@@ -31,11 +31,11 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+              I'm a ~40year old, late to the game, frontend developer, artist,
+              and parent.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+                I have a twitter, too.
               </a>
             </p>
           </div>
