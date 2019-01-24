@@ -10,7 +10,6 @@ import { rhythm, scale } from '../utils/typography'
 
 const Title = styled.h1`
   color: #2ecc40;
-  margin-bottom: ${rhythm(1 / 4)};
   text-transform: uppercase;
   letter-spacing: ${rhythm(1 / 10)};
 `
@@ -24,7 +23,7 @@ const Date = styled.p`
 `
 
 const HorizontalRule = styled.hr`
-  margin-bottom: ${rhythm};
+  margin-bottom: ${rhythm(1)};
 `
 
 const PostNavigation = styled.ul`
