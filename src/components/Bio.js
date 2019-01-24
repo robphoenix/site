@@ -9,7 +9,7 @@ function Bio() {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
+        const { author, social, bio } = data.site.siteMetadata
         return (
           <div
             style={{
@@ -31,8 +31,7 @@ function Bio() {
               }}
             />
             <p>
-              I'm a ~40year old, late to the game, frontend developer, artist,
-              and parent.
+              {bio}
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 I have a twitter, too.
@@ -57,6 +56,7 @@ const bioQuery = graphql`
     site {
       siteMetadata {
         author
+        bio
         social {
           twitter
         }

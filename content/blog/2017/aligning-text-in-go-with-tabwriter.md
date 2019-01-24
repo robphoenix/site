@@ -14,7 +14,7 @@ columnar fashion, much like a csv file, as so:
 
 Getting the output into that format has gone through a few iterations; firstly
 static, then more dynamic and then I stumbled across Go's
-[`tabwriter`](https://golang.org/pkg/text/tabwriter/) package, which made
+[_tabwriter_](https://golang.org/pkg/text/tabwriter/) package, which made
 everything better.
 
 Initially all the column widths were static. An IP address will be at most 15
@@ -23,8 +23,8 @@ characters wide, `192.168.100.200`, a MAC address will be 17,
 
 More problematic were the interface names. I built the tool to work on Windows
 as well as Unix based systems, and Windows interfaces have ridiculously long,
-but obvious, names like `Wireless Network Connection`, rather than something
-short and less obvious like `wlp1s0`, the wireless interface on my Ubuntu
+but obvious, names like **Wireless Network Connection**, rather than something
+short and less obvious like **wlp1s0**, the wireless interface on my Ubuntu
 laptop. So I had to consider this variance in length, and did so by just
 counting the longest interface names I encountered and setting the width to
 that, which didn't take into account interfaces I hadn't, or wouldn't, encounter.

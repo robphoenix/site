@@ -5,27 +5,27 @@ import styled, { css } from 'styled-components'
 
 import { rhythm, scale } from '../utils/typography'
 
-const MainTitle = styled.h1`
+const MainHeader = styled.h1`
   ${scale(1.5)};
   margin-bottom: ${rhythm(1.5)};
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: ${rhythm(0.3)};
-  color: #0074d9;
+  color: #f012be;
 `
 
-const TitleLink = styled(Link)`
+const HeaderLink = styled(Link)`
   box-shadow: none;
   text-decoration: none;
   color: inherit;
 `
 
-const PostTitle = styled.h3`
+const PostHeader = styled.h3`
   font-family: Montserrat, sans-serif;
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: ${rhythm(0.3)};
-  color: #0074d9;
+  color: #ff4136;
 `
 
 const Container = styled.div`
@@ -43,15 +43,15 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <MainTitle>
-          <TitleLink to={`/`}>{title}</TitleLink>
-        </MainTitle>
+        <MainHeader>
+          <HeaderLink to={`/`}>{title}</HeaderLink>
+        </MainHeader>
       )
     } else {
       header = (
-        <PostTitle>
-          <TitleLink to={`/`}>{title}</TitleLink>
-        </PostTitle>
+        <PostHeader>
+          <HeaderLink to={`/`}>{title}</HeaderLink>
+        </PostHeader>
       )
     }
     return (

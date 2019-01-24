@@ -3,18 +3,14 @@ module.exports = {
     title: `rob phoenix`,
     author: `Rob Phoenix`,
     description: `A blog.`,
+    bio: `I'm a ~40year old, late to the game, frontend developer, artist, and parent.`,
     siteUrl: ``,
     social: {
       twitter: `brdltbrncle`,
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
-    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,7 +41,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
