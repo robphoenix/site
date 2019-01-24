@@ -1,9 +1,18 @@
 // @ts-nocheck
 import React from 'react'
 import { Link } from 'gatsby'
-import styled, { css } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import { rhythm, scale } from '../utils/typography'
+
+const Global = createGlobalStyle`
+  a {
+    color: #f012be;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+`
 
 const MainHeader = styled.h1`
   ${scale(1.5)};
@@ -25,7 +34,7 @@ const PostHeader = styled.h3`
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: ${rhythm(0.3)};
-  color: #ff4136;
+  color: #f012be;
 `
 
 const Container = styled.div`
@@ -56,6 +65,7 @@ class Layout extends React.Component {
     }
     return (
       <Container>
+        <Global />
         {header}
         {children}
         <footer>

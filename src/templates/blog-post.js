@@ -1,10 +1,39 @@
+// @ts-nocheck
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
+
+const Title = styled.h1`
+  color: #2ecc40;
+  margin-bottom: ${rhythm(1 / 4)};
+  text-transform: uppercase;
+  letter-spacing: ${rhythm(1 / 10)};
+`
+
+const Date = styled.p`
+  ${scale(-1 / 5)};
+  display: block;
+  margin-bottom: ${rhythm(1)};
+  margin-top: ${rhythm(-1)};
+  color: #aaaaaa;
+`
+
+const HorizontalRule = styled.hr`
+  margin-bottom: ${rhythm};
+`
+
+const PostNavigation = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,40 +44,12 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1
-          style={{
-            color: `#0074D9`,
-          }}
-        >
-          {post.frontmatter.title}
-        </h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <Title>{post.frontmatter.title}</Title>
+        <Date>{post.frontmatter.date}</Date>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <HorizontalRule />
         <Bio />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <PostNavigation>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -63,7 +64,7 @@ class BlogPostTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </ul>
+        </PostNavigation>
       </Layout>
     )
   }

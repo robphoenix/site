@@ -1,10 +1,26 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
+
+const Title = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+  text-transform: uppercase;
+  letter-spacing: ${rhythm(1 / 10)};
+`
+
+const TitleLink = styled(Link)`
+  box-shadow: none;
+  color: #2ecc40;
+`
+
+const SmallDate = styled.small`
+  color: #aaaaaa;
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,27 +36,14 @@ class BlogIndex extends React.Component {
         />
         <Bio />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title
+          const { title, date } = node.frontmatter
+
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                  textTransform: `uppercase`,
-                  letterSpacing: rhythm(0.1),
-                }}
-              >
-                <Link
-                  style={{
-                    boxShadow: `none`,
-                    color: `#2ECC40`,
-                  }}
-                  to={node.fields.slug}
-                >
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
+              <Title>
+                <TitleLink to={node.fields.slug}>{title}</TitleLink>
+              </Title>
+              <SmallDate>{date}</SmallDate>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -67,7 +70,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM YYYY")
             title
           }
         }
