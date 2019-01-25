@@ -1,13 +1,13 @@
 ---
-title: "Notes on Python: String Formatting"
+title: 'Notes on Python: String Formatting'
 date: 2015-11-12
-tags: [ "python" ]
+tags: ['python']
 ---
 
-I've only recently realised I've been formatting text in Python in a really clunky manner.  The `.format()` string method is something that I've seen and even briefly used, but never stopped and got to know well enough to use more efficiently.
-So, that's what this is, a little *get to know you* with `string.format()`
+I've only recently realised I've been formatting text in Python in a really clunky manner. The `.format()` string method is something that I've seen and even briefly used, but never stopped and got to know well enough to use more efficiently.
+So, that's what this is, a little _get to know you_ with `string.format()`
 
-In it's simplest terms `.format()` takes a string that contains braces (`{}`), referred to as *replacement fields*, and replaces them with an argument.
+In it's simplest terms `.format()` takes a string that contains braces (`{}`), referred to as _replacement fields_, and replaces them with an argument.
 
 ```python
 In [1]: "Today, I'm listening to {}.".format("Blind Willie Johnson")
@@ -88,7 +88,7 @@ In [36]: sentence.format(todays_music)
 Out[36]: "I'm listening to the album Sweeter As The Years Go By, by Blind Willie Johnson, currently playing is Let Your Light Shine On Me"
 ```
 
-Note that when we're accessing more than one element from the given data structure we need to explicitly refer to that data structure. If we don't we will *use up* the given data structure with the first reference to it and have nothing left available to us...
+Note that when we're accessing more than one element from the given data structure we need to explicitly refer to that data structure. If we don't we will _use up_ the given data structure with the first reference to it and have nothing left available to us...
 
 ```python
 In [9]: bad_sentence = ("I'm listening to the album {[album]}"
@@ -122,7 +122,7 @@ In [18]: "{0:10} : {1:30}.".format("Musician", "Blind Willie Johnson")
 Out[18]: 'Musician   : Blind Willie Johnson          .'
 ```
 
-Here, within the braces we put a colon (`:`) before our *format specifiers*, the number afterwards is the size of the `fill`.
+Here, within the braces we put a colon (`:`) before our _format specifiers_, the number afterwards is the size of the `fill`.
 we can also include an alignment specifier, and a fill character...
 
 ```python

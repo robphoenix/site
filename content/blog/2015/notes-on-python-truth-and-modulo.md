@@ -1,7 +1,7 @@
 ---
-title: "Notes On Python: Truth and Modulo"
+title: 'Notes On Python: Truth and Modulo'
 date: 2015-10-12
-tags: [ "python" ]
+tags: ['python']
 ---
 
 Today I learnt how to be less verbose when using the `%` operator in Python.
@@ -10,9 +10,9 @@ Today I learnt how to be less verbose when using the `%` operator in Python.
 
 So, to set the scene, the first problem on [Project Euler][pe] is presented as such:
 
-*"If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.*
+_"If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23._
 
-*Find the sum of all the multiples of 3 or 5 below 1000."*
+_Find the sum of all the multiples of 3 or 5 below 1000."_
 
 I initially answered this with the following function:
 
@@ -28,7 +28,7 @@ def sum_mul_three_five(end_num):
     return sum(total)
 ```
 
-This code is pretty self-explanatory, but the line I want to focus on is the `if` statement.  The `%` operator returns the remainder of a division, and is popularly used in Python for such things as sorting even numbers.
+This code is pretty self-explanatory, but the line I want to focus on is the `if` statement. The `%` operator returns the remainder of a division, and is popularly used in Python for such things as sorting even numbers.
 For instance:
 
 ```python
@@ -46,7 +46,7 @@ For instance:
 8
 ```
 
-Here we iterate through a simple list of numbers.  The `if` statement uses the `%` operator to check what the remainder will be when each number is divided by `2`.  If there is no remainder, ie. the result is `0` then the number is equally divided by `2` and therefore `even`...
+Here we iterate through a simple list of numbers. The `if` statement uses the `%` operator to check what the remainder will be when each number is divided by `2`. If there is no remainder, ie. the result is `0` then the number is equally divided by `2` and therefore `even`...
 
 ```python
 >>> for number in range(10):
@@ -67,7 +67,7 @@ Here we iterate through a simple list of numbers.  The `if` statement uses the `
 9 is odd
 ```
 
-So, in my solution for [Project Euler][pe] I am using `%` to test whether each number is divisible by 3 or 5.  When I tried to refactor this with a more Functional approach using a list comprehension, I got this long mess:
+So, in my solution for [Project Euler][pe] I am using `%` to test whether each number is divisible by 3 or 5. When I tried to refactor this with a more Functional approach using a list comprehension, I got this long mess:
 
 ```python
 def sum_mul_three_five(end_num):
@@ -79,9 +79,9 @@ def sum_mul_three_five(end_num):
     return sum(total)
 ```
 
-*Eeek!* As I have [been told][ttp], while this works, it's probably the [wrong way][sww].  What I didn't realise is that we can be more concise with the modulo statements, and use them as a `True/False` test.  This is because `0` and `1`, the two results we can get from using `%`, equate to `False` and `True` respectively.
+_Eeek!_ As I have [been told][ttp], while this works, it's probably the [wrong way][sww]. What I didn't realise is that we can be more concise with the modulo statements, and use them as a `True/False` test. This is because `0` and `1`, the two results we can get from using `%`, equate to `False` and `True` respectively.
 
-***EDIT*** See Below...
+**_EDIT_** See Below...
 
 This may seem simple but it's perhaps overlooked when learning Python, especially for those without a CS background, such as myself, or perhaps my view of the wood was blocked by the trees.
 
@@ -101,7 +101,7 @@ True
 False
 ```
 
-Now, the `if` condition of an `if/else` conditional expression is met when the condition is `True`, or `not False`.  This is where my mind started to fold over into itself.  So, to return the numbers divisible by `3` in an `if` statement the result needs to be `True`, whereas with `%` it is `False`...
+Now, the `if` condition of an `if/else` conditional expression is met when the condition is `True`, or `not False`. This is where my mind started to fold over into itself. So, to return the numbers divisible by `3` in an `if` statement the result needs to be `True`, whereas with `%` it is `False`...
 
 ```python
 >>> for number in range(10):
@@ -136,7 +136,7 @@ def sum_mul_three_five(end_num):
     return sum(total)
 ```
 
-Which is saying *return the number if it is `not True`, ie. `False`*, a condition met when the remainder is `0` when the number is divided by `3`.
+Which is saying _return the number if it is `not True`, ie. `False`_, a condition met when the remainder is `0` when the number is divided by `3`.
 
 Though this is still a bit ugly, so let's simplify the rest a bit...
 
@@ -152,7 +152,7 @@ def sum_mul_three_five(end_num):
 
 I think that makes sense, I hope it does.
 
-***EDIT*** Ok, so I totally overlooked that the result of `%` isn't restricted to `0` or `1`, so this example is perhaps not as black and white as I first believed.
+**_EDIT_** Ok, so I totally overlooked that the result of `%` isn't restricted to `0` or `1`, so this example is perhaps not as black and white as I first believed.
 
 ```python
 >>> for number in range(10):
@@ -196,7 +196,7 @@ I think that makes sense, I hope it does.
 4
 ```
 
-So, what happens with remainders that aren't `0` or `1`?  Well, they are interpreted as `False` in this case
+So, what happens with remainders that aren't `0` or `1`? Well, they are interpreted as `False` in this case
 
 ```python
 >>> for number in range(10):
@@ -217,8 +217,7 @@ False:  Number: 8       Remainder: 2
 True:   Number: 9       Remainder: 0
 ```
 
-I have to admit, this hasn't totally clicked in my brain yet. I mean, I get it, but the whole *is it True, is it False?* thing is a little hard to keep track of y'know.
-
+I have to admit, this hasn't totally clicked in my brain yet. I mean, I get it, but the whole _is it True, is it False?_ thing is a little hard to keep track of y'know.
 
 [pe]: https://projecteuler.net/problem=1
 [ttp]: https://twitter.com/supertylerc/status/650003121058353152

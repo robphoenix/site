@@ -1,10 +1,10 @@
 ---
-title:  "Notes on Python: Lists"
-date:   2015-03-31
-tags:   [ "python" ]
+title: 'Notes on Python: Lists'
+date: 2015-03-31
+tags: ['python']
 ---
 
-Like the numerable daily lists made with pen and paper, the list in Python is an incredibly handy way to store information, but with extra *power*.
+Like the numerable daily lists made with pen and paper, the list in Python is an incredibly handy way to store information, but with extra _power_.
 
 We can start with an empty list:
 
@@ -96,7 +96,7 @@ Select elements in the list through their index (not forgetting that python list
 'router-02'
 ```
 
-Lists can be really useful as an interim holding bay while parsing a file, or extracting information from a directory, such as a folder of *show run* or *show version* files.
+Lists can be really useful as an interim holding bay while parsing a file, or extracting information from a directory, such as a folder of _show run_ or _show version_ files.
 
 This brief summary really is brief and pulls heavily from others:
 
@@ -105,7 +105,7 @@ This brief summary really is brief and pulls heavily from others:
 - [Dive Into Python][dip]
 - [Brent Salisbury Python Tutorial][bspt]
 
-[pfi]:  http://www.pythonlearn.com/html-009/book009.html
-[gpc]:  https://developers.google.com/edu/python/lists
-[dip]:  http://www.diveintopython.net/native_data_types/lists.html
+[pfi]: http://www.pythonlearn.com/html-009/book009.html
+[gpc]: https://developers.google.com/edu/python/lists
+[dip]: http://www.diveintopython.net/native_data_types/lists.html
 [bspt]: http://networkstatic.net/python-tutorial-functions-and-passing-lists-and-dictionaries-with-simple-examples/

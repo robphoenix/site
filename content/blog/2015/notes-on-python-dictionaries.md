@@ -1,10 +1,10 @@
 ---
-title: "Notes on Python: Dictionaries"
+title: 'Notes on Python: Dictionaries'
 date: 2015-09-30
-tags: [ "python" ]
+tags: ['python']
 ---
 
-A dictionary is a key/value store.  A value is bound to a key, stored within a data structure, and referenced by this key.  In the common dictionary we all know the word is the key, and it's meaning is the value.  Dictionaries are indispensable to language, and in Python they are a fundamental data structure.
+A dictionary is a key/value store. A value is bound to a key, stored within a data structure, and referenced by this key. In the common dictionary we all know the word is the key, and it's meaning is the value. Dictionaries are indispensable to language, and in Python they are a fundamental data structure.
 
 We can create an empty dictionary object in a couple of ways.
 
@@ -182,7 +182,7 @@ A dictionary can also be nested, enabling the building up of more complicated da
 '03/09/1915'
 ```
 
-There you have the dictionary.  Thanks to books by [Mark Lutz][learnpy] and [Charles Severance][pyinfor] for letting me lean on their knowledge.
+There you have the dictionary. Thanks to books by [Mark Lutz][learnpy] and [Charles Severance][pyinfor] for letting me lean on their knowledge.
 
 [learnpy]: http://www.amazon.co.uk/Learning-Python-Mark-Lutz/dp/1449355730/ref=sr_1_1?ie=UTF8&qid=1443686087&sr=8-1&keywords=learning+python
 [pyinfor]: http://www.py4inf.com/

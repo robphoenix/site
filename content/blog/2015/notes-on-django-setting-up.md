@@ -1,14 +1,14 @@
 ---
-title: "Notes on Django: Setting Up"
+title: 'Notes on Django: Setting Up'
 date: 2015-09-03
-tags: [ "python", "django", "vagrant" ]
+tags: ['python', 'django', 'vagrant']
 ---
 
-I'm starting to develop multiple Django projects, but am still referring to the *(excellent)* [Django tutorial][djt] to get set up, so I thought I'd write out the steps I take to set up a new Django project and it's associated development environment, just to help remember it and have an easy reference for the future.
+I'm starting to develop multiple Django projects, but am still referring to the _(excellent)_ [Django tutorial][djt] to get set up, so I thought I'd write out the steps I take to set up a new Django project and it's associated development environment, just to help remember it and have an easy reference for the future.
 
-I work on my Django projects within a [Vagrant][v] environment.  This creates a nice, easy-to-use, isolated environment that is simple to bring up, tear down and replicate.  It also means I, controversially, don't use [virtualenv][ve], as Vagrant isolates things for me.  Though I admit, I'm still an amateur and am probably overlooking something important, especially as nothing I've made has yet made it into production.  To be honest I'd really like to move everything to [Docker][dkr] but I haven't yet had the time to properly learn Docker or explore the feasability of this.  One of the nice things about Vagrant is that I have a separate VM for my PostgreSQL database.  So, because I'm still learning Postgres, and run into migration problems when changing models, it is easy to just destroy and rebuild my database backend quickly.  This does however destroy any data I have, which currently isn't a big problem.  I want to put aside some time in my workflow for creating a script that populates the database with some basic data for development.  But I really need to spend some time learning how to properly deal with the database and migrations, of course.
+I work on my Django projects within a [Vagrant][v] environment. This creates a nice, easy-to-use, isolated environment that is simple to bring up, tear down and replicate. It also means I, controversially, don't use [virtualenv][ve], as Vagrant isolates things for me. Though I admit, I'm still an amateur and am probably overlooking something important, especially as nothing I've made has yet made it into production. To be honest I'd really like to move everything to [Docker][dkr] but I haven't yet had the time to properly learn Docker or explore the feasability of this. One of the nice things about Vagrant is that I have a separate VM for my PostgreSQL database. So, because I'm still learning Postgres, and run into migration problems when changing models, it is easy to just destroy and rebuild my database backend quickly. This does however destroy any data I have, which currently isn't a big problem. I want to put aside some time in my workflow for creating a script that populates the database with some basic data for development. But I really need to spend some time learning how to properly deal with the database and migrations, of course.
 
-My Vagrant setup can be found on my [Github][gv], and consists of a Vagrantfile, a couple of bash scripts to provision each machine, and a shared folder that contains a pip requirements file, and will go on to contain my Django project's root folder.  This means I can work on my Django project files on my laptop rather than in the VM.  I have a private [GitLab][gitl] server that I use to house all my project repositories, with my root git folder containing the Vagrant setup and this shared folder.
+My Vagrant setup can be found on my [Github][gv], and consists of a Vagrantfile, a couple of bash scripts to provision each machine, and a shared folder that contains a pip requirements file, and will go on to contain my Django project's root folder. This means I can work on my Django project files on my laptop rather than in the VM. I have a private [GitLab][gitl] server that I use to house all my project repositories, with my root git folder containing the Vagrant setup and this shared folder.
 
 This is my Vagrantfile:
 
@@ -80,9 +80,9 @@ Vagrant.configure(2) do |config|
 end
 ```
 
-The django provision file just installs pip and runs the requirements file.  The db provision file installs Postgres and sets up the database.
+The django provision file just installs pip and runs the requirements file. The db provision file installs Postgres and sets up the database.
 
-So, once I've updated any variables in this Vagrantfile and the db provision file, I'll set up the new remote repo on my Gitlab server.  Then we unchain Django and get developing...
+So, once I've updated any variables in this Vagrantfile and the db provision file, I'll set up the new remote repo on my Gitlab server. Then we unchain Django and get developing...
 
 ```bash
 laptop$ cd root-project-dir
@@ -159,7 +159,7 @@ Starting development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 ```
 
-Running the Django server at `0.0.0.0:8000` makes the site accessible from outside the VM, on the port specified in the Vagrantfile.  So, if I used the Vagrantfile above, which contains `django_8000_fp = "8011"` then in the browser on my laptop I would got o `http://localhost:8011` which would bring up the Django site.
+Running the Django server at `0.0.0.0:8000` makes the site accessible from outside the VM, on the port specified in the Vagrantfile. So, if I used the Vagrantfile above, which contains `django_8000_fp = "8011"` then in the browser on my laptop I would got o `http://localhost:8011` which would bring up the Django site.
 
 If that works, go on to set up the app:
 
@@ -175,8 +175,8 @@ vagrant@django:~/shared/mysite$ python manage.py createsuperuser
 Go build stuff.
 
 [djt]: https://docs.djangoproject.com/en/1.8/intro/tutorial01/
-[v]:   https://www.vagrantup.com/
-[ve]:  https://virtualenv.pypa.io/en/latest/
+[v]: https://www.vagrantup.com/
+[ve]: https://virtualenv.pypa.io/en/latest/
 [dkr]: https://www.docker.com/
-[gv]:  https://github.com/bordeltabernacle/Vagrant-Django-PostgreSQL
+[gv]: https://github.com/bordeltabernacle/Vagrant-Django-PostgreSQL
 [gitl]: https://about.gitlab.com/downloads/

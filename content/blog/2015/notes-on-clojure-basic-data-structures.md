@@ -1,22 +1,21 @@
 ---
-title: "Notes on Clojure: Basic Data Structures"
+title: 'Notes on Clojure: Basic Data Structures'
 date: 2015-09-29
-tags: [ "clojure" ]
+tags: ['clojure']
 ---
 
 Let's have a wee gander at Clojure's data structures, shall we?
 
 Clojure has four fundamental data structures, also known as collections.
 
-- *Lists* are, well, they're lists.
-- *Vectors* are indexed lists.
-- *Maps* are key/value collections.
-- *Sets* are collections of unique values
+- _Lists_ are, well, they're lists.
+- _Vectors_ are indexed lists.
+- _Maps_ are key/value collections.
+- _Sets_ are collections of unique values
 
-All these collections are *immutable* and *persistent*, so when altering them after they've been created, adding or removing items, they're not actually changed, instead they create new, updated versions of themselves.
+All these collections are _immutable_ and _persistent_, so when altering them after they've been created, adding or removing items, they're not actually changed, instead they create new, updated versions of themselves.
 
-Lists & Vectors
----------------
+## Lists & Vectors
 
 To create a list we can use the explicit `list` function:
 
@@ -56,7 +55,7 @@ clojure.lang.PersistentVector
 [1 2 :three "four"]
 ```
 
-They are visually different, using square brackets, which may not seem like much but in a world of parenthesis can make a difference.  The contents are accessed differently.  To get an entry, a list works through from the beginning of the list to the entry, whereas a vector can directly access the entry by index.  To be honest I don't yet understand when you would use one over the other, but I'm sure I'll get a feel for them the more I work with Clojure.
+They are visually different, using square brackets, which may not seem like much but in a world of parenthesis can make a difference. The contents are accessed differently. To get an entry, a list works through from the beginning of the list to the entry, whereas a vector can directly access the entry by index. To be honest I don't yet understand when you would use one over the other, but I'm sure I'll get a feel for them the more I work with Clojure.
 
 So what can we do with these two types of collections?
 
@@ -173,10 +172,9 @@ nil
 "No Dice!"
 ```
 
-Maps
-----
+## Maps
 
-Maps provide us with a key/value store.  They are defined by the curly handlebar braces.
+Maps provide us with a key/value store. They are defined by the curly handlebar braces.
 
 ```clojure
 => (type {})
@@ -187,7 +185,7 @@ clojure.lang.PersistentArrayMap
 java.lang.RuntimeException: Map literal must contain an even number of forms
 ```
 
-You don't need to include commas, but they may well help with understanding the code, visually separating the key/value pairs and ensuring you don't add a key without it's corresponding value.  I believe it's more common for keywords to be used for the keys in a map, which also provides an extra method for retrieving items from the map, alongside the `get` function.
+You don't need to include commas, but they may well help with understanding the code, visually separating the key/value pairs and ensuring you don't add a key without it's corresponding value. I believe it's more common for keywords to be used for the keys in a map, which also provides an extra method for retrieving items from the map, alongside the `get` function.
 
 ```clojure
 => (get {"Memphis Slim" "Miss Ida B", "Otis Spann" "Good Morning Mr. Blues"} "Memphis Slim")
@@ -218,10 +216,9 @@ And add and remove key/value pairs with `assoc`, `dissoc` and `merge`...
 {:LeroyCarr "Blues Before Sunrise", :RobertJohnson "I Believe I'll Dust My Broom", :MemphisSlim "Miss Ida B", :SkipJames "Worried Blues"}
 ```
 
-Sets
-----
+## Sets
 
-Sets are collections of unique data, defined by `#{}`.  They must be unique at the time of creation, and will not recognise repeated elements if you try to add them.
+Sets are collections of unique data, defined by `#{}`. They must be unique at the time of creation, and will not recognise repeated elements if you try to add them.
 
 ```clojure
 => #{:MemphisSlim :OtisSpann :BukkaWhite :RobertJohnson :OtisSpann}
@@ -267,4 +264,4 @@ nil
 #{:RobertJohnson}
 ```
 
-There we go, storing and retrieving data in Clojre, lovely.  As per, I learnt a lot of this from other more knowledgeable people than myself, most significantly [Carin Meier](https://twitter.com/gigasquid) and [Daniel Higginbotham](https://twitter.com/nonrecursive), as well as the good folks that give us the [Clojure Docs](http://clojure.org/documentation) and that contribute to the [community-driven docs](http://clojuredocs.org/). Thanks.
+There we go, storing and retrieving data in Clojre, lovely. As per, I learnt a lot of this from other more knowledgeable people than myself, most significantly [Carin Meier](https://twitter.com/gigasquid) and [Daniel Higginbotham](https://twitter.com/nonrecursive), as well as the good folks that give us the [Clojure Docs](http://clojure.org/documentation) and that contribute to the [community-driven docs](http://clojuredocs.org/). Thanks.

@@ -1,12 +1,12 @@
 ---
-title: "Notes on JavaScript: The For Loop"
+title: 'Notes on JavaScript: The For Loop'
 date: 2015-10-05
-tags: [ "javascript" ]
+tags: ['javascript']
 ---
 
 Being used to the simplicity of the Python `for` loop, it took me a little while to get used to the JavaScript `for` loop syntax.
 
-The `for` loop in Python is basically just the statement `for x in y do z`, where `y` is an iterable such as a list or a string, which is fairly self-explanatory.  For me, the JavaScript `for` loop didn't seem as transparent when I first started using it.
+The `for` loop in Python is basically just the statement `for x in y do z`, where `y` is an iterable such as a list or a string, which is fairly self-explanatory. For me, the JavaScript `for` loop didn't seem as transparent when I first started using it.
 
 Here is a simple example:
 
@@ -40,7 +40,7 @@ for ([initiating statement]; [conditional statement]; [end of loop statement]) {
 - `[end of loop statement]` : This is executed at the end of each loop, usually incrementing the counter initialised at the beginning of the loop.
 - `[execution statment]` : This is the code that should be executed on each iteration of the loop.
 
-All these statements are optional.  For example the `[initiating statement]` may be previously set outside of the loop, or it can even be used to set multiple initiating variables. The other statements can also take into consideration multiple values.
+All these statements are optional. For example the `[initiating statement]` may be previously set outside of the loop, or it can even be used to set multiple initiating variables. The other statements can also take into consideration multiple values.
 
 ```javascript
 > for (i = 0, j = 1, k = 2; i + j + k < 30; i++, j++, k++) {
@@ -58,7 +58,7 @@ i: 8 j: 9 k: 10
 >
 ```
 
-Funnily enough it was only later that I found out there is actually a `for ... in` loop in JavaScript similar to that in Python.  Though it doesn't behave exactly the same.
+Funnily enough it was only later that I found out there is actually a `for ... in` loop in JavaScript similar to that in Python. Though it doesn't behave exactly the same.
 
 ```javascript
 > var blues = ["Son House", "Blind Willie Johnson", "Elizabeth Cotten"]
@@ -73,7 +73,7 @@ undefined
 2
 ```
 
-This `for ... in` loop iterates over the properties of an object, iterating over the index if a property is not explicitly called.  So in this case we have to iterate over them like so...
+This `for ... in` loop iterates over the properties of an object, iterating over the index if a property is not explicitly called. So in this case we have to iterate over them like so...
 
 ```javascript
 > for (var singer in blues) {
@@ -95,7 +95,7 @@ Blind Willie Johnson
 Elizabeth Cotten
 ```
 
-My understanding is that the first `for` method described here is the most reliable for working in all versions of JavaScript.  [W3Schools][w3s] & [MDN][mdn] are both useful resources for understanding the `for` loop beyond this basic overview.
+My understanding is that the first `for` method described here is the most reliable for working in all versions of JavaScript. [W3Schools][w3s] & [MDN][mdn] are both useful resources for understanding the `for` loop beyond this basic overview.
 
 [ecma6]: https://strongloop.com/strongblog/introduction-to-es6-iterators/
 [w3s]: http://www.w3schools.com/js/js_loop_for.asp

@@ -1,7 +1,7 @@
 ---
-title: "Notes on Elixir: Pattern-Matching Maps"
+title: 'Notes on Elixir: Pattern-Matching Maps'
 date: 2016-01-04
-tags: [ "elixir" ]
+tags: ['elixir']
 ---
 
 Following on from my [last post][nopm] about pattern-matching, `maps`, the main
@@ -10,7 +10,7 @@ from other data structures with regards to pattern-matching.
 
 A `map` can actually pattern-match on just a subset of a value. The key(s) in
 the pattern have to exist in the match, but the two structures don't have to
-mirror each other in the same way a `list` or a `tuple` has to.  For example:
+mirror each other in the same way a `list` or a `tuple` has to. For example:
 
 ```elixir
 iex(1)> [a, b] = [1, 2, 3]
@@ -41,9 +41,9 @@ iex(8)> %{:a => one, :d => four} = %{:a => 1, :b => 2, :c =>3}
 
 We can see that neither the `list` nor the `tuple` matches if the data
 structure of the pattern is different to the data structure of the match, namely
-the size.  Whereas this is not the case for the `map`.  Because the key is
+the size. Whereas this is not the case for the `map`. Because the key is
 present in both the pattern and the match then the match is successful,
-regardless of the different sizes of the pattern and the match.  An empty
+regardless of the different sizes of the pattern and the match. An empty
 `map` will also match.
 
 However the match will not be successful if the key in the pattern is not in the
@@ -51,7 +51,7 @@ match. This is also the case even if there are matching keys. So any key used in
 the pattern has to be present in the match.
 
 You'll see this used extensively in the [Phoenix Framework][pf] when dealing
-with the parameters passed to a function.  The function is able to pick out
+with the parameters passed to a function. The function is able to pick out
 of the parameters only those pieces of data it needs.
 
 Here we have a function that creates a new user:
@@ -80,7 +80,7 @@ given parameters map, discarding the rest of the data as irrelevant to its
 needs.
 
 It is also possible to match against the whole map at the same time as pattern-matching
-part of the map.  Let's change the `create` function to look like this:
+part of the map. Let's change the `create` function to look like this:
 
 ```elixir
 def create(conn, parameters = %{"user" => user_params}) do
@@ -111,14 +111,13 @@ end
 ```
 
 This is because the pattern here is actually `%{"user" => user_params} = parameters`
-and the match is the Parameters map being passed in.  And when
-you're *inside a pattern* you can also match different parts of the pattern,
-binding them to different variables.  As far as I can tell, this is the more
+and the match is the Parameters map being passed in. And when
+you're _inside a pattern_ you can also match different parts of the pattern,
+binding them to different variables. As far as I can tell, this is the more
 idiomatic approach, and what you will see most often.
 
 Pattern-matching provides a really nice way to reach in and grab data out of a
 `map` key-value store.
-
 
 ## Further Reading
 

@@ -1,10 +1,10 @@
 ---
-title: "Notes on Django: Population Script"
+title: 'Notes on Django: Population Script'
 date: 2015-09-16
-tags: [ "python", "django", "vagrant" ]
+tags: ['python', 'django', 'vagrant']
 ---
 
-After my last Django post I happened across [this population script][ps] from [Tango with Django][twd].  So I've updated it and adapted it to my own needs.  Ha, Screw You [Technical Debt!][td]
+After my last Django post I happened across [this population script][ps] from [Tango with Django][twd]. So I've updated it and adapted it to my own needs. Ha, Screw You [Technical Debt!][td]
 
 `example models.py`
 
@@ -132,9 +132,7 @@ if __name__ == '__main__':
 
 ```
 
-
 And in our root project directory, where `manage.py` is, we run our script.
-
 
 ```bash
 vagrant@django:~/shared/ProjectRootDirectory$ python populate.py
@@ -161,7 +159,6 @@ SuperUser: uname
 
 ================================================================================
 ```
-
 
 So, buggering about with models and the database just got easier, now that it takes minutes to destroy it and rebuild it. Super.
 

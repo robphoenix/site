@@ -1,18 +1,18 @@
 ---
-title: "Notes on JavaScript: Logical Short-circuit"
+title: 'Notes on JavaScript: Logical Short-circuit'
 date: 2015-08-24
-tags: [ "javascript" ]
+tags: ['javascript']
 ---
 
-Following on from my last two posts ([1][onePost]/[2][twoPost]), I was reading [Eloquent Javascript][ej] over the weekend and learnt about a behaviour of logical operators relevant to both posts.
+Following on from my last two posts ([1][onepost]/[2][twopost]), I was reading [Eloquent Javascript][ej] over the weekend and learnt about a behaviour of logical operators relevant to both posts.
 
-This bit of code from the [exercism.io][exercism] *"Hello, world"* exercise:
+This bit of code from the [exercism.io][exercism] _"Hello, world"_ exercise:
 
 ```javascript
-name = name || 'world';
+name = name || 'world'
 ```
 
-gives the `name` variable the ability to be either the string `'world'` or the variable `name`.  Which one it ends up being depends on whether the logical operator `||` reads the variable `name` as `true` or `false`.
+gives the `name` variable the ability to be either the string `'world'` or the variable `name`. Which one it ends up being depends on whether the logical operator `||` reads the variable `name` as `true` or `false`.
 
 The `||` works by converting the value on it's left to a Boolean, and if it's `true` then it will use that value, and if it converts to `false` it will use the value on it's right.
 
@@ -42,7 +42,7 @@ If we switch the values on either side of the `||`, then the left hand side will
 Anonymous
 ```
 
-This behaviour gives us a technique similar to the Python optional argument, and we can rewrite our Python `the_blues` function, from [previously][twoPost], in JavaScript as such:
+This behaviour gives us a technique similar to the Python optional argument, and we can rewrite our Python `the_blues` function, from [previously][twopost], in JavaScript as such:
 
 ```javascript
 > var theBlues = function(name) {
@@ -55,7 +55,7 @@ You got the Blues.
 Son House got the Blues.
 ```
 
-And what about `&&`?  Well, it does the same except that if the value on its left converts to `false`, rather than `true`, it returns that value, otherwise returning the value on its right.
+And what about `&&`? Well, it does the same except that if the value on its left converts to `false`, rather than `true`, it returns that value, otherwise returning the value on its right.
 
 ```javascript
 > var name = false;
@@ -67,13 +67,12 @@ false
 Anonymous
 ```
 
-[Eloquent Javscript][ej] highlights the fact that *'the expression to their right is evaluated only when necessary.'* So, for `||` if the expression on the left is `true` then, no matter what it is, the expression on the right will not be evaluated.  and for `&&` if the expression on the left if `false`, the expression on the right will not be evaluated. This is called *short-circuit evaluation*.
+[Eloquent Javscript][ej] highlights the fact that _'the expression to their right is evaluated only when necessary.'_ So, for `||` if the expression on the left is `true` then, no matter what it is, the expression on the right will not be evaluated. and for `&&` if the expression on the left if `false`, the expression on the right will not be evaluated. This is called _short-circuit evaluation_.
 
-As an aside, my solo exhibition in 2011 was at a gallery called [*ANDOR*][andor]. Funny, huh?
+As an aside, my solo exhibition in 2011 was at a gallery called [_ANDOR_][andor]. Funny, huh?
 
-
-[onePost]: https://bordeltabernacle.github.io/2015/08/21/node-dipping-toes.html
-[twoPost]: https://bordeltabernacle.github.io/2015/08/21/python-function-arguments.html
-[ej]:       http://eloquentjavascript.net/
+[onepost]: https://bordeltabernacle.github.io/2015/08/21/node-dipping-toes.html
+[twopost]: https://bordeltabernacle.github.io/2015/08/21/python-function-arguments.html
+[ej]: http://eloquentjavascript.net/
 [exercism]: http://exercism.io/
 [andor]: http://www.creativeandorcultural.com/index.php/nobodys-fault-but-mine-yours-ours-mine

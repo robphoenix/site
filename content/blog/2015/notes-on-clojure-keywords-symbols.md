@@ -1,15 +1,15 @@
 ---
-title: "Notes on Clojure: Keywords & Symbols Confusion"
+title: 'Notes on Clojure: Keywords & Symbols Confusion'
 date: 2015-09-25
-tags: [ "clojure" ]
+tags: ['clojure']
 ---
 
-Having not used Clojure extensively yet, or really much at all, I'm still unsure as to when to use Keywords.  So I just spent a bit of time exploring them, and subsequently touched on Symbols too.  And in writing this post confused myself further in the process.  What you have here then is not a formed explanation of either Keywords or Symbols, but observations on their behaviour. While reading this, imagine me saying 'huh?' and scratching my head like Stan Laurel.
+Having not used Clojure extensively yet, or really much at all, I'm still unsure as to when to use Keywords. So I just spent a bit of time exploring them, and subsequently touched on Symbols too. And in writing this post confused myself further in the process. What you have here then is not a formed explanation of either Keywords or Symbols, but observations on their behaviour. While reading this, imagine me saying 'huh?' and scratching my head like Stan Laurel.
 
 Keywords are described in the [Clojure docs][cljdocs], within the Data Structures section, as such:
 
-*"Keywords are symbolic identifiers that evaluate to themselves. They provide very fast equality tests. Like Symbols, they have names and optional namespaces, both of which are strings. The leading ':' is not part of the namespace or name.
-Keywords implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). For example (:mykey my-hash-map :none) means the same as (get my-hash-map :mykey :none)."*
+_"Keywords are symbolic identifiers that evaluate to themselves. They provide very fast equality tests. Like Symbols, they have names and optional namespaces, both of which are strings. The leading ':' is not part of the namespace or name.
+Keywords implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). For example (:mykey my-hash-map :none) means the same as (get my-hash-map :mykey :none)."_
 
 And within the lein repl:
 
@@ -22,7 +22,7 @@ clojure.core/keyword
   in the keyword strings, it will be added automatically.
 ```
 
-Interestingly, on [Wikipedia][wikiID] identifiers are described as *"a name that identifies either a unique object or a unique class of objects"*, which immediately makes me think of Python variables or similar.  But that's not what these are, they don't hold another value, they evaluate to themselves, which kinda confuses me.  Anyway, let's get back in the lein repl and see what they're all about.
+Interestingly, on [Wikipedia][wikiid] identifiers are described as _"a name that identifies either a unique object or a unique class of objects"_, which immediately makes me think of Python variables or similar. But that's not what these are, they don't hold another value, they evaluate to themselves, which kinda confuses me. Anyway, let's get back in the lein repl and see what they're all about.
 
 ```clojure
 ; create a keyword from a string using the keyword method
@@ -121,8 +121,8 @@ user=> :a
 
 Symbols appear to be easily confused with Keywords in Clojure.
 
-*"Symbols are identifiers that are normally used to refer to something else. They can be used in program forms to refer to function parameters, let bindings, class names and global vars. They have names and optional namespaces, both of which are strings. Symbols can have metadata (see with-meta).
-Symbols, just like Keywords, implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). For example ('mysym my-hash-map :none) means the same as (get my-hash-map 'mysym :none)."*
+_"Symbols are identifiers that are normally used to refer to something else. They can be used in program forms to refer to function parameters, let bindings, class names and global vars. They have names and optional namespaces, both of which are strings. Symbols can have metadata (see with-meta).
+Symbols, just like Keywords, implement IFn for invoke() of one argument (a map) with an optional second argument (a default value). For example ('mysym my-hash-map :none) means the same as (get my-hash-map 'mysym :none)."_
 
 ```clojure
 user=> (doc symbol)
@@ -306,13 +306,13 @@ user=> ':blues'
 
 The confusion is all mine, any insight is borrowed heavily from the following articles.
 
-  - [Why does Clojure have “keywords” in addition to “symbols”?](https://stackoverflow.com/questions/1527548/why-does-clojure-have-keywords-in-addition-to-symbols?rq=1)
-  - [ClojureDocs - Symbol](http://clojuredocs.org/clojure.core/symbol)
-  - [ClojureDocs - Keyword](http://clojuredocs.org/clojure.core/keyword)
-  - [Clojure For The Brave and True - Quoting](http://www.braveclojure.com/do-things/#2_10__Quoting)
-  - [Clojure For The Brave and True - Keywords](http://www.braveclojure.com/do-things/#2_5__Keywords)
-  - [Clojure For The Brave and True - Symbols & Naming](http://www.braveclojure.com/do-things/#2_9__Symbols_and_Naming)
-  - [Symbols in Clojure](https://stackoverflow.com/questions/2320348/symbols-in-clojure)
+- [Why does Clojure have “keywords” in addition to “symbols”?](https://stackoverflow.com/questions/1527548/why-does-clojure-have-keywords-in-addition-to-symbols?rq=1)
+- [ClojureDocs - Symbol](http://clojuredocs.org/clojure.core/symbol)
+- [ClojureDocs - Keyword](http://clojuredocs.org/clojure.core/keyword)
+- [Clojure For The Brave and True - Quoting](http://www.braveclojure.com/do-things/#2_10__Quoting)
+- [Clojure For The Brave and True - Keywords](http://www.braveclojure.com/do-things/#2_5__Keywords)
+- [Clojure For The Brave and True - Symbols & Naming](http://www.braveclojure.com/do-things/#2_9__Symbols_and_Naming)
+- [Symbols in Clojure](https://stackoverflow.com/questions/2320348/symbols-in-clojure)
 
 [cljdocs]: http://clojure.org/data_structures#Data%20Structures-Keywords
-[wikiID]: https://en.wikipedia.org/wiki/Identifier
+[wikiid]: https://en.wikipedia.org/wiki/Identifier

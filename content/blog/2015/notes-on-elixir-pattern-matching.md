@@ -1,20 +1,19 @@
 ---
-title: "Notes on Elixir: Pattern Matching"
+title: 'Notes on Elixir: Pattern Matching'
 date: 2015-12-31
-tags: [ "elixir" ]
+tags: ['elixir']
 ---
 
 One of the first things you'll learn about in Elixir is Pattern-Matching, a
 concept that re-thinks variable assignment and the meaning of the `=` symbol.
 
-In Elixir the `=` symbol is not used for *assignment*, where the expression `a =
-1` *assigns* the literal value `1` to the variable `a`.
+In Elixir the `=` symbol is not used for _assignment_, where the expression `a = 1` _assigns_ the literal value `1` to the variable `a`.
 
-Instead, the equals sign is called a *match operator*, and is used to make the
-left hand side *match* the right hand side. As Rob Conery has highlighted, it's an
-*equals* sign, a symbol signifying *equality* between the values on either side.
+Instead, the equals sign is called a _match operator_, and is used to make the
+left hand side _match_ the right hand side. As Rob Conery has highlighted, it's an
+_equals_ sign, a symbol signifying _equality_ between the values on either side.
 So, `a = 1` is still valid Elixir code, but what's actually going on is that the
-`a` and the `1` are being checked to see if they can match.  And as the `a` is
+`a` and the `1` are being checked to see if they can match. And as the `a` is
 an empty variable name, this expression can be a valid match by binding `a` to
 the literal value `1`.
 
@@ -38,25 +37,25 @@ iex(5)1 = b
 ```
 
 Here, `a` has initially been bound to `1` through pattern-matching, so when we
-write    `1 = a`, this expression matches.  We're not assigning here, we're
-*matching*, and here `a` is `1` so the two values match.  We then re-bind `a` to
+write `1 = a`, this expression matches. We're not assigning here, we're
+_matching_, and here `a` is `1` so the two values match. We then re-bind `a` to
 `2`, yep, we can do that, so now `1 = a` doesn't match, because `a` is now `2`,
 and we get a `MatchError`.
 
 If we want to try and match a variable without risking it being re-bound to a
-new value we can use the `^` symbol(the *pin operator*), in front of the
+new value we can use the `^` symbol(the _pin operator_), in front of the
 variable.
 
 In the last expression, `b` hasn't been initialized yet, so `1 = b` doesn't
 work, `b` holds no value, it can't be matched, nor is it bound to the
-literal `1` on the left.  This happens because the pattern is on the left of the
+literal `1` on the left. This happens because the pattern is on the left of the
 `=` and the match is on the right.
 
 ```
 pattern = match
 ```
 
-And in this case, as `b` holds no value, it can't be matched against.  But it
+And in this case, as `b` holds no value, it can't be matched against. But it
 can be used as a pattern to find a match for.
 
 The match operator can give the impression of working the same way as an
@@ -70,7 +69,7 @@ x + 5 = 10
 ```
 
 On every line of this simple algebraic formula each side of the `=` matches,
-leading us to the conclusion that `x` is the same as `5`.  `x` could then go on
+leading us to the conclusion that `x` is the same as `5`. `x` could then go on
 to be further used, as the literal value `5`, in the wider context of the formula:
 
 ```
@@ -115,15 +114,15 @@ iex(13)z
 ```
 
 This looks a lot like the kind of multiple variable assignment you see in
-Python.  Let's run through it.  `a` is easily matched to a list.  The pattern
+Python. Let's run through it. `a` is easily matched to a list. The pattern
 `[x, y, z]` is then able to match `a` as both represent the same data structure,
-a list of 3 values.  In the process of the match, `x`, `y` & `z` are bound to
-their respective literal values.  This process is more obvious in the next
-pattern-match.  Also notice that, due to the immutable nature of data in Elixir,
+a list of 3 values. In the process of the match, `x`, `y` & `z` are bound to
+their respective literal values. This process is more obvious in the next
+pattern-match. Also notice that, due to the immutable nature of data in Elixir,
 the values of `x`, `y` & `z` have not changed even though `a` has been re-bound.
 
 A match won't happen if the pattern and match are different sizes, or different
-types, such as a list and a tuple.  But the values can be of different types:
+types, such as a list and a tuple. But the values can be of different types:
 
 ```elixir
 iex(18)[a, b, c] = [1, 2]
@@ -159,8 +158,8 @@ iex(26){:success, data} = {:failure, "Oh, dear"}
 ** (MatchError) no match of right hand side value: {:failure, "Oh, dear"}
 ```
 
-Sometimes we don't want everything, some values just don't matter.  If we create
-a variable but don't use it, Elixir will complain.  It will still work, but
+Sometimes we don't want everything, some values just don't matter. If we create
+a variable but don't use it, Elixir will complain. It will still work, but
 it'll just highlight your sloppiness to you. It's okay though, we can deal with
 this, using the underscore symbol.
 
@@ -184,10 +183,10 @@ If this is intended please rename the variable to remove the underscore
 ```
 
 The underscore by itself lets the Elixir compiler know to just ignore that
-variable, that it doesn't have to do anything.  You can also put an underscore
+variable, that it doesn't have to do anything. You can also put an underscore
 in front of a variable name, for readability, if you want it to be apparent what
-it is you are ignoring.  This variable will still be treated like any other but
-affects compiler warnings.  You won't be warned for not using it, but will be
+it is you are ignoring. This variable will still be treated like any other but
+affects compiler warnings. You won't be warned for not using it, but will be
 warned if you do try and use it, as you can see above.
 
 Another much used pattern-matching technique, especially in recursion, is
@@ -231,7 +230,7 @@ iex(47)[head|tail] = []
 
 As you can see `head` and `tail` are naming conventions rather than required for
 this to work. You can match against a single element list, the `tail` is just an
-empty list.  You can't, however, match against an empty list, it has no first
+empty list. You can't, however, match against an empty list, it has no first
 element, nor any other elements. This is one of the methods that replaces the
 `for loop` in Elixir, along with comprehensions and `map`, `filter` & `reduce`.
 It's incredibly useful.
@@ -265,8 +264,8 @@ this way we essentially loop through the list.
 
 This example also highlights the other significant use of pattern-matching. In
 our `Increment` module we have two functions with the same name, but that take
-different arguments.  One takes a list that has something in it, the other takes
-an empty list.  This works because of pattern-matching.  Which function is used
+different arguments. One takes a list that has something in it, the other takes
+an empty list. This works because of pattern-matching. Which function is used
 depends on what the given argument is pattern matched against.
 
 ```elixir
@@ -291,18 +290,19 @@ iex(61)Math.two_become_one(:multiply, 2, 3)
 6
 ```
 
-Here we're defining a module with four functions.  Each with the same name, yet
+Here we're defining a module with four functions. Each with the same name, yet
 each one does something different depending on what the first argument matches
-against.  Here pattern-matching is working as a control-flow mechanism.
+against. Here pattern-matching is working as a control-flow mechanism.
 
 Pattern-matching is one of the core techniques of Elixir, and is used
-extensively.  Once it makes sense, it's a wonderful thing.
+extensively. Once it makes sense, it's a wonderful thing.
 
 ### Further Reading
 
 - [Elixir docs](http://elixir-lang.org/getting-started/pattern-matching.html)
 
 -
+
 [Pattern Matching In Elixir - Quick Left](https://quickleft.com/blog/pattern-matching-elixir/)
 
 -

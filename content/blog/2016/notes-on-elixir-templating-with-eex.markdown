@@ -1,11 +1,11 @@
 ---
-title: "Notes on Elixir: Templating with EEx"
+title: 'Notes on Elixir: Templating with EEx'
 date: 2016-02-12
-tags: [ "elixir" ]
+tags: ['elixir']
 ---
 
-EEx is to Elixir what [Jinja][j] is to Python.  It enables the use of Elixir
-code inside strings and files.  It's used extensively in the Phoenix framework for HTML
+EEx is to Elixir what [Jinja][j] is to Python. It enables the use of Elixir
+code inside strings and files. It's used extensively in the Phoenix framework for HTML
 templates, and recently I've started to use it to replace my Python scripts for generating
 Cisco config files.
 
@@ -22,7 +22,7 @@ template:
 These tags, in the context of a template are evaluated by one of 4 functions, or
 2 macros:
 
-- `compile_file/2` & `compile_string/2` - These generate a *quoted expression* from
+- `compile_file/2` & `compile_string/2` - These generate a _quoted expression_ from
   a file or a string respectively, essentially creating an Abstract Syntax Tree
   representation of the input.
 - `eval_file/3` & `eval_string` - Evaluate the given file or string respectively,
@@ -42,7 +42,7 @@ iex> EEx.eval_string string, [name: "World"]
 ```
 
 Here, `string` is bound to a simple template, with a variable name inside the
-tag.  We then evaluate the string, passing in a keyword list of arguments, and
+tag. We then evaluate the string, passing in a keyword list of arguments, and
 hey presto, in our output the `name` variable has been replaced! Not so
 different from string interpolation really. Except we have access to all of
 Elixir inside the tag;
@@ -85,7 +85,7 @@ iex> EEx.eval_string string
 ```
 
 The quotation tag is interesting, it's almost like a raw string indicator,
-telling EEx to not evaluate the tag.  I've not had cause to use it yet, but I
+telling EEx to not evaluate the tag. I've not had cause to use it yet, but I
 can see it might be useful for some kind of two-stage templating;
 
 ```elixir
@@ -121,8 +121,8 @@ a new output from the combination of the template and the given variable
 bindings. Also, the template file here was just a `.txt` file rather than a
 `.eex` file. The template file isn't required to be a `.eex` file, but
 convention is to combine the two extensions, for instance `.txt.eex` or
-`.html.eex`, as this *'preserves its intent as a template, and also denotes what
-it's outputting'*, and helps with syntax highlighting too. (thanks asonge &
+`.html.eex`, as this _'preserves its intent as a template, and also denotes what
+it's outputting'_, and helps with syntax highlighting too. (thanks asonge &
 ciastek)
 
 The `compile_string/2` & `compile_file/2` functions are fairly straightforward,
@@ -139,7 +139,7 @@ illustrate this with an example.
 
 Let's say we have a very large number of devices that we need to generate
 individual configurations for, in my experience this would be for Cisco switches
-and routers.  We create a template, "base_example.conf.eex":
+and routers. We create a template, "base_example.conf.eex":
 
 ```elixir
 hostname <%= hostname %>
@@ -168,11 +168,11 @@ no shutdown
 This is a very basic template, with some tags expecting variables. There is also
 a list comprehension towards the end, this expects `vlans` to be a list of 2
 element lists, that it will then map over, creating as many vlan/name pairs as
-necessary.  This is really useful for situations where you might have a variable
+necessary. This is really useful for situations where you might have a variable
 amount of input data, saving you from having to adjust the template each time
 according to, in this case, the number of vlans.
 
-So, I've saved this template in a *templates* directory. Let's dip into iex and
+So, I've saved this template in a _templates_ directory. Let's dip into iex and
 see what we can do:
 
 ```elixir

@@ -1,24 +1,24 @@
 ---
-title:  "Installing oVirt"
-date:   2015-04-13
-tags:   [ "virtualization" ]
+title: 'Installing oVirt'
+date: 2015-04-13
+tags: ['virtualization']
 ---
 
-Installing [oVirt][1], the upstream project of  [Red Hat's Enterprise Virtualization][2] product, and [vSphere][3] alternative.
+Installing [oVirt][1], the upstream project of [Red Hat's Enterprise Virtualization][2] product, and [vSphere][3] alternative.
 
-I started this install on Fedora, using the latest release, 21, ignoring the oVirt website where it said *"Important: It is recommended that you install oVirt on Fedora 20"*, assuming the latest is the greatest, only to find that oVirt is not available on Fedora 21.  This was the first bump on a rocky road.  I did start off installing on Fedora 20 but ended up using CentOS 7 instead.  If you're interested in using Fedora 20, you can download it [here][4] or [here][5].
+I started this install on Fedora, using the latest release, 21, ignoring the oVirt website where it said _"Important: It is recommended that you install oVirt on Fedora 20"_, assuming the latest is the greatest, only to find that oVirt is not available on Fedora 21. This was the first bump on a rocky road. I did start off installing on Fedora 20 but ended up using CentOS 7 instead. If you're interested in using Fedora 20, you can download it [here][4] or [here][5].
 
-The main issue I found was DNS; resolving the server's hostname.  I'm doing this on a private lab network, and haven't got round to setting up a DNS server yet, so I had to configure my hosts file and set up [dnsmasq][6]. From oVirt's troubleshooting page...
+The main issue I found was DNS; resolving the server's hostname. I'm doing this on a private lab network, and haven't got round to setting up a DNS server yet, so I had to configure my hosts file and set up [dnsmasq][6]. From oVirt's troubleshooting page...
 
-*"**When running engine-setup, I get the message "myhost.local did not resolve into an IP address", but setting up bind locally is hard. Is there an easy way to spoof full DNS locally?***
-*The easiest solution is to use dnsmasq for DNS. You then use the IP address of your engine as your DNS server, and in /etc/dnsmasq.conf you point to your regular DNS servers with "server=8.8.8.8" (for example). You will also need to open port 53 in iptables to enable computers on your home network to use this DNS server. To do this, add the line "-A INPUT -m state --state NEW -m udp -p udp --dport 53 -j ACCEPT" to your iptables configuration, remembering to add it also to any configuration files required to ensure that the option persists across reboots."*
+\*"**When running engine-setup, I get the message "myhost.local did not resolve into an IP address", but setting up bind locally is hard. Is there an easy way to spoof full DNS locally?\***
+_The easiest solution is to use dnsmasq for DNS. You then use the IP address of your engine as your DNS server, and in /etc/dnsmasq.conf you point to your regular DNS servers with "server=8.8.8.8" (for example). You will also need to open port 53 in iptables to enable computers on your home network to use this DNS server. To do this, add the line "-A INPUT -m state --state NEW -m udp -p udp --dport 53 -j ACCEPT" to your iptables configuration, remembering to add it also to any configuration files required to ensure that the option persists across reboots."_
 
 First things first, after a minimal install of CentOS 7; update, reboot & install a few programs:
+
 - net-tools for the ifconfig command
 - vim as my text editor of choice
 - bind-utils to check my DNS
 - dnsmasq to set up my DNS
-
 
 ```bash
 $ sudo yum update
@@ -85,7 +85,7 @@ oVirt-01.lab-test.local mail is handled by 10 your-dns-needs-immediate-attention
 
 Excellent, success!
 
-I have to admit that the next bit concerning firewall settings I don't fully understand, it has been added to my *'Things to research and understand'* list.  But, this is what I did so I'll add it here.  For those more knowledgeable than myself, please feel free to enlighten/correct me.
+I have to admit that the next bit concerning firewall settings I don't fully understand, it has been added to my _'Things to research and understand'_ list. But, this is what I did so I'll add it here. For those more knowledgeable than myself, please feel free to enlighten/correct me.
 
 ```bash
 # ==={ this stops the firewalld service to use iptables instead }===
@@ -132,8 +132,7 @@ COMMIT
 # Completed on Thu Apr  9 16:58:37 2015
 ```
 
-Again I don't fully understand the next configuration concerning Network Manager.  I was aware of it reading Jason Brooks [excellent oVirt documentation][7] but not knowing why it was done, I actually didn't do it initially.  My oVirt setup failed and so I added it in and the setup worked, so it obviously does something! *(Yep, added to the **'Things to research and understand'** list!)*
-
+Again I don't fully understand the next configuration concerning Network Manager. I was aware of it reading Jason Brooks [excellent oVirt documentation][7] but not knowing why it was done, I actually didn't do it initially. My oVirt setup failed and so I added it in and the setup worked, so it obviously does something! _(Yep, added to the **'Things to research and understand'** list!)_
 
 ```bash
 $ sudo systemctl stop NetworkManager.service
@@ -144,7 +143,7 @@ Starting network (via systemctl):                                               
 $ sudo chkconfig network on
 ```
 
-And on to installing oVirt.  By the way, I'm just installing the All-in-One, on a single server, and pretty much accepting all the defaults.
+And on to installing oVirt. By the way, I'm just installing the All-in-One, on a single server, and pretty much accepting all the defaults.
 
 ```bash
 $ sudo yum localinstall http://resources.ovirt.org/pub/yum-repo/ovirt-release35.rpm
@@ -275,7 +274,6 @@ $ sudo engine-setup
 ```
 
 This is when I configured NetworkManager, and started again:
-
 
 ```bash
 $ sudo engine-cleanup
@@ -456,10 +454,9 @@ COMMIT
 "/etc/sysconfig/iptables" 33L, 969C
 ```
 
-Let's visit the server in a web browser; http://oVirt-01.lab-test.local:80/ovirt-engine sign in using username *admin* and the password configured during setup and there we have our oVirt management portal:
+Let's visit the server in a web browser; http://oVirt-01.lab-test.local:80/ovirt-engine sign in using username _admin_ and the password configured during setup and there we have our oVirt management portal:
 
 ![oVirt screenshot]({{ site.url }}/images/ovirt-mgmt-portal1.png)
-
 
 [1]: http://www.ovirt.org/Home
 [2]: https://www.redhat.com/en/technologies/virtualization/enterprise-virtualization

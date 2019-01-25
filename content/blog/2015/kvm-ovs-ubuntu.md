@@ -1,7 +1,7 @@
 ---
-title:  "Installing KVM & OVS on Ubuntu"
-date:   2015-04-24
-tags:   [ "virtualization", "openvswitch" ]
+title: 'Installing KVM & OVS on Ubuntu'
+date: 2015-04-24
+tags: ['virtualization', 'openvswitch']
 ---
 
 KVM & OpenvSwitch are technologies I've wanted to learn for a while now. I think it'll really help my understanding and knowledge of Linux and the underlying mechanics of virtualisation and how it interacts with the physical network.
@@ -19,11 +19,11 @@ INFO: /dev/kvm exists
 KVM acceleration can be used
 ```
 
-`egrep` is like `grep`, a command that prints out any line with the given regular expression. So, here we're searching the ***cpuinfo*** file for any lines containing ***vmx*** or ***svm***. ***vmx*** is the flag that virtualisation is enabled in the BIOS for Intel CPUs & ***svm*** is the same for AMD CPUs. The `-c` option is for count, so here we only print out the number of lines that match, rather than the lines themselves.
-So, a result of 1 or more means virtualisation is enabled. Here, I've got 8 lines in the ***cpuinfo*** file matching ***vmx***.
+`egrep` is like `grep`, a command that prints out any line with the given regular expression. So, here we're searching the **_cpuinfo_** file for any lines containing **_vmx_** or **_svm_**. **_vmx_** is the flag that virtualisation is enabled in the BIOS for Intel CPUs & **_svm_** is the same for AMD CPUs. The `-c` option is for count, so here we only print out the number of lines that match, rather than the lines themselves.
+So, a result of 1 or more means virtualisation is enabled. Here, I've got 8 lines in the **_cpuinfo_** file matching **_vmx_**.
 If you do get a 0, reboot your computer, go into the BIOS menu and make sure you've got virtualisation enabled.
 
-The [`kvm-ok`][3] program verifies whether your machine is able to run KVM virtual machines. It actually checks the ***cpuinfo*** file, like we did in the previous command. It also checks whether the kernel has detected the CPUs Virtualisation Technology (VT) capability, and looks to see if `/dev/kvm` exists.
+The [`kvm-ok`][3] program verifies whether your machine is able to run KVM virtual machines. It actually checks the **_cpuinfo_** file, like we did in the previous command. It also checks whether the kernel has detected the CPUs Virtualisation Technology (VT) capability, and looks to see if `/dev/kvm` exists.
 
 The capabilities exist, so let's install KVM.
 
@@ -59,14 +59,13 @@ Id Name State
 
 And we're all set.
 
-On a separate machine, I've set up a [Xubuntu][4] VM, and installed ***Virtual Machine Manager (VMM)***, just to give me a visual understanding of my VMs if need be.
+On a separate machine, I've set up a [Xubuntu][4] VM, and installed **_Virtual Machine Manager (VMM)_**, just to give me a visual understanding of my VMs if need be.
 
 ```bash
 $ sudo apt-get install virt-manager
 ```
 
-
-***VMM*** is super simple and intuitive. I love using the command line, but I still find having visual cues really helps my understanding of a situation, too much time in Windows & vSphere perhaps!
+**_VMM_** is super simple and intuitive. I love using the command line, but I still find having visual cues really helps my understanding of a situation, too much time in Windows & vSphere perhaps!
 
 For the OpenvSwitch installation I pretty faithfully followed Scott Lowe's [example][5], with a couple of differences.
 
@@ -76,28 +75,24 @@ Right, let's get up-to-date, as per.
 $ sudo apt-get -y update && sudo apt-get -y dist-upgrade
 ```
 
-
-Make way for OVS by removing the default ***libvirt*** bridge.
+Make way for OVS by removing the default **_libvirt_** bridge.
 
 ```bash
 $ sudo virsh net-destroy default
 $ sudo virsh net-autostart --disable default
 ```
 
-
-Remove [***ebtables***][6], a Linux ethernet firewall.
+Remove [**_ebtables_**][6], a Linux ethernet firewall.
 
 ```bash
 $ sudo aptitude purge ebtables
 ```
-
 
 Install OpenvSwitch.
 
 ```bash
 $ sudo apt-get install openvswitch-controller openvswitch-switch openvswitch-datapath-source
 ```
-
 
 The `openvswitch-brcompat` has apparently been removed now from OVS, so it can be ignored.
 Once that's finished, try starting OVS, though I found it was already running.
@@ -107,7 +102,6 @@ $ sudo service openvswitch-switch start
 start: Job is already running: openvswitch-switch
 ```
 
-
 Run the OVS show command, you should just get an empty config.
 
 ```bash
@@ -116,8 +110,7 @@ $ sudo ovs-vsctl show
 ovs_version: "2.0.2"
 ```
 
-
-The `ovs-vsctl` command, according to the [man page][8], is a *"utility for querying and configuring ovs-vswitchd"*. `ovs-vswitchd` is, again according to the [man page][9], the daemon that manages and controls the OVS switch(es). As far as I understand it `ovs-vsctl` queries and configures `ovsdb-server` *(which provides the interface to the OVS databases* [[man page]][11] *)*, and `ovs-vswitchd` then implements the changes. To be honest I'm not entirely sure of this process, I need to spend some more time reading [this][10] I think.
+The `ovs-vsctl` command, according to the [man page][8], is a _"utility for querying and configuring ovs-vswitchd"_. `ovs-vswitchd` is, again according to the [man page][9], the daemon that manages and controls the OVS switch(es). As far as I understand it `ovs-vsctl` queries and configures `ovsdb-server` _(which provides the interface to the OVS databases_ [[man page]][11] _)_, and `ovs-vswitchd` then implements the changes. To be honest I'm not entirely sure of this process, I need to spend some more time reading [this][10] I think.
 Anyway, `ovs-vsctl show` "Prints a brief overview of the database contents." Of which, currently, we have none.
 
 Now, the OVS bridge has to be created. When I was doing this I was SSH'd into the NIC I was configuring (em1), and creating the bridge brought the interface down. So, either make sure you have physical access to the machine, or SSH into another NIC.
@@ -126,7 +119,6 @@ Now, the OVS bridge has to be created. When I was doing this I was SSH'd into th
 $ sudo ovs-vsctl add-br br0
 $ sudo ovs-vsctl add-port br0 em1
 ```
-
 
 Run the show command again, and we should have a configuration.
 
@@ -141,7 +133,6 @@ Interface "br0"
 type: internal
 ovs_version: "2.0.2"
 ```
-
 
 Now, the interfaces need to be configured.
 
@@ -216,7 +207,6 @@ RX bytes:7873976 (7.8 MB) TX bytes:216238 (216.2 KB)
 So, I'm actually connecting to the bridge interface rather than the NIC.
 
 Hopefully, this is just the beginning of an interesting adventure, in the meantime I'm going to read [this][7] again.
-
 
 [1]: https://help.ubuntu.com/community/KVM/Installation
 [2]: http://www.cyberciti.biz/faq/linux-xen-vmware-kvm-intel-vt-amd-v-support/

@@ -1,7 +1,7 @@
 ---
-title: "Notes on Elixir: Bodyless Function Clauses"
+title: 'Notes on Elixir: Bodyless Function Clauses'
 date: 2016-01-13
-tags: [ "elixir" ]
+tags: ['elixir']
 ---
 
 ```elixir
@@ -17,27 +17,27 @@ register until I [submitted a pull request][pr]. I've not been able to find out
 much about them, but here's a quick rundown of when you might see a bodyless
 function clause.
 
-EDIT(14/01/16): I've added *Protocols*.
+EDIT(14/01/16): I've added _Protocols_.
 
 As far as I know, the bodyless function clause is only something used within
 Elixir & Erlang, and possibly Prolog. The [Erlang docs][ed] give an interesting
-explanation of what happens when a function is called.  This explanation hints
+explanation of what happens when a function is called. This explanation hints
 at the separation of the head and body of functions and I believe applies to
 Elixir as well.
 
-This explanation breaks functions up into the head and body, where the head *"consists
+This explanation breaks functions up into the head and body, where the head _"consists
 of the function name, an argument list, and an optional guard sequence beginning
-with the keyword when"*, and the body *"consists of a sequence of expressions"*.
+with the keyword when"_, and the body _"consists of a sequence of expressions"_.
 
 When a function is called, the function code is located, and the function clauses
-are checked in turn to find one where *"the patterns in the clause head can be
-successfully matched against the given arguments"*, and *"the guard sequence, if
-any, is true"*.  It's only if a function head corresponds to this
-that the function body is then evaluated.  This gives the impression of the head
+are checked in turn to find one where _"the patterns in the clause head can be
+successfully matched against the given arguments"_, and _"the guard sequence, if
+any, is true"_. It's only if a function head corresponds to this
+that the function body is then evaluated. This gives the impression of the head
 and body being separate entities, the head being a kind of control mechanism
 that doesn't necessarily require a body.
 
-So, what is this useful for?  The three reasons I know of for using a bodyless
+So, what is this useful for? The three reasons I know of for using a bodyless
 function clause in Elixir are [documentation][doc], [default arguments][defargs]
 and [protocols][protocols].
 
@@ -94,13 +94,12 @@ end
 ```
 
 A complete complete function with the same name is then expected, by the
-protocol, for each data type you want to implement it for.  In this case, for
+protocol, for each data type you want to implement it for. In this case, for
 each data type you want to test for validity.
 
 So, there you go, the function head, a mechanism in it's own right, separate from
-the main function body.  If you know of any other uses of the bodyless function
+the main function body. If you know of any other uses of the bodyless function
 please do let me know.
-
 
 [pr]: https://github.com/elixir-lang/elixir/pull/4109/files#r48349021
 [ed]: http://www.erlang.org/doc/reference_manual/functions.html

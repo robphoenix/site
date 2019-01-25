@@ -1,12 +1,12 @@
 ---
-title: "Notes on Elixir: Getting Started with Nerves"
+title: 'Notes on Elixir: Getting Started with Nerves'
 date: 2016-03-02
-tags: [ "elixir", "nerves" ]
+tags: ['elixir', 'nerves']
 ---
 
 This week I got my first Raspberry Pi, so of course I set up a wicked cool media
 centre with it. Nah, jokes, I checked out the [Nerves Project][np], and got
-`blinky`, the `Hello, World!` of embedded systems running.  I had a few false
+`blinky`, the `Hello, World!` of embedded systems running. I had a few false
 starts and wrong turns, so here's what ended up working for me.
 
 First I had to get the micro SD card that came with my rpi2 recognised on my
@@ -21,7 +21,7 @@ need to spend more time learning Linux fundamentals.
 Nerves has a great project called [Bakeware][bake] that massively simplifies the
 process of configuring and compiling systems, toolchains and firmware.
 Unfortunately I was under the impression it was only available for Mac OSX and so
-I went down a long and unsuccessful road involving `make`.  Thank goodness for
+I went down a long and unsuccessful road involving `make`. Thank goodness for
 the kind folks on the #nerves elixir-lang Slack channel, who sent me in the
 right direction.
 
@@ -69,7 +69,7 @@ And back in your terminal, don't forget to type this: `source ~/.bashrc` or this
 
 Right, we're now ready to create our first embedded system in Elixir!
 Nerves has a couple of [example projects][ep] available, one being `blinky`,
-which is apparently the `Hello, World!` of embedded systems.  That's what
+which is apparently the `Hello, World!` of embedded systems. That's what
 we'll use now:
 
 ```bash
@@ -79,7 +79,7 @@ we'll use now:
 
 Thanks to [a tip from Wendy Smoak][ws], we can save some effort and
 define our target platform inside our Bakefile, saving us having to declare it every time with `--target rpi2`.
-To do this open up `nerves-examples/blinky/Bakefile` and add in `default_target :rpi2` or whatever you're building to, whether it's an earlier rpi or a Beaglebone Black.  The Bakefile should now look like this:
+To do this open up `nerves-examples/blinky/Bakefile` and add in `default_target :rpi2` or whatever you're building to, whether it's an earlier rpi or a Beaglebone Black. The Bakefile should now look like this:
 
 ```elixir
 use Bake.Config
@@ -98,6 +98,7 @@ target :bbb,
 ```
 
 Now, we bake:
+
 ```bash
 # go into the blinky directory
 ~ $ cd nerves-examples/blinky
@@ -111,8 +112,8 @@ Now, we bake:
 ~/nerves-examples/blinky $ bake burn -d /dev/mmcblk0
 ```
 
-So, that should work.  You may need to change the permissions on your SD card for the
-`bake burn` to work.  All that's left now is to plug in our rpi2 and have our minds
+So, that should work. You may need to change the permissions on your SD card for the
+`bake burn` to work. All that's left now is to plug in our rpi2 and have our minds
 blown.
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/txqA3c49iPo" frameborder="0"> </iframe>
@@ -121,7 +122,7 @@ As far as I know, in the `blinky.ex` file you can comment out the `Logger.debug 
 
 Big big thanks to [Frank Hunleth][fh] and [Greg Mefford][gm].
 
-I've started building a [Vagrant environment][vagrant] for this if you're interested, but it still has teething problems.  It started out as a way to check the steps I'd taken in a clean Ubuntu VM, and the process clarified a few things, though what use it may actually be, I don't know. It almost works, installing everything, and burning the blinky firmware for you, but not quite. One day soon, maybe.
+I've started building a [Vagrant environment][vagrant] for this if you're interested, but it still has teething problems. It started out as a way to check the steps I'd taken in a clean Ubuntu VM, and the process clarified a few things, though what use it may actually be, I don't know. It almost works, installing everything, and burning the blinky firmware for you, but not quite. One day soon, maybe.
 
 Anyway, I'm super excited about Nerves, dust off that old raspberry pi that you had big dreams for, enlist your kids, and check it out.
 

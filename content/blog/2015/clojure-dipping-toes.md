@@ -1,11 +1,10 @@
 ---
-title: "Notes on Clojure: Dipping My Toes In"
+title: 'Notes on Clojure: Dipping My Toes In'
 date: 2015-09-04
-tags: [ "clojure" ]
-
+tags: ['clojure']
 ---
 
-Maybe because I'm such a late arrival to this programming pastime, I feel a certain inadequacy, a need to over compensate.  Or maybe I just find it exciting learning new things, and I just want to get deeper and consume everything.  Anyway, I've been getting more interested in functional programming, I don't know why.  I'm not so embedded in object-oriented, and I've been trying to understand JavaScript's prototype-based programming, and if I'm honest, these concepts aren't yet meaningful enough to me to matter so much outside of syntax and the practicalities of how to write code, yet functional programming seems to make a certain amount of sense. Perhaps this will become an endeavour in proving myself wrong. So, I listened to [Carin Meier][cm] on [The Changelog][cl] and bought [her book][lc], and am going to start learning Clojure.
+Maybe because I'm such a late arrival to this programming pastime, I feel a certain inadequacy, a need to over compensate. Or maybe I just find it exciting learning new things, and I just want to get deeper and consume everything. Anyway, I've been getting more interested in functional programming, I don't know why. I'm not so embedded in object-oriented, and I've been trying to understand JavaScript's prototype-based programming, and if I'm honest, these concepts aren't yet meaningful enough to me to matter so much outside of syntax and the practicalities of how to write code, yet functional programming seems to make a certain amount of sense. Perhaps this will become an endeavour in proving myself wrong. So, I listened to [Carin Meier][cm] on [The Changelog][cl] and bought [her book][lc], and am going to start learning Clojure.
 
 [Leiningen][lngen] is the tool Carin recommends for getting started with Clojure, so let's install that.
 Check Java is installed first:
@@ -26,7 +25,7 @@ $ lein -v
 Leiningen 1.7.1 on Java 1.7.0_80 Java HotSpot(TM) 64-Bit Server VM
 ```
 
-So, I uninstalled that, and followed the instructions on the Leiningen site.  Copy and Paste the contents of the [lein][lein] file, into a file called `lein`.  Move the file into my `$PATH`, and make it executable.
+So, I uninstalled that, and followed the instructions on the Leiningen site. Copy and Paste the contents of the [lein][lein] file, into a file called `lein`. Move the file into my `$PATH`, and make it executable.
 
 ```bash
 $ sudo apt-get remove leiningen # remove apt-get installed lein
@@ -119,7 +118,7 @@ Bye for now!
 $
 ```
 
-So the following is basically just me following along with Carin's book, where she starts to introduce Clojure.  So all credit goes to her, I'm just a messenger.
+So the following is basically just me following along with Carin's book, where she starts to introduce Clojure. So all credit goes to her, I'm just a messenger.
 
 ```bash
 $ lein new wonderland # start a new Clojure project
@@ -144,28 +143,28 @@ user=>
 
 g
 ; Some basic number stuff. Clojure is littered with parenthesis, you get used to
-; it.  Clojure structures things differently to what I'm used to.  The operator
-; goes first, then the parameters it takes.  I really quite like this, it's a
+; it. Clojure structures things differently to what I'm used to. The operator
+; goes first, then the parameters it takes. I really quite like this, it's a
 ; nice way of organising things, though I can see it might annoy some people.
 user=> (+ 1 1)
 2
 user=> 42
 42
-user=> 6/3  ; Clojure will reduce a ratio if it can.
-            ; This is different to division
+user=> 6/3 ; Clojure will reduce a ratio if it can.
+; This is different to division
 2
-user=> 8/3  ; And won't if it can't, but will leave it as a ratio, rather than
-            ; change it to a decimal
+user=> 8/3 ; And won't if it can't, but will leave it as a ratio, rather than
+; change it to a decimal
 8/3
 user=> 6.0/3 ; you can't use decimals in a ratio.
-NumberFormatException Invalid number: 6.0/3  clojure.lang.LispReader.readNumber (LispReader.java:330)
+NumberFormatException Invalid number: 6.0/3 clojure.lang.LispReader.readNumber (LispReader.java:330)
 
 user=> 6/3.0
-NumberFormatException Invalid number: 6/3.0  clojure.lang.LispReader.readNumber (LispReader.java:330)
+NumberFormatException Invalid number: 6/3.0 clojure.lang.LispReader.readNumber (LispReader.java:330)
 
 user=> 6.0/3.0
 
-NumberFormatException Invalid number: 6.0/3.0  clojure.lang.LispReader.readNumber (LispReader.java:330)
+NumberFormatException Invalid number: 6.0/3.0 clojure.lang.LispReader.readNumber (LispReader.java:330)
 user=> (/ 6 3)
 2
 user=> (/ 3 6) ; Dividing whole numbers will result in a ratio
@@ -197,6 +196,7 @@ user=> (cons "down" '(5, "blues", :music)) ; and use cons to add to our list
 ("down" 5 "blues" :music)
 user=> (cons "down" (cons 7 '(5, "blues", :music))) ; and nest our cons
 ("down" 7 5 "blues" :music)
+
 ```
 
 That's as far as I got last night. I know it's not far, but having kids makes me tired.  And I just want to reiterate again, this is basically just regurgitating Carin's work, go [buy her book][lc].
@@ -209,3 +209,4 @@ Interestingly, the name *Leiningen* comes from the short story [Leiningen versus
 [lngen]: http://leiningen.org/
 [story]: http://www.classicshorts.com/stories/lvta.html
 [lein]: https://github.com/technomancy/leiningen/blob/stable/bin/lein
+```

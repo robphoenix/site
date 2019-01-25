@@ -1,7 +1,7 @@
 ---
-title: "Notes on Linux: Redirection"
+title: 'Notes on Linux: Redirection'
 date: 2016-08-25
-tags: [ "linux" ]
+tags: ['linux']
 ---
 
 Redirection is the ability to manipulate the input and output of commands. This
@@ -87,13 +87,13 @@ drwxrwxr-x  7 rob rob  4096 aug 24 14:26 .vim
 Redirection uses standard Unix file descriptors, a method of describing which
 input/output resource to access. There are 3 of these file descriptors:
 
-* standard input - commonly referred to as `stdin`, this is the input to a
-    command or file resource and is represented by the integer `0`
-* standard output - commonly referred to as `stdout`, this is the output from a
-    command, such as the listing of files from the `ls` command above. This is
-    represented by the integer `1`
-* standard error - commonly referred to as `stderr`, this is any error generated
-    by a command, and is represented by the integer `2`
+- standard input - commonly referred to as `stdin`, this is the input to a
+  command or file resource and is represented by the integer `0`
+- standard output - commonly referred to as `stdout`, this is the output from a
+  command, such as the listing of files from the `ls` command above. This is
+  represented by the integer `1`
+- standard error - commonly referred to as `stderr`, this is any error generated
+  by a command, and is represented by the integer `2`
 
 Above when we redirected the output from the `ls` command to a file we were
 redirecting the `stdout`. This is the default when using `>` and so we didn't
@@ -105,8 +105,7 @@ ls -al 1> file.txt
 
 If we wanted to catch an error we would specify `stderr` instead, represented
 with a `2`. Let's create an error and record it in a file. We run a non-existent
-command, which gives us a `command not found` error. Running it again we add `2>
-error.txt` which redirects the `stderr` to a file. And if we use `cat` to output
+command, which gives us a `command not found` error. Running it again we add `2> error.txt` which redirects the `stderr` to a file. And if we use `cat` to output
 the contents of that file, we see the same `command not found` error.
 
 ```bash
@@ -138,7 +137,7 @@ command > file.txt 2>&1
 This basically redirects `stderr` to `stdout` and redirects `stdout` to a file.
 I use this often in bash scripts that provision Vagrant machines, redirecting
 all the output from commands either to `/dev/null`, which simply makes it
-disappear, or to a file. I prefer a *quieter* output on screen, and so redirect
+disappear, or to a file. I prefer a _quieter_ output on screen, and so redirect
 the output from the shell script elsewhere.
 
 Now, the `>` symbol will overwrite any file it is directed at. If we want to
@@ -176,6 +175,6 @@ two
 
 ## Further Reading
 
-* [Standard Input and Output Redirection](http://sc.tamu.edu/help/general/unix/redirection.html)
-* [Piping and Redirection!](http://ryanstutorials.net/linuxtutorial/piping.php)
-* [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html)
+- [Standard Input and Output Redirection](http://sc.tamu.edu/help/general/unix/redirection.html)
+- [Piping and Redirection!](http://ryanstutorials.net/linuxtutorial/piping.php)
+- [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html)

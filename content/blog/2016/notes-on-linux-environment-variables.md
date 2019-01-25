@@ -1,7 +1,7 @@
 ---
-title: "Notes on Linux: Environment Variables"
+title: 'Notes on Linux: Environment Variables'
 date: 2016-08-24
-tags: [ "linux" ]
+tags: ['linux']
 ---
 
 Environment variables are a pretty fundamental aspect of working with Linux, and
@@ -241,7 +241,7 @@ export PATH=$HOME/bin:$PATH
 export GOPATH=$HOME/code/go
 ```
 
-I've had a few *ohhh, that's why that is like that* moments while learning about
+I've had a few _ohhh, that's why that is like that_ moments while learning about
 Linux environment variables. It feels good to properly understand what's
 going on. The links below have been super helpful...
 
