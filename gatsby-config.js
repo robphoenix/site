@@ -3,10 +3,12 @@ module.exports = {
     title: `rob phoenix`,
     author: `Rob Phoenix`,
     description: `A blog.`,
-    bio: `~40 year old, late to the game, frontend developer, having a great time with HTML, CSS & JS/TS.`,
+    bio: `A 40-ish, late to the game, frontend developer, working remote under the grey skies of rural North Wales.`,
     siteUrl: ``,
     social: {
       twitter: `brdltbrncle`,
+      github: `robphoenix`,
+      linkedin: `robphoenix`,
     },
   },
   plugins: [

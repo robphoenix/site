@@ -1,6 +1,8 @@
+// @ts-nocheck
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import styled from 'styled-components'
 
 import { rhythm } from '../utils/typography'
 
@@ -30,13 +32,7 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              {bio}
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                I have a twitter, too.
-              </a>
-            </p>
+            <p>{bio}</p>
           </div>
         )
       }}
@@ -59,6 +55,8 @@ const bioQuery = graphql`
         bio
         social {
           twitter
+          github
+          linkedin
         }
       }
     }
