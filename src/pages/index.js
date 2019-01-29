@@ -34,7 +34,7 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+        {/* <Bio /> */}
         {posts.map(({ node }) => {
           const { title, date } = node.frontmatter
 
