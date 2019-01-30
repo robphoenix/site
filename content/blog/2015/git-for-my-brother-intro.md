@@ -86,9 +86,7 @@ nothing to commit, working directory clean
 
 So basically, we've just started a new project to be tracked by _Git_, added a file to it and commited/saved the state of the project to the _Git_ log.
 
-I realise not everyone is comfortable on the command line and this can scare them away, but there are a number of different graphical user interfaces [(GUIs)][gitgui], that can make it easier to deal with, and show a nice visual representation of your project, it's development and the changes made to it. This in itself can provide an incredibly useful overview of what's going on in your project. Here's our new project in the _Github for Windows_ client:
-
-![Github for Windows screenshot]({{ site.url }}/images/gfmb01-github-for-windows.png)
+I realise not everyone is comfortable on the command line and this can scare them away, but there are a number of different graphical user interfaces [(GUIs)][gitgui], that can make it easier to deal with, and show a nice visual representation of your project, it's development and the changes made to it. This in itself can provide an incredibly useful overview of what's going on in your project.
 
 **Okay, but I'm not a software developer, do I really care? Can I really be bothered?**
 
@@ -97,7 +95,7 @@ I'm not gonna lie, it's great but it's not magic, there's a learning curve invol
 [1]: https://git-scm.herokuapp.com/
 [2]: http://www.linux.com/
 [3]: https://try.github.io/levels/1/challenges/1
-[brother]: http://cargocollective.com/richardjamesphoenix/About
+[brother]: https://richardphoenix.com/
 [sourcecode]: http://www.linfo.org/source_code.html
 [commandline]: https://en.wikipedia.org/wiki/Command-line_interface
 [gitgui]: https://www.git-scm.com/downloads/guis
