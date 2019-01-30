@@ -8,8 +8,16 @@ import { rhythm } from '../utils/typography'
 
 const iconSideSize = rhythm(0.7)
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
 const SocialLink = styled.a`
-  margin: ${rhythm(1 / 10)};
+  display: flex;
+  margin: ${rhythm(0.2)};
+  color: #85144b;
 `
 
 function Social() {
@@ -19,7 +27,7 @@ function Social() {
       render={data => {
         const { social } = data.site.siteMetadata
         return (
-          <div>
+          <Container>
             <SocialLink href={`https://twitter.com/${social.twitter}`}>
               <FaTwitter
                 css={`
@@ -44,7 +52,7 @@ function Social() {
                 `}
               />
             </SocialLink>
-          </div>
+          </Container>
         )
       }}
     />

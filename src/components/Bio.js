@@ -5,17 +5,26 @@ import Image from 'gatsby-image'
 import styled from 'styled-components'
 
 import { rhythm } from '../utils/typography'
+import Social from '../components/Social'
+
+const Description = styled.p`
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: #85144b;
+  margin: 0;
+`
 
 function Bio() {
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social, bio } = data.site.siteMetadata
+        const { author, bio } = data.site.siteMetadata
         return (
           <div
             style={{
               display: `flex`,
+              alignItems: `center`,
               marginBottom: rhythm(2.5),
             }}
           >
@@ -32,7 +41,8 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>{bio}</p>
+            <Description>{bio}</Description>
+            <Social />
           </div>
         )
       }}
@@ -53,11 +63,6 @@ const bioQuery = graphql`
       siteMetadata {
         author
         bio
-        social {
-          twitter
-          github
-          linkedin
-        }
       }
     }
   }

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
+import Bio from '../components/Bio'
 
 const Title = styled.h3`
   margin-bottom: ${rhythm(1 / 4)};
@@ -34,6 +35,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
           description={data.site.siteMetadata.description}
         />
+        <Bio />
         {posts.map(({ node }) => {
           const { title, date } = node.frontmatter
 

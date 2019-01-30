@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 import styled, { createGlobalStyle } from 'styled-components'
 
 import { rhythm, scale } from '../utils/typography'
-import Social from '../components/Social'
 import Navbar from '../components/Navbar'
+import Footer from './Footer'
 
 const fuschia = `#f012be`
 
@@ -18,13 +18,13 @@ const Global = createGlobalStyle`
   }
 `
 
-const HeaderWrapper = styled.div`
+const MainHeader = styled.div`
   margin-bottom: ${rhythm(1.5)};
   text-transform: uppercase;
   color: ${fuschia};
 `
 
-const MainHeader = styled.h1`
+const MainTitle = styled.h1`
   ${scale(1.5)};
   margin-bottom: 0;
   margin-top: 0;
@@ -61,9 +61,9 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <MainHeader>
+        <MainTitle>
           <HeaderLink to={`/`}>{title}</HeaderLink>
-        </MainHeader>
+        </MainTitle>
       )
     } else {
       header = (
@@ -75,16 +75,12 @@ class Layout extends React.Component {
     return (
       <Container>
         <Global />
-        <HeaderWrapper>
+        <MainHeader>
           <Navbar />
           {header}
-        </HeaderWrapper>
+        </MainHeader>
         {children}
-        <footer>
-          <Social />© {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </Container>
     )
   }

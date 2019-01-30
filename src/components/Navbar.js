@@ -9,7 +9,6 @@ const Nav = styled.ul`
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   display: flex;
-  justify-content: space-between;
   margin-bottom: 0;
   margin-top: 0;
   list-style: none;
@@ -20,7 +19,8 @@ const Nav = styled.ul`
 const NavLink = styled(Link)`
   box-shadow: none;
   text-decoration: none;
-  padding: ${rhythm(0.2)};
+  padding-left: ${rhythm(0.1)};
+  padding-right: ${rhythm(1.5)};
   color: #0074d9;
 `
 
@@ -33,7 +33,6 @@ const NavItem = ({ linkTo, children }) => (
 function Navbar() {
   return (
     <Nav>
-      <NavItem linkTo={'/about/'}>about</NavItem>
       <NavItem linkTo={'/projects/'}>projects</NavItem>
       <NavItem linkTo={'/art/work/'}>art</NavItem>
     </Nav>

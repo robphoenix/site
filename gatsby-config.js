@@ -3,7 +3,7 @@ module.exports = {
     title: `rob phoenix`,
     author: `Rob Phoenix`,
     description: `A blog.`,
-    bio: `A 40-ish, late to the game, frontend developer, working remote under the grey skies of rural North Wales.`,
+    bio: `A frontend developer, working remote in rural North Wales, building UIs for forensic monitoring systems. A former artist, network engineer and backend developer, currently having a lot of fun with HTML, CSS & JS/TS.`,
     siteUrl: ``,
     social: {
       twitter: `brdltbrncle`,
