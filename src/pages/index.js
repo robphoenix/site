@@ -1,37 +1,35 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import Bio from '../components/Bio'
-import { graphql } from 'gatsby'
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+const Index = ({ location }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            keywords
+          }
+        }
+      }
+    `
+  )
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-          description={data.site.siteMetadata.description}
-        />
-        <Bio />
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={location} title={site.siteMetadata.title}>
+      <SEO
+        title="Home"
+        keywords={site.siteMetadata.keywords}
+        description={site.siteMetadata.description}
+      />
+      <Bio />
+    </Layout>
+  )
 }
 
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-  }
-`
+export default Index
