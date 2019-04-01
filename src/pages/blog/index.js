@@ -1,8 +1,9 @@
 import React from 'react'
 
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import Bio from '../components/Bio'
+import Layout from '../../components/Layout'
+import SEO from '../../components/seo'
+import Bio from '../../components/Bio'
+import BlogPosts from '../../components/BlogPosts'
 import { graphql } from 'gatsby'
 
 class BlogIndex extends React.Component {
@@ -18,6 +19,7 @@ class BlogIndex extends React.Component {
           description={data.site.siteMetadata.description}
         />
         <Bio />
+        <BlogPosts />
       </Layout>
     )
   }

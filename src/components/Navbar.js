@@ -33,6 +33,7 @@ const NavItem = ({ linkTo, children }) => (
 function Navbar() {
   return (
     <Nav>
+      <NavItem linkTo={'/blog/'}>blog</NavItem>
       <NavItem linkTo={'/projects/'}>projects</NavItem>
       <NavItem linkTo={'/art/work/'}>art</NavItem>
     </Nav>
