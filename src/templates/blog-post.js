@@ -10,8 +10,6 @@ import { rhythm, scale } from '../utils/typography'
 
 const Title = styled.h1`
   color: #2ecc40;
-  text-transform: uppercase;
-  letter-spacing: ${rhythm(1 / 10)};
 `
 
 const Date = styled.p`

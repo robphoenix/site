@@ -8,8 +8,6 @@ import { rhythm } from '../utils/typography'
 import Social from '../components/Social'
 
 const Description = styled.p`
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 500;
   color: #85144b;
   margin: 0;
 `
@@ -34,6 +32,7 @@ function Bio() {
       }
     `
   )
+
   const { author, bio } = data.site.siteMetadata
 
   return (
@@ -48,7 +47,7 @@ function Bio() {
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
-          marginRight: rhythm(1 / 2),
+          marginRight: rhythm(0.5),
           marginBottom: 0,
           minWidth: 50,
           borderRadius: `100%`,

@@ -6,13 +6,10 @@ import styled from 'styled-components'
 import { rhythm, scale } from '../utils/typography'
 
 const Nav = styled.ul`
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
   display: flex;
   margin-bottom: 0;
   margin-top: 0;
   list-style: none;
-  letter-spacing: ${rhythm(0.2)};
   ${scale(0.1)};
 `
 

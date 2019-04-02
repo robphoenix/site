@@ -1,7 +1,15 @@
 import Typography from 'typography'
-import sutro from 'typography-theme-sutro'
+// import CodePlugin from 'typography-plugin-code'
 
-const typography = new Typography(sutro)
+const theme = {
+  baseFontSize: `18px`,
+  headerFontFamily: [`Expletus Sans`, `sans-serif`],
+  bodyFontFamily: [`Karla`, `sans-serif`],
+  baseLineHeight: 1.45,
+  blockMarginBottom: 0.85,
+}
+
+const typography = new Typography(theme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

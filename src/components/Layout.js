@@ -5,7 +5,6 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 import { rhythm, scale } from '../utils/typography'
 import Navbar from '../components/Navbar'
-import Footer from './Footer'
 
 const fuschia = `#f012be`
 
@@ -20,7 +19,6 @@ const Global = createGlobalStyle`
 
 const MainHeader = styled.div`
   margin-bottom: ${rhythm(1.5)};
-  text-transform: uppercase;
   color: ${fuschia};
 `
 
@@ -28,7 +26,6 @@ const MainTitle = styled.h1`
   ${scale(1.5)};
   margin-bottom: 0;
   margin-top: 0;
-  letter-spacing: ${rhythm(0.3)};
 `
 
 const HeaderLink = styled(Link)`
@@ -38,11 +35,8 @@ const HeaderLink = styled(Link)`
 `
 
 const PostHeader = styled.h3`
-  font-family: 'Open Sans', sans-serif;
   ${scale(0.7)};
   margin-top: 0;
-  text-transform: uppercase;
-  letter-spacing: ${rhythm(0.3)};
   color: ${fuschia};
 `
 
@@ -50,7 +44,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: ${rhythm(24)};
-  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  padding: ${rhythm(1.5)} ${rhythm(0.75)};
 `
 
 class Layout extends React.Component {
@@ -81,7 +75,6 @@ class Layout extends React.Component {
           {header}
         </MainHeader>
         {children}
-        <Footer />
       </Container>
     )
   }

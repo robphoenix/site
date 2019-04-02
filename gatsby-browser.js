@@ -1,5 +1,5 @@
 // custom typefaces
-import 'typeface-open-sans'
-import 'typeface-merriweather'
+import 'typeface-expletus-sans'
+import 'typeface-karla'
 // syntax highlighting
 require('prismjs/themes/prism-tomorrow.css')
