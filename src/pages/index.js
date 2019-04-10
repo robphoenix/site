@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import Bio from '../components/Bio'
+// import Bio from '../components/Bio'
 
 const Index = ({ location }) => {
   const { site } = useStaticQuery(
@@ -21,13 +21,12 @@ const Index = ({ location }) => {
   )
 
   return (
-    <Layout location={location} title={site.siteMetadata.title}>
+    <Layout location={location} title={site.siteMetadata.title} bg="hotpink">
       <SEO
         title="Home"
         keywords={site.siteMetadata.keywords}
         description={site.siteMetadata.description}
       />
-      <Bio />
     </Layout>
   )
 }

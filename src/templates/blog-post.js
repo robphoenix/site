@@ -1,36 +1,9 @@
 // @ts-nocheck
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
 
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
-
-const Title = styled.h1`
-  color: #2ecc40;
-`
-
-const Date = styled.p`
-  ${scale(-1 / 5)};
-  display: block;
-  margin-bottom: ${rhythm(1)};
-  margin-top: ${rhythm(-1)};
-  color: #aaaaaa;
-`
-
-const HorizontalRule = styled.hr`
-  margin-bottom: ${rhythm(1)};
-`
-
-const PostNavigation = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -39,14 +12,12 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} bg="hotpink">
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <Title>{post.frontmatter.title}</Title>
-        <Date>{post.frontmatter.date}</Date>
+        {post.frontmatter.title}
+        {post.frontmatter.date}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <HorizontalRule />
-        <Bio />
-        <PostNavigation>
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -61,7 +32,7 @@ class BlogPostTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </PostNavigation>
+        </ul>
       </Layout>
     )
   }

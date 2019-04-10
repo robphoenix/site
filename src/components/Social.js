@@ -1,24 +1,10 @@
 // @ts-nocheck
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { css } from '@emotion/core'
 
-import { rhythm } from '../utils/typography'
-
-const iconSideSize = rhythm(0.7)
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
-
-const SocialLink = styled.a`
-  display: flex;
-  margin: ${rhythm(0.2)};
-  color: #85144b;
-`
+const iconSideSize = `24px`
 
 function Social() {
   return (
@@ -28,30 +14,30 @@ function Social() {
         const { social } = data.site.siteMetadata
         return (
           <Container>
-            <SocialLink href={`https://twitter.com/${social.twitter}`}>
+            <a href={`https://twitter.com/${social.twitter}`}>
               <FaTwitter
-                css={`
+                css={css`
                   height: ${iconSideSize};
                   width: ${iconSideSize};
                 `}
               />
-            </SocialLink>
-            <SocialLink href={`https://github.com/${social.github}`}>
+            </a>
+            <a href={`https://github.com/${social.github}`}>
               <FaGithub
-                css={`
+                css={css`
                   height: ${iconSideSize};
                   width: ${iconSideSize};
                 `}
               />
-            </SocialLink>
-            <SocialLink href={`https://www.linkedin.com/in/${social.linkedin}`}>
+            </a>
+            <a href={`https://www.linkedin.com/in/${social.linkedin}`}>
               <FaLinkedin
-                css={`
+                css={css`
                   height: ${iconSideSize};
                   width: ${iconSideSize};
                 `}
               />
-            </SocialLink>
+            </a>
           </Container>
         )
       }}

@@ -22,7 +22,7 @@ const BlogIndex = ({ location }) => {
   )
 
   return (
-    <Layout location={location} title={site.siteMetadata.title}>
+    <Layout location={location} title={site.siteMetadata.title} bg="goldenrod">
       <SEO
         title="Home"
         keywords={site.siteMetadata.keywords}
