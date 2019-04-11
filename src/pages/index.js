@@ -21,12 +21,13 @@ const Index = ({ location }) => {
   )
 
   return (
-    <Layout location={location} title={site.siteMetadata.title} bg="hotpink">
+    <Layout location={location} title={site.siteMetadata.title}>
       <SEO
         title="Home"
         keywords={site.siteMetadata.keywords}
         description={site.siteMetadata.description}
       />
+      welcome to my site!
     </Layout>
   )
 }

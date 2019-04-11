@@ -13,7 +13,7 @@ function Social() {
       render={data => {
         const { social } = data.site.siteMetadata
         return (
-          <Container>
+          <div>
             <a href={`https://twitter.com/${social.twitter}`}>
               <FaTwitter
                 css={css`
@@ -38,7 +38,7 @@ function Social() {
                 `}
               />
             </a>
-          </Container>
+          </div>
         )
       }}
     />
