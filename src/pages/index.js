@@ -27,7 +27,7 @@ const Index = ({ location }) => {
         keywords={site.siteMetadata.keywords}
         description={site.siteMetadata.description}
       />
-      welcome to my site!
+      <h1>{site.siteMetadata.title}</h1>
     </Layout>
   )
 }

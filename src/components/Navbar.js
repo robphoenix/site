@@ -6,13 +6,19 @@ function Navbar() {
   return (
     <ul>
       <li>
-        <Link to={'/blog/'}>blog</Link>
+        <Link to={'/blog/'}>
+          <p>blog</p>
+        </Link>
       </li>
       <li>
-        <Link to={'/projects/'}>projects</Link>
+        <Link to={'/projects/'}>
+          <p>projects</p>
+        </Link>
       </li>
       <li>
-        <Link to={'/art/work/'}>art</Link>
+        <Link to={'/art/work/'}>
+          <p>art</p>
+        </Link>
       </li>
     </ul>
   )

@@ -21,8 +21,9 @@ const Layout = ({ location, title, children }) => {
     <ThemeProvider theme={theme}>
       <Global
         styles={css`
-          * {
+          body {
             background-color: ${colour};
+            transition: background-color 0.2s ease-out;
           }
         `}
       />
