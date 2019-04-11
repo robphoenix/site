@@ -10,7 +10,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
-    "babel-plugin-styled-components": "^1.10.0",
+    "emotion-theming": "^10.0.10",
     "gatsby": "^2.3.4",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-emotion": "^4.0.6",
@@ -33,6 +33,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.3.0",
+    "styled-system": "^4.1.0",
     "typeface-karla": "0.0.72",
     "typeface-space-mono": "0.0.71",
     "typography-plugin-code": "^0.16.19"
