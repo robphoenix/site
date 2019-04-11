@@ -31,8 +31,8 @@ const theme = {
   heights: [16, 32, 64, 128, 256],
   maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
   colors: {
-    home: 'hotpink',
-    blog: 'goldenrod',
+    home: '#f8ecfa',
+    blog: '#f2dee3',
     posts: 'lightblue',
   },
 }
