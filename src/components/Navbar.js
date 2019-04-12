@@ -25,7 +25,7 @@ const pages = [
   { name: `About`, to: `/about/` },
   { name: `Blog`, to: `/blog/` },
   { name: `Work`, to: `/work/` },
-  { name: `Art`, to: `/art/` },
+  { name: `Art`, to: `/art/work/` },
 ]
 
 const Navbar = () => {
