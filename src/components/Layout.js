@@ -42,7 +42,13 @@ const Layout = ({ location, children }) => {
           justifyContent: 'space-between',
         }}
       >
-        {onHomePage ? `` : <h1>{title}</h1>}
+        <h1
+          css={{
+            opacity: onHomePage ? 0 : 1,
+          }}
+        >
+          {title}
+        </h1>
         <Navbar />
         {children}
       </div>

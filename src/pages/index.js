@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-// import Bio from '../components/Bio'
 
 const query = graphql`
   query {
