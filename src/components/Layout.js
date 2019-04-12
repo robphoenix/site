@@ -23,7 +23,6 @@ const Layout = ({ location, title, children }) => {
       />
       <div
         css={{
-          height: `100%`,
           width: `100%`,
         }}
       >

@@ -1,25 +1,49 @@
-// @ts-nocheck
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import { fontSize } from 'styled-system'
 
-function Navbar() {
+const NavItem = styled.li`
+  ${fontSize}
+`
+
+const NavLink = ({ to, children }) => (
+  <NavItem fontSize={[3, 4, 5]}>
+    <Link
+      to={to}
+      css={{
+        textDecoration: 'none',
+      }}
+    >
+      {children}
+    </Link>
+  </NavItem>
+)
+
+const pages = [
+  { name: `Home`, to: `/` },
+  { name: `About`, to: `/about/` },
+  { name: `Blog`, to: `/blog/` },
+  { name: `Work`, to: `/work/` },
+  { name: `Art`, to: `/art/` },
+]
+
+const Navbar = () => {
   return (
-    <ul>
-      <li>
-        <Link to={'/blog/'}>
-          <p>blog</p>
-        </Link>
-      </li>
-      <li>
-        <Link to={'/projects/'}>
-          <p>projects</p>
-        </Link>
-      </li>
-      <li>
-        <Link to={'/art/work/'}>
-          <p>art</p>
-        </Link>
-      </li>
+    <ul
+      css={{
+        listStyle: 'none',
+        display: 'flex',
+        justifyContent: 'flex-end',
+      }}
+    >
+      {pages.map(page => {
+        return (
+          <NavLink to={page.to}>
+            <p>{page.name}</p>
+          </NavLink>
+        )
+      })}
     </ul>
   )
 }
