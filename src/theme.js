@@ -33,6 +33,9 @@ const theme = {
   colors: {
     home: '#f8ecfa',
     blog: '#f2dee3',
+    about: 'yellow',
+    work: 'purple',
+    artwork: 'orange',
     posts: 'lightblue',
   },
 }

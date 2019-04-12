@@ -6,7 +6,22 @@ const theme = {
   headerFontFamily: [`Space Mono`, `monospace`],
   bodyFontFamily: [`Karla`, `sans-serif`],
   baseLineHeight: 1.5,
-  blockMarginBottom: 0.85,
+  blockMarginBottom: 0,
+  overrideStyles: () => ({
+    body: {
+      margin: 0,
+      padding: 0,
+      boxSizing: 'border-box',
+    },
+    '*, *::before, *::after': {
+      boxSizing: 'inherit',
+      margin: 0,
+      padding: 0,
+    },
+    ul: {
+      margin: 0,
+    },
+  }),
 }
 
 const typography = new Typography(theme)

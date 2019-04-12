@@ -5,29 +5,26 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 // import Bio from '../components/Bio'
 
-const Index = ({ location }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-          }
-        }
+const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
       }
-    `
-  )
+    }
+  }
+`
+
+const Index = ({ location }) => {
+  const { site } = useStaticQuery(query)
+  const { keywords, description, title } = site.siteMetadata
 
   return (
-    <Layout location={location} title={site.siteMetadata.title}>
-      <SEO
-        title="Home"
-        keywords={site.siteMetadata.keywords}
-        description={site.siteMetadata.description}
-      />
-      <h1>{site.siteMetadata.title}</h1>
+    <Layout location={location}>
+      <SEO title="Home" keywords={keywords} description={description} />
+      <h1>{title}</h1>
     </Layout>
   )
 }

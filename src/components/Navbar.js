@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import { fontSize } from 'styled-system'
-
-const NavItem = styled.li`
-  ${fontSize}
-`
+import css from '@styled-system/css'
 
 const NavLink = ({ to, children }) => (
-  <NavItem fontSize={[3, 4, 5]}>
+  <li
+    css={css({
+      fontSize: [3, 4, 5],
+    })}
+  >
     <Link
       to={to}
       css={{
@@ -17,7 +16,7 @@ const NavLink = ({ to, children }) => (
     >
       {children}
     </Link>
-  </NavItem>
+  </li>
 )
 
 const pages = [

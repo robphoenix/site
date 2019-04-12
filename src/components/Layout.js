@@ -38,6 +38,8 @@ const Layout = ({ location, children }) => {
       <div
         css={{
           width: `100%`,
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
         {onHomePage ? `` : <h1>{title}</h1>}
