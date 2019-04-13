@@ -5,7 +5,7 @@ import css from '@styled-system/css'
 const NavLink = ({ to, children }) => (
   <li
     css={css({
-      fontSize: [3, 4, 5],
+      fontSize: [4, 5, 6],
     })}
   >
     <Link

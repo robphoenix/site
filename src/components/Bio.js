@@ -5,26 +5,26 @@ import Image from 'gatsby-image'
 
 import Social from '../components/Social'
 
-const Bio = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        site {
-          siteMetadata {
-            author
-            bio
-          }
+const query = graphql`
+  query {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50) {
+          ...GatsbyImageSharpFixed
         }
       }
-    `
-  )
+    }
+    site {
+      siteMetadata {
+        author
+        bio
+      }
+    }
+  }
+`
+
+const Bio = () => {
+  const data = useStaticQuery(query)
 
   const { author, bio } = data.site.siteMetadata
 

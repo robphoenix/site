@@ -1,16 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import Layout from '../components/Layout'
 
 const query = graphql`
   query {
     site {
       siteMetadata {
         title
-        description
-        keywords
       }
     }
   }
@@ -18,11 +16,11 @@ const query = graphql`
 
 const Index = ({ location }) => {
   const { site } = useStaticQuery(query)
-  const { keywords, description, title } = site.siteMetadata
+  const { title } = site.siteMetadata
 
   return (
     <Layout location={location}>
-      <SEO title="Home" keywords={keywords} description={description} />
+      <SEO title="Home" />
       <h1>{title}</h1>
     </Layout>
   )

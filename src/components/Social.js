@@ -1,52 +1,9 @@
-// @ts-nocheck
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
-import { css } from '@emotion/core'
 
-const iconSideSize = `24px`
-
-function Social() {
-  return (
-    <StaticQuery
-      query={socialQuery}
-      render={data => {
-        const { social } = data.site.siteMetadata
-        return (
-          <div>
-            <a href={`https://twitter.com/${social.twitter}`}>
-              <FaTwitter
-                css={css`
-                  height: ${iconSideSize};
-                  width: ${iconSideSize};
-                `}
-              />
-            </a>
-            <a href={`https://github.com/${social.github}`}>
-              <FaGithub
-                css={css`
-                  height: ${iconSideSize};
-                  width: ${iconSideSize};
-                `}
-              />
-            </a>
-            <a href={`https://www.linkedin.com/in/${social.linkedin}`}>
-              <FaLinkedin
-                css={css`
-                  height: ${iconSideSize};
-                  width: ${iconSideSize};
-                `}
-              />
-            </a>
-          </div>
-        )
-      }}
-    />
-  )
-}
-
-const socialQuery = graphql`
-  query SocialQuery {
+const query = graphql`
+  query {
     site {
       siteMetadata {
         social {
@@ -58,5 +15,25 @@ const socialQuery = graphql`
     }
   }
 `
+
+const Social = () => {
+  const { site } = useStaticQuery(query)
+  const { social } = site.siteMetadata
+  const iconSize = 24
+
+  return (
+    <div>
+      <a href={`https://twitter.com/${social.twitter}`}>
+        <FaTwitter size={iconSize} />
+      </a>
+      <a href={`https://github.com/${social.github}`}>
+        <FaGithub size={iconSize} />
+      </a>
+      <a href={`https://www.linkedin.com/in/${social.linkedin}`}>
+        <FaLinkedin size={iconSize} />
+      </a>
+    </div>
+  )
+}
 
 export default Social

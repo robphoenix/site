@@ -4,7 +4,7 @@ import { ThemeProvider } from 'emotion-theming'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import theme from '../theme'
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
 
 const query = graphql`
   query {
@@ -23,6 +23,7 @@ const Layout = ({ location, children }) => {
   const page = location.pathname.replace(/\//g, ``) || `home`
   const colour = theme.colors[page] || theme.colors.posts
 
+  // @ts-ignore
   const rootPath = `${__PATH_PREFIX__}/`
   const onHomePage = location.pathname === rootPath
 
@@ -50,8 +51,8 @@ const Layout = ({ location, children }) => {
           {title}
         </h1>
         <Navbar />
-        {children}
       </div>
+      {children}
     </ThemeProvider>
   )
 }
