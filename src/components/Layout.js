@@ -1,24 +1,13 @@
 import React from 'react'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
-import { useStaticQuery, graphql } from 'gatsby'
 
 import theme from '../theme'
 import Navbar from './Navbar'
-
-const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Layout = ({ location, children }) => {
-  const { site } = useStaticQuery(query)
-  const title = site.siteMetadata.title
+  const { title } = useSiteMetadata()
 
   const page = location.pathname.replace(/\//g, ``) || `home`
   const colour = theme.colors[page] || theme.colors.posts

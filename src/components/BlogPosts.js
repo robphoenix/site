@@ -1,35 +1,11 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-
-const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "DD MMMM YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`
+import { Link } from 'gatsby'
+import { useAllMarkdownRemark } from '../hooks/use-all-markdown-remark'
 
 const BlogPosts = () => {
-  const { allMarkdownRemark } = useStaticQuery(query)
+  const { edges } = useAllMarkdownRemark()
 
-  return allMarkdownRemark.edges.map(({ node }) => {
+  return edges.map(({ node }) => {
     const { title, date } = node.frontmatter
 
     return (
