@@ -1,23 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import css from '@styled-system/css'
-
-const NavLink = ({ to, children }) => (
-  <li
-    css={css({
-      fontSize: [4, 5, 6],
-    })}
-  >
-    <Link
-      to={to}
-      css={{
-        textDecoration: 'none',
-      }}
-    >
-      {children}
-    </Link>
-  </li>
-)
+import styled from '@emotion/styled'
+import { fontSize } from 'styled-system'
 
 const pages = [
   { name: `Home`, to: `/` },
@@ -27,23 +11,27 @@ const pages = [
   { name: `Art`, to: `/art/work/` },
 ]
 
+const NavList = styled.div({
+  listStyle: 'none',
+  display: 'flex',
+  justifyContent: 'flex-end',
+})
+
+const NavItem = styled.li(fontSize)
+
+const NavLink = styled(Link)({
+  textDecoration: 'none',
+})
+
 const Navbar = () => {
   return (
-    <ul
-      css={{
-        listStyle: 'none',
-        display: 'flex',
-        justifyContent: 'flex-end',
-      }}
-    >
-      {pages.map(page => {
-        return (
-          <NavLink to={page.to}>
-            <p>{page.name}</p>
-          </NavLink>
-        )
-      })}
-    </ul>
+    <NavList>
+      {pages.map(page => (
+        <NavItem fontSize={[4, 5, 6]}>
+          <NavLink to={page.to}>{page.name}</NavLink>
+        </NavItem>
+      ))}
+    </NavList>
   )
 }
 
