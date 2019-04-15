@@ -1,37 +1,62 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import { fontSize } from 'styled-system'
+import { Flex, Box, Text } from 'rebass'
 
-const pages = [
-  { name: `Home`, to: `/` },
-  { name: `About`, to: `/about/` },
-  { name: `Blog`, to: `/blog/` },
-  { name: `Work`, to: `/work/` },
-  { name: `Art`, to: `/art/work/` },
+const navigation = [
+  {
+    label: `Home`,
+    href: `/`,
+  },
+  {
+    label: `About`,
+    href: `/about/`,
+  },
+  {
+    label: `Blog`,
+    href: `/blog/`,
+  },
+  {
+    label: `Work`,
+    href: `/work/`,
+  },
+  {
+    label: `Art`,
+    href: `/art/work/`,
+  },
 ]
 
-const NavList = styled.div({
-  listStyle: 'none',
-  display: 'flex',
-  justifyContent: 'flex-end',
-})
+const Nav = props => <Box {...props} as="nav" />
 
-const NavItem = styled.li(fontSize)
+const NavList = props => (
+  <Flex
+    {...props}
+    as="ul"
+    css={{
+      listStyle: 'none',
+    }}
+  />
+)
 
-const NavLink = styled(Link)({
-  textDecoration: 'none',
-})
+const NavListItem = props => <Text {...props} as="li" />
 
 const Navbar = () => {
   return (
-    <NavList>
-      {pages.map(page => (
-        <NavItem fontSize={[4, 5, 6]}>
-          <NavLink to={page.to}>{page.name}</NavLink>
-        </NavItem>
-      ))}
-    </NavList>
+    <Nav role="navigation" width={1}>
+      <NavList width={1} justifyContent="space-around">
+        {navigation.map(({ href, label }) => (
+          <NavListItem key={label} fontFamily="header" fontSize={[3, 4, 5]}>
+            <Link
+              to={href}
+              css={{
+                textDecoration: 'none',
+              }}
+            >
+              {label}
+            </Link>
+          </NavListItem>
+        ))}
+      </NavList>
+    </Nav>
   )
 }
 

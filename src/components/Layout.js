@@ -1,47 +1,43 @@
+// @ts-nocheck
 import React from 'react'
-import { Global } from '@emotion/core'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from 'styled-components'
+import { Text, Flex } from 'rebass'
 
 import theme from '../theme'
 import Navbar from './Navbar'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
+import GlobalStyle from './GlobalStyle'
 
 const Layout = ({ location, children }) => {
   const { title } = useSiteMetadata()
-
   const page = location.pathname.replace(/\//g, ``) || `home`
-  const colour = theme.colors[page] || theme.colors.posts
-
-  // @ts-ignore
-  const rootPath = `${__PATH_PREFIX__}/`
-  const onHomePage = location.pathname === rootPath
+  const onHomePage = location.pathname === `${__PATH_PREFIX__}/`
 
   return (
     <ThemeProvider theme={theme}>
-      <Global
-        styles={{
-          body: {
-            backgroundColor: `${colour}`,
-          },
-        }}
-      />
-      <div
-        css={{
-          width: `100%`,
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
-        <h1
-          css={{
-            opacity: onHomePage ? 0 : 1,
-          }}
+      <>
+        <Flex
+          flexDirection={['column', 'row']}
+          alignItems="baseline"
+          justifyContent="space-between"
         >
-          {title}
-        </h1>
-        <Navbar />
-      </div>
-      {children}
+          <GlobalStyle page={page} />
+          <Text
+            as="h1"
+            width={'400px'}
+            fontFamily="header"
+            fontSize={[4, 6]}
+            fontWeight="bold"
+            css={{
+              opacity: onHomePage ? 0 : 1,
+            }}
+          >
+            {title}
+          </Text>
+          <Navbar />
+        </Flex>
+        {children}
+      </>
     </ThemeProvider>
   )
 }
