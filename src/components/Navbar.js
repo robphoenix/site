@@ -1,6 +1,9 @@
+// @ts-nocheck
 import React from 'react'
 import { Link } from 'gatsby'
 import { Flex, Box, Text } from 'rebass'
+import { themeGet } from 'styled-system'
+import theme from '../theme'
 
 const navigation = [
   {
@@ -25,7 +28,17 @@ const navigation = [
   },
 ]
 
-const Nav = props => <Box {...props} as="nav" />
+const Nav = props => (
+  <Box
+    {...props}
+    as="nav"
+    css={{
+      [`@media (max-width: ${theme.breakpoints.sm})`]: {
+        display: 'none',
+      },
+    }}
+  />
+)
 
 const NavList = props => (
   <Flex

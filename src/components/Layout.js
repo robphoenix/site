@@ -11,7 +11,7 @@ import GlobalStyle from './GlobalStyle'
 const Layout = ({ location, children }) => {
   const { title } = useSiteMetadata()
   const page = location.pathname.replace(/\//g, ``) || `home`
-  const onHomePage = location.pathname === `${__PATH_PREFIX__}/`
+  const onHomePage = location.pathname === `/`
 
   return (
     <ThemeProvider theme={theme}>
@@ -19,21 +19,22 @@ const Layout = ({ location, children }) => {
         <Flex
           flexDirection={['column', 'row']}
           alignItems="baseline"
-          justifyContent="space-between"
+          justifyContent="space-around"
         >
           <GlobalStyle page={page} />
-          <Text
-            as="h1"
-            width={'400px'}
-            fontFamily="header"
-            fontSize={[4, 6]}
-            fontWeight="bold"
-            css={{
-              opacity: onHomePage ? 0 : 1,
-            }}
-          >
-            {title}
-          </Text>
+          <Flex width={'400px'} justifyContent="center">
+            <Text
+              as="h1"
+              fontFamily="header"
+              fontSize={6}
+              fontWeight="bold"
+              css={{
+                opacity: onHomePage ? 0 : 1,
+              }}
+            >
+              {title}
+            </Text>
+          </Flex>
           <Navbar />
         </Flex>
         {children}

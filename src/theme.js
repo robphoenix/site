@@ -1,5 +1,14 @@
+// @ts-nocheck
+// const breakpoints = [400, 750, 1200]
+const breakpoints = ['40em', '52em', '64em']
+
+// aliases
+breakpoints.sm = breakpoints[0]
+breakpoints.md = breakpoints[1]
+breakpoints.lg = breakpoints[2]
+
 export default {
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints,
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [0, 12, 14, 16, 18, 24, 32, 48, 64, 72],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],

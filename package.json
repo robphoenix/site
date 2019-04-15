@@ -37,6 +37,7 @@
     "typeface-space-mono": "0.0.71"
   },
   "devDependencies": {
+    "@types/rebass": "^3.0.3",
     "@types/styled-components": "^4.1.14",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
