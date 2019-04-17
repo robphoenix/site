@@ -1,14 +1,8 @@
 // @ts-nocheck
 // const breakpoints = [400, 750, 1200]
-const breakpoints = ['40em', '52em', '64em']
-
-// aliases
-breakpoints.sm = breakpoints[0]
-breakpoints.md = breakpoints[1]
-breakpoints.lg = breakpoints[2]
 
 export default {
-  breakpoints,
+  breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [0, 12, 14, 16, 18, 24, 32, 48, 64, 72],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
@@ -39,7 +33,7 @@ export default {
   heights: [0, 16, 24, 32, 64, 128, 256],
   maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
   colors: {
-    home: '#f8ecfa',
+    '': '#f8ecfa',
     blog: '#f2dee3',
     about: 'yellow',
     work: 'purple',
