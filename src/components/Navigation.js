@@ -1,8 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import { Link } from 'gatsby'
-import { Flex, Box, Text } from 'rebass'
-import theme from '../theme'
+import { Flex, Text } from 'rebass'
 import styled from 'styled-components'
 import { display, width } from 'styled-system'
 
@@ -24,26 +23,6 @@ const topLevelNavigation = [
     href: `/art/work/`,
   },
 ]
-
-// const Nav = props => (
-//   <Box
-//     {...props}
-//     as="nav"
-//     css={{
-//       display: 'none',
-//       [`${theme.mediaQueries.mobile.sm}`]: {
-//         display: 'block',
-//       },
-//     }}
-//   />
-// )
-
-// const Nav = styled(Box)(props => ({
-//   display: 'none',
-//   [`${props.theme.mediaQueries.mobile.sm}`]: {
-//     display: 'block',
-//   },
-// }))
 
 const Nav = styled('nav')(display, width)
 
