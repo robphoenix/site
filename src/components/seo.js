@@ -4,8 +4,8 @@ import Helmet from 'react-helmet'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-const SEO = ({ meta, seoTitle, seoDescription, seoKeywords }) => {
-  const { title, description, keywords, lang, author } = useSiteMetadata()
+const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
+  const { title, description, keywords, author } = useSiteMetadata()
 
   const metaTitle = seoTitle || title
   const metaDescription = seoDescription || description
@@ -73,11 +73,11 @@ SEO.defaultProps = {
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
+  seoDescription: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  seoKeywords: PropTypes.arrayOf(PropTypes.string),
+  seoTitle: PropTypes.string.isRequired,
 }
 
 export default SEO
