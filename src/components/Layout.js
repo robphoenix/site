@@ -4,13 +4,14 @@ import { ThemeProvider } from 'styled-components'
 import { Text, Flex } from 'rebass'
 
 import theme from '../theme'
-import Navbar from './Navbar'
+import Navigation from './Navigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import GlobalStyle from './GlobalStyle'
 
 const Layout = ({ location, children }) => {
   const { title } = useSiteMetadata()
-  const page = location.pathname.replace(/\//g, ``) || `home`
+  const page = location.pathname.replace(/\//g, ``)
+  const backgroundColour = theme.colors[page] || theme.colors.posts
   const onHomePage = location.pathname === `/`
 
   return (
@@ -21,7 +22,7 @@ const Layout = ({ location, children }) => {
           alignItems="baseline"
           justifyContent="space-around"
         >
-          <GlobalStyle page={page} />
+          <GlobalStyle bg={backgroundColour} />
           <Flex width={'400px'} justifyContent="center">
             <Text
               as="h1"
@@ -35,7 +36,7 @@ const Layout = ({ location, children }) => {
               {title}
             </Text>
           </Flex>
-          <Navbar />
+          <Navigation />
         </Flex>
         {children}
       </>
