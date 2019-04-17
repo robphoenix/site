@@ -34,7 +34,7 @@ export default {
   maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
   colors: {
     '': '#f8ecfa',
-    blog: '#f2dee3',
+    writing: '#f2dee3',
     about: 'yellow',
     work: 'purple',
     artwork: 'orange',

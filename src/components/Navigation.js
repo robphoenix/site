@@ -11,8 +11,8 @@ const topLevelNavigation = [
     href: `/about/`,
   },
   {
-    label: `Blog`,
-    href: `/blog/`,
+    label: `Writing`,
+    href: `/writing/`,
   },
   {
     label: `Work`,
@@ -24,7 +24,7 @@ const topLevelNavigation = [
   },
 ]
 
-const Nav = styled('nav')(display, width)
+const Nav = styled(Flex)(display, width)
 
 const NavList = props => (
   <Flex
@@ -40,10 +40,21 @@ const NavListItem = props => <Text {...props} as="li" />
 
 const Navigation = () => {
   return (
-    <Nav role="navigation" width={1} display={['none', 'flex']}>
-      <NavList width={1} justifyContent="space-between">
+    <Nav
+      as="nav"
+      role="navigation"
+      width={1}
+      display={['none', 'flex']}
+      justifyContent="flex-end"
+    >
+      <NavList>
         {topLevelNavigation.map(({ href, label }) => (
-          <NavListItem key={label} fontFamily="header" fontSize={[3, 4, 5]}>
+          <NavListItem
+            key={label}
+            fontFamily="header"
+            fontSize={[3, 4, 5]}
+            mx={[2, 3, 4]}
+          >
             <Link
               to={href}
               css={{

@@ -21,7 +21,6 @@ const Index = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO seoTitle="Home" />
-      <h1>{title}</h1>
     </Layout>
   )
 }

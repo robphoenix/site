@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
-class BlogPostTemplate extends React.Component {
+class Article extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -38,10 +38,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default Article
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ArticleBySlug($slug: String!) {
     site {
       siteMetadata {
         title

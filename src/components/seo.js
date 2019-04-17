@@ -7,7 +7,6 @@ import { useSiteMetadata } from '../hooks/use-site-metadata'
 const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
   const { title, description, keywords, author } = useSiteMetadata()
 
-  const metaTitle = seoTitle || title
   const metaDescription = seoDescription || description
   const metaKeywords = [...seoKeywords, ...keywords]
 
@@ -17,8 +16,8 @@ const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
       htmlAttributes={{
         lang,
       }}
-      title={metaTitle}
-      titleTemplate={`%s | ${metaTitle}`}
+      title={title}
+      titleTemplate={`%s | ${seoTitle}`}
       meta={[
         {
           name: `description`,
@@ -26,7 +25,7 @@ const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
         },
         {
           property: `og:title`,
-          content: metaTitle,
+          content: seoTitle,
         },
         {
           property: `og:description`,
@@ -46,7 +45,7 @@ const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
         },
         {
           name: `twitter:title`,
-          content: metaTitle,
+          content: seoTitle,
         },
         {
           name: `twitter:description`,

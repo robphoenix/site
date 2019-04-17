@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useAllMarkdownRemark } from '../hooks/use-all-markdown-remark'
 
-const BlogPosts = () => {
+const Articles = () => {
   const { edges } = useAllMarkdownRemark()
 
   return edges.map(({ node }) => {
@@ -17,4 +17,4 @@ const BlogPosts = () => {
   })
 }
 
-export default BlogPosts
+export default Articles
