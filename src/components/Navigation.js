@@ -5,38 +5,9 @@ import { Flex, Text } from 'rebass'
 import styled from 'styled-components'
 import { display, width } from 'styled-system'
 
-const topLevelNavigation = [
-  {
-    label: `About`,
-    href: `/about/`,
-  },
-  {
-    label: `Writing`,
-    href: `/writing/`,
-  },
-  {
-    label: `Work`,
-    href: `/work/`,
-  },
-  {
-    label: `Art`,
-    href: `/art/work/`,
-  },
-]
+import topLevelNavigation from '../data/top-level-navigation'
 
 const Nav = styled(Flex)(display, width)
-
-const NavList = props => (
-  <Flex
-    {...props}
-    as="ul"
-    css={{
-      listStyle: 'none',
-    }}
-  />
-)
-
-const NavListItem = props => <Text {...props} as="li" />
 
 const Navigation = () => {
   return (
@@ -47,9 +18,15 @@ const Navigation = () => {
       display={['none', 'flex']}
       justifyContent="flex-end"
     >
-      <NavList>
+      <Flex
+        as="ul"
+        css={{
+          listStyle: 'none',
+        }}
+      >
         {topLevelNavigation.map(({ href, label }) => (
-          <NavListItem
+          <Text
+            as="li"
             key={label}
             fontFamily="header"
             fontSize={[3, 4, 5]}
@@ -63,9 +40,9 @@ const Navigation = () => {
             >
               {label}
             </Link>
-          </NavListItem>
+          </Text>
         ))}
-      </NavList>
+      </Flex>
     </Nav>
   )
 }

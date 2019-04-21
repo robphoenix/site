@@ -11,7 +11,6 @@ const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
   const metaKeywords = [...seoKeywords, ...keywords]
 
   return (
-    // @ts-ignore
     <Helmet
       htmlAttributes={{
         lang,

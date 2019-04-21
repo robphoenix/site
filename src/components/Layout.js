@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 
 import theme from '../theme'
 import Navigation from './Navigation'
+import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import GlobalStyle from './GlobalStyle'
 
@@ -17,13 +18,9 @@ const Layout = ({ location, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <>
-        <Flex
-          flexDirection={['column', 'row']}
-          alignItems="baseline"
-          justifyContent="space-around"
-        >
+        <Flex alignItems="baseline" justifyContent="space-around">
           <GlobalStyle bg={backgroundColour} />
-          <Flex ml={3} width={1}>
+          <Flex ml={3} width={1} justifyContent={['center', 'flex-start']}>
             <Link
               to="/"
               css={{
@@ -43,6 +40,7 @@ const Layout = ({ location, children }) => {
           <Navigation />
         </Flex>
         {children}
+        <MobileNavigation bg={backgroundColour} />
       </>
     </ThemeProvider>
   )
