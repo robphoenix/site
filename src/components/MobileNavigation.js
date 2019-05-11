@@ -31,7 +31,7 @@ const Nav = styled(Flex)(
   position
 )
 
-const MobileNavigation = ({ bg }) => {
+const MobileNavigation = () => {
   return (
     <Nav
       as="nav"
@@ -40,8 +40,9 @@ const MobileNavigation = ({ bg }) => {
       height={4}
       display={['flex', 'none']}
       alignItems="center"
-      bg={bg}
-      borderTop="1px solid black"
+      bg="bg"
+      borderTop="1px solid"
+      borderColor="text"
       zIndex="1"
       bottom="0"
       left="0"
@@ -51,13 +52,20 @@ const MobileNavigation = ({ bg }) => {
       <Flex
         as="ul"
         width={1}
-        justifyContent="space-between"
+        justifyContent="space-around"
         css={{
           listStyle: 'none',
         }}
       >
         {topLevelNavigation.map(({ href, label }) => (
-          <Text as="li" key={label} fontFamily="header" fontSize={4} mx={3}>
+          <Text
+            as="li"
+            key={label}
+            fontFamily="header"
+            fontSize={3}
+            mx={[2, 3]}
+            color="text"
+          >
             <Link
               to={href}
               css={{

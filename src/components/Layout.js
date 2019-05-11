@@ -2,7 +2,9 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Text, Flex } from 'rebass'
+import { right } from 'styled-system'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 import theme from '../theme'
 import Navigation from './Navigation'
@@ -10,37 +12,53 @@ import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import GlobalStyle from './GlobalStyle'
 
-const Layout = ({ location, children }) => {
+const Fixed = styled(Flex)({
+  top: 0,
+  position: `fixed`,
+})
+
+const FixedRight = styled(Fixed)({
+  right: `0`,
+})
+
+const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
-  const page = location.pathname.replace(/\//g, ``)
-  const backgroundColour = theme.colors[page] || theme.colors.posts
 
   return (
     <ThemeProvider theme={theme}>
       <>
-        <Flex alignItems="baseline" justifyContent="space-around">
-          <GlobalStyle bg={backgroundColour} />
-          <Flex ml={3} width={1} justifyContent={['center', 'flex-start']}>
-            <Link
-              to="/"
-              css={{
-                textDecoration: 'none',
-              }}
+        <GlobalStyle bg={theme.colors.bg} />
+        <Fixed>
+          <Link
+            to="/"
+            css={{
+              textDecoration: 'none',
+              ':hover': {
+                textDecoration: 'underline',
+                textDecorationStyle: 'wavy',
+                textDecorationColor: 'hotpink',
+              },
+            }}
+          >
+            <Text
+              as="h1"
+              fontFamily="header"
+              fontSize={4}
+              fontWeight="normal"
+              color="text"
+              ml={4}
+              mt={4}
             >
-              <Text
-                as="h1"
-                fontFamily="header"
-                fontSize={6}
-                fontWeight="normal"
-              >
-                {title}
-              </Text>
-            </Link>
-          </Flex>
+              {title}
+            </Text>
+          </Link>
+        </Fixed>
+        <FixedRight>
           <Navigation />
-        </Flex>
+        </FixedRight>
+
         {children}
-        <MobileNavigation bg={backgroundColour} />
+        <MobileNavigation />
       </>
     </ThemeProvider>
   )

@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { Flex, Text } from 'rebass'
 import styled from 'styled-components'
 import { display, width } from 'styled-system'
+import css from '@styled-system/css'
 
 import topLevelNavigation from '../data/top-level-navigation'
 
@@ -14,33 +15,38 @@ const Navigation = () => {
     <Nav
       as="nav"
       role="navigation"
-      width={1}
       display={['none', 'flex']}
       justifyContent="flex-end"
     >
       <Flex
         as="ul"
+        alignItems="flex-end"
+        flexDirection="column"
+        mt={4}
+        mr={4}
         css={{
           listStyle: 'none',
         }}
       >
         {topLevelNavigation.map(({ href, label }) => (
-          <Text
-            as="li"
-            key={label}
-            fontFamily="header"
-            fontSize={[3, 4, 5]}
-            mx={[2, 3, 4]}
-          >
+          <>
             <Link
               to={href}
-              css={{
-                textDecoration: 'none',
-              }}
+              css={css({
+                color: `text`,
+                textDecoration: `none`,
+                borderBottom: `10px solid`,
+                borderColor: `bg`,
+                ':hover': {
+                  borderColor: `hotpink`,
+                },
+              })}
             >
-              {label}
+              <Text as="li" key={label} fontFamily="header" fontSize={3}>
+                {label}
+              </Text>
             </Link>
-          </Text>
+          </>
         ))}
       </Flex>
     </Nav>

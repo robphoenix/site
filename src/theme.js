@@ -3,8 +3,8 @@
 
 export default {
   breakpoints: ['40em', '52em', '64em'],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontSizes: [0, 12, 14, 16, 18, 24, 32, 48, 64, 72],
+  space: [0, 4, 8, 16, 32, 64, 128, 192, 256, 512],
+  fontSizes: [12, 14, 16, 18, 24, 32, 40, 48, 64, 72],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
   lineHeights: {
     solid: 1,
@@ -19,7 +19,7 @@ export default {
   },
   fonts: {
     body: 'Karla, sans-serif',
-    header: 'Space Mono, monospace',
+    header: 'Overpass Mono, monospace',
   },
   borders: [
     0,
@@ -33,11 +33,8 @@ export default {
   heights: [0, 16, 24, 32, 64, 128, 256],
   maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
   colors: {
-    '': '#f8ecfa',
-    writing: '#f2dee3',
-    about: 'yellow',
-    work: 'purple',
-    artwork: 'orange',
-    posts: 'lightblue',
+    bg: '#fafafa',
+    text: '#1e2327',
+    hover: 'red',
   },
 }
