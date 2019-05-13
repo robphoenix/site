@@ -35,6 +35,6 @@ export default {
   colors: {
     bg: '#fafafa',
     text: '#1e2327',
-    hover: 'red',
+    accent: `#00b8a9`,
   },
 }

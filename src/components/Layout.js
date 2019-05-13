@@ -2,9 +2,9 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Text, Flex } from 'rebass'
-import { right } from 'styled-system'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import css from '@styled-system/css'
 
 import theme from '../theme'
 import Navigation from './Navigation'
@@ -31,14 +31,17 @@ const Layout = ({ children }) => {
         <Fixed>
           <Link
             to="/"
-            css={{
-              textDecoration: 'none',
+            css={css({
+              color: `text`,
+              textDecoration: `none`,
+              borderBottom: `3px solid`,
+              borderColor: `bg`,
+              marginLeft: 4,
+              marginTop: 4,
               ':hover': {
-                textDecoration: 'underline',
-                textDecorationStyle: 'wavy',
-                textDecorationColor: 'hotpink',
+                borderColor: `accent`,
               },
-            }}
+            })}
           >
             <Text
               as="h1"
@@ -46,8 +49,6 @@ const Layout = ({ children }) => {
               fontSize={4}
               fontWeight="normal"
               color="text"
-              ml={4}
-              mt={4}
             >
               {title}
             </Text>

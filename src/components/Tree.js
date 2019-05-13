@@ -17,7 +17,7 @@ const query = graphql`
 
 const Tree = () => {
   const { tree } = useStaticQuery(query)
-  return <Img fluid={tree.childImageSharp.fluid} />
+  return <Img fluid={tree.childImageSharp.fluid} title="tree" />
 }
 
 export default Tree

@@ -35,10 +35,11 @@ const Navigation = () => {
               css={css({
                 color: `text`,
                 textDecoration: `none`,
-                borderBottom: `10px solid`,
+                borderBottom: `3px solid`,
                 borderColor: `bg`,
+                marginBottom: 3,
                 ':hover': {
-                  borderColor: `hotpink`,
+                  borderColor: `accent`,
                 },
               })}
             >
