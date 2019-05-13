@@ -22,8 +22,8 @@ const Navigation = () => {
         as="ul"
         alignItems="flex-end"
         flexDirection="column"
-        mt={4}
-        mr={4}
+        mt={5}
+        mr={5}
         css={{
           listStyle: 'none',
         }}

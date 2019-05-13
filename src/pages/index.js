@@ -20,7 +20,7 @@ const Index = () => {
         <Box
           width={600}
           ml="auto"
-          mr={6}
+          mr={7}
           css={{
             bottom: 0,
           }}

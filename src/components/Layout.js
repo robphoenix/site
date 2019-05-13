@@ -36,8 +36,8 @@ const Layout = ({ children }) => {
               textDecoration: `none`,
               borderBottom: `3px solid`,
               borderColor: `bg`,
-              marginLeft: 4,
-              marginTop: 4,
+              marginLeft: 5,
+              marginTop: 5,
               ':hover': {
                 borderColor: `accent`,
               },

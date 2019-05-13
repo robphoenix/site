@@ -1,11 +1,11 @@
 export default [
   {
-    label: `About`,
-    href: `/about/`,
-  },
-  {
     label: `Writing`,
     href: `/writing/`,
+  },
+  {
+    label: `About`,
+    href: `/about/`,
   },
   {
     label: `Work`,
