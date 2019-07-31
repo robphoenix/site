@@ -1,10 +1,7 @@
 /** @jsx jsx */
-// @ts-nocheck
 import { jsx } from 'theme-ui'
 import { ThemeProvider } from 'theme-ui'
-import { Text, Flex } from 'rebass'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
 import { Global, css } from '@emotion/core'
 
 import theme from '../theme'
@@ -12,21 +9,19 @@ import Navigation from './Navigation'
 import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-const Fixed = styled(Flex)({
-  top: 0,
-  position: `fixed`,
-})
-
-const FixedRight = styled(Fixed)({
-  right: `0`,
-})
-
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <div
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: '300px 1fr 200px',
+          gridTemplateRows: '100px 100px 1fr',
+          height: '100vh',
+        }}
+      >
         <Global
           styles={css`
             html,
@@ -45,39 +40,45 @@ const Layout = ({ children }) => {
             }
           `}
         />
-        <Fixed>
-          <Link
-            to="/"
+        <div
+          sx={{
+            gridColumn: '1/1',
+            gridRow: '1/1',
+            justifySelf: 'center',
+            alignSelf: 'center',
+            top: 0,
+            left: 0,
+          }}
+        >
+          <h1
             sx={{
+              fontFamily: 'header',
+              fontSize: 4,
+              fontWeight: 'normal',
               color: 'text',
-              textDecoration: 'none',
-              borderBottom: '2px solid',
-              borderColor: 'bg',
-              marginLeft: 5,
-              marginTop: 5,
-              ':hover': {
-                borderColor: 'text',
-              },
             }}
           >
-            <Text
-              as="h1"
+            <Link
+              to="/"
               sx={{
-                fontFamily: 'header',
-                fontSize: 4,
-                fontWeight: 'normal',
                 color: 'text',
+                textDecoration: 'none',
               }}
             >
               {title}
-            </Text>
-          </Link>
-        </Fixed>
-        <FixedRight>
-          <Navigation />
-        </FixedRight>
+            </Link>
+          </h1>
+        </div>
 
-        {children}
+        <Navigation />
+        <div
+          sx={{
+            gridColumn: '2/3',
+            gridRow: '1/-1',
+          }}
+        >
+          {children}
+        </div>
         <MobileNavigation />
       </div>
     </ThemeProvider>

@@ -1,9 +1,8 @@
-import React from 'react'
-import { Flex, Box, Text } from 'rebass'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
-import Tree from '../components/Tree'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Index = () => {
@@ -11,23 +10,33 @@ const Index = () => {
   return (
     <Layout>
       <SEO seoTitle="Home" />
-      <Flex mt={[6, 6, 7]} flexDirection="column">
-        <Flex justifyContent="center" mb={5}>
-          <Text color="text" fontFamily="header" fontSize={7}>
-            {description}
-          </Text>
-        </Flex>
-        <Box
-          width={600}
-          ml="auto"
-          mr={7}
-          css={{
-            bottom: 0,
+      <div
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginTop: [6, 6, 7],
+        }}
+      >
+        <div
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: 5,
           }}
         >
-          <Tree />
-        </Box>
-      </Flex>
+          <span
+            sx={{
+              color: 'text',
+              fontFamily: 'header',
+              fontSize: 7,
+            }}
+          >
+            {description.split(', ')[0]},
+            <br />
+            {description.split(', ')[1]}
+          </span>
+        </div>
+      </div>
     </Layout>
   )
 }

@@ -1,4 +1,5 @@
-// @ts-nocheck
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link } from 'gatsby'
 import { Flex, Text } from 'rebass'
@@ -15,41 +16,49 @@ const Navigation = () => {
     <Nav
       as="nav"
       role="navigation"
-      display={['none', 'flex']}
-      justifyContent="flex-end"
+      sx={{
+        gridColumn: '3/3',
+        gridRow: '1/3',
+        display: ['none', 'flex'],
+        justifyContent: 'flex-end',
+        alignSelf: 'center',
+        justifySelf: 'center',
+      }}
     >
-      <Flex
-        as="ul"
-        alignItems="flex-end"
-        flexDirection="column"
-        mt={5}
-        mr={5}
-        css={{
+      <ul
+        sx={{
+          display: 'flex',
+          alignItems: 'flex-end',
+          flexDirection: 'column',
           listStyle: 'none',
         }}
       >
         {topLevelNavigation.map(({ href, label }) => (
-          <>
+          <Text
+            as="li"
+            key={label}
+            sx={{
+              fontFamily: 'header',
+              fontSize: 3,
+            }}
+          >
             <Link
               to={href}
-              css={css({
+              sx={{
                 color: `text`,
                 textDecoration: `none`,
-                borderBottom: `3px solid`,
+                borderBottom: `2px solid`,
                 borderColor: `bg`,
-                marginBottom: 3,
                 ':hover': {
                   borderColor: `accent`,
                 },
-              })}
+              }}
             >
-              <Text as="li" key={label} fontFamily="header" fontSize={3}>
-                {label}
-              </Text>
+              {label}
             </Link>
-          </>
+          </Text>
         ))}
-      </Flex>
+      </ul>
     </Nav>
   )
 }
