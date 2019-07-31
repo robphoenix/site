@@ -1,16 +1,16 @@
+/** @jsx jsx */
 // @ts-nocheck
-import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { jsx } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import { Text, Flex } from 'rebass'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import css from '@styled-system/css'
+import { Global, css } from '@emotion/core'
 
 import theme from '../theme'
 import Navigation from './Navigation'
 import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import GlobalStyle from './GlobalStyle'
 
 const Fixed = styled(Flex)({
   top: 0,
@@ -26,29 +26,48 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle bg={theme.colors.bg} />
+      <div>
+        <Global
+          styles={css`
+            html,
+            body {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              background-color: ${theme.colors.bg};
+            }
+            *,
+            *::before,
+            *::after {
+              box-sizing: inherit;
+              margin: 0;
+              padding: 0;
+            }
+          `}
+        />
         <Fixed>
           <Link
             to="/"
-            css={css({
-              color: `text`,
-              textDecoration: `none`,
-              borderBottom: `3px solid`,
-              borderColor: `bg`,
+            sx={{
+              color: 'text',
+              textDecoration: 'none',
+              borderBottom: '2px solid',
+              borderColor: 'bg',
               marginLeft: 5,
               marginTop: 5,
               ':hover': {
-                borderColor: `accent`,
+                borderColor: 'text',
               },
-            })}
+            }}
           >
             <Text
               as="h1"
-              fontFamily="header"
-              fontSize={4}
-              fontWeight="normal"
-              color="text"
+              sx={{
+                fontFamily: 'header',
+                fontSize: 4,
+                fontWeight: 'normal',
+                color: 'text',
+              }}
             >
               {title}
             </Text>
@@ -60,7 +79,7 @@ const Layout = ({ children }) => {
 
         {children}
         <MobileNavigation />
-      </>
+      </div>
     </ThemeProvider>
   )
 }

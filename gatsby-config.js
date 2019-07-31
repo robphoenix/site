@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Rob Phoenix`,
     author: `Rob Phoenix`,
-    description: `I’m a frontend developer,
-working in rural North Wales.`,
+    description: `Frontend developer, based in rural North Wales.`,
     keywords: [`blog`, `gatsby`, `javascript`, `react`],
     bio: `A frontend developer, working remote in rural North Wales, building UIs for forensic monitoring systems. A former artist, network engineer and backend developer, currently having a lot of fun with HTML, CSS & JS/TS.`,
     lang: `en`,
@@ -16,6 +15,7 @@ working in rural North Wales.`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

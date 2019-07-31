@@ -1,6 +1,3 @@
-// @ts-nocheck
-// const breakpoints = [400, 750, 1200]
-
 export default {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 192, 256, 512],
