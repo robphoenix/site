@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeProvider, useThemeUI } from 'theme-ui'
 import { Link } from 'gatsby'
 import { Global, css } from '@emotion/core'
 
@@ -14,14 +14,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 200px',
-          gridTemplateRows: '100px 100px 1fr',
-          height: '100vh',
-        }}
-      >
+      <div>
         <Global
           styles={css`
             html,
@@ -42,43 +35,38 @@ const Layout = ({ children }) => {
         />
         <div
           sx={{
-            gridColumn: '1/1',
-            gridRow: '1/1',
-            justifySelf: 'center',
-            alignSelf: 'center',
-            top: 0,
-            left: 0,
+            display: 'flex',
+            alignItems: 'baseline',
+            padding: 4,
           }}
         >
-          <h1
+          <Link
+            to="/"
             sx={{
-              fontFamily: 'header',
-              fontSize: 4,
-              fontWeight: 'normal',
               color: 'text',
+              textDecoration: 'none',
+              marginX: 4,
             }}
           >
-            <Link
-              to="/"
+            <h1
               sx={{
+                fontFamily: 'header',
+                fontSize: 5,
+                fontWeight: 'normal',
                 color: 'text',
-                textDecoration: 'none',
+                padding: 0,
+                textTransform: 'uppercase',
+                letterSpacing: 'tracked',
               }}
             >
               {title}
-            </Link>
-          </h1>
+            </h1>
+          </Link>
+          <Navigation />
         </div>
 
-        <Navigation />
-        <div
-          sx={{
-            gridColumn: '2/3',
-            gridRow: '1/-1',
-          }}
-        >
-          {children}
-        </div>
+        {children}
+
         <MobileNavigation />
       </div>
     </ThemeProvider>

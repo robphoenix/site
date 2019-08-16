@@ -13,23 +13,10 @@ const Nav = styled(Flex)(display, width)
 
 const Navigation = () => {
   return (
-    <Nav
-      as="nav"
-      role="navigation"
-      sx={{
-        gridColumn: '3/3',
-        gridRow: '1/3',
-        display: ['none', 'flex'],
-        justifyContent: 'flex-end',
-        alignSelf: 'center',
-        justifySelf: 'center',
-      }}
-    >
+    <Nav as="nav" role="navigation">
       <ul
         sx={{
           display: 'flex',
-          alignItems: 'flex-end',
-          flexDirection: 'column',
           listStyle: 'none',
         }}
       >
@@ -40,6 +27,9 @@ const Navigation = () => {
             sx={{
               fontFamily: 'header',
               fontSize: 3,
+              marginX: 3,
+              textTransform: 'uppercase',
+              letterSpacing: 'tracked',
             }}
           >
             <Link
