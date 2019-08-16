@@ -33,12 +33,12 @@ const Navigation = () => {
             <Link
               to={href}
               sx={{
-                color: `text`,
-                textDecoration: `none`,
-                borderBottom: `2px solid`,
-                borderColor: `bg`,
+                color: 'text',
+                textDecoration: 'none',
+                borderBottom: 2,
+                borderColor: 'bg',
                 ':hover': {
-                  borderColor: `accent`,
+                  borderColor: 'accent',
                 },
               }}
             >
