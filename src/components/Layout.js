@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { ThemeProvider, useThemeUI } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import { Link } from 'gatsby'
 import { Global, css } from '@emotion/core'
 
@@ -37,6 +37,7 @@ const Layout = ({ children }) => {
           sx={{
             display: 'flex',
             alignItems: 'baseline',
+            justifyContent: ['center', 'flex-start'],
             padding: 4,
           }}
         >
@@ -51,7 +52,7 @@ const Layout = ({ children }) => {
             <h1
               sx={{
                 fontFamily: 'header',
-                fontSize: 5,
+                fontSize: [4, 5],
                 fontWeight: 'normal',
                 color: 'text',
                 padding: 0,

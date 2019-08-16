@@ -1,19 +1,18 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React from 'react'
+
 import { Link } from 'gatsby'
-import { Flex, Text } from 'rebass'
-import styled from 'styled-components'
-import { display, width } from 'styled-system'
-import css from '@styled-system/css'
 
 import topLevelNavigation from '../data/top-level-navigation'
 
-const Nav = styled(Flex)(display, width)
-
 const Navigation = () => {
   return (
-    <Nav as="nav" role="navigation">
+    <nav
+      role="navigation"
+      sx={{
+        display: ['none', 'flex'],
+      }}
+    >
       <ul
         sx={{
           display: 'flex',
@@ -21,8 +20,7 @@ const Navigation = () => {
         }}
       >
         {topLevelNavigation.map(({ href, label }) => (
-          <Text
-            as="li"
+          <li
             key={label}
             sx={{
               fontFamily: 'header',
@@ -46,10 +44,10 @@ const Navigation = () => {
             >
               {label}
             </Link>
-          </Text>
+          </li>
         ))}
       </ul>
-    </Nav>
+    </nav>
   )
 }
 
