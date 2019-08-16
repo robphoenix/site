@@ -35,6 +35,11 @@ export default {
     background: '#fafafa',
     primary: `#00b8a9`,
     modes: {
+      light: {
+        text: '#1e2327',
+        background: '#fafafa',
+        primary: `#00b8a9`,
+      },
       dark: {
         text: '#fff',
         background: '#000',

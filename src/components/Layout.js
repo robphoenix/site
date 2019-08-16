@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+
 import { ThemeProvider, ColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
 import { Global, css } from '@emotion/core'
