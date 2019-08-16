@@ -36,9 +36,9 @@ const Navigation = () => {
                 color: 'text',
                 textDecoration: 'none',
                 borderBottom: 2,
-                borderColor: 'bg',
+                borderColor: 'background',
                 ':hover': {
-                  borderColor: 'accent',
+                  borderColor: 'primary',
                 },
               }}
             >

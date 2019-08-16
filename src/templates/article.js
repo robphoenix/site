@@ -12,7 +12,7 @@ class Article extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle} bg="hotpink">
+      <Layout location={this.props.location} title={siteTitle} background="hotpink">
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         {post.frontmatter.title}
         {post.frontmatter.date}

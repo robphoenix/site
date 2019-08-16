@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { ThemeProvider } from 'theme-ui'
+import { ThemeProvider, ColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
 import { Global, css } from '@emotion/core'
 
@@ -8,13 +8,20 @@ import theme from '../theme'
 import Navigation from './Navigation'
 import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
+import ColorModeToggle from './ColorModeToggle'
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <ColorMode />
+      <div
+        sx={{
+          height: '100vh',
+          backgroundColor: 'background',
+        }}
+      >
         <Global
           styles={css`
             html,
@@ -22,7 +29,6 @@ const Layout = ({ children }) => {
               margin: 0;
               padding: 0;
               box-sizing: border-box;
-              background-color: ${theme.colors.bg};
             }
             *,
             *::before,
@@ -33,6 +39,7 @@ const Layout = ({ children }) => {
             }
           `}
         />
+
         <div
           sx={{
             display: 'flex',
@@ -64,6 +71,7 @@ const Layout = ({ children }) => {
             </h1>
           </Link>
           <Navigation />
+          <ColorModeToggle />
         </div>
 
         {children}

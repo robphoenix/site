@@ -27,9 +27,9 @@ const Articles = () => {
               color: `text`,
               textDecoration: `none`,
               borderBottom: `3px solid`,
-              borderColor: `bg`,
+              borderColor: `background`,
               ':hover': {
-                borderColor: `accent`,
+                borderColor: `primary`,
               },
             })}
           >
