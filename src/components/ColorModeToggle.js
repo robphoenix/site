@@ -1,16 +1,16 @@
 import React from 'react'
-import { useColorMode } from 'theme-ui'
+import { useTheme } from '../context/theme'
 
 const ColorModeToggle = () => {
-  const [colorMode, setColorMode] = useColorMode()
+  const { mode, setMode } = useTheme()
 
   return (
     <button
       onClick={() => {
-        setColorMode(colorMode === 'light' ? 'dark' : 'light')
+        setMode(mode === 'light' ? 'dark' : 'light')
       }}
     >
-      Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+      Toggle {mode === 'light' ? 'Dark' : 'Light'}
     </button>
   )
 }

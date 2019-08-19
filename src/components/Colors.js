@@ -2,14 +2,10 @@
 import { jsx } from 'theme-ui'
 
 import { useThemeUI, useColorMode } from 'theme-ui'
+import { useTheme } from '../context/theme'
 
 const Colors = () => {
-  const { theme } = useThemeUI()
-  const [colorMode] = useColorMode()
-  const { text, background, primary } = theme.colors
-  const initialColorMode = { text, background, primary }
-  const currentMode = theme.colors.modes[colorMode] || initialColorMode
-  const colors = Object.keys(currentMode)
+  const { colors, fonts, mode } = useTheme()
 
   return (
     <div>
@@ -20,19 +16,25 @@ const Colors = () => {
           display: 'flex',
         }}
       >
-        {colors.map(color => (
+        {Object.keys(colors).map(color => (
           <div key={color}>
             <div
               sx={{
                 paddingY: 4,
                 paddingX: 6,
-                backgroundColor: currentMode[color],
+                backgroundColor: colors[color],
                 border: 1,
                 borderColor: 'text',
               }}
             />
-            <span>
-              {color} {currentMode[color]}
+
+            <span
+              sx={{
+                color: 'text',
+                fontFamily: 'body',
+              }}
+            >
+              {color} {colors[color]}
             </span>
           </div>
         ))}

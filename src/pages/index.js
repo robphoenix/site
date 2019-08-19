@@ -20,6 +20,7 @@ const Index = () => {
       >
         {description}
       </div>
+      <Colors />
     </Layout>
   )
 }
