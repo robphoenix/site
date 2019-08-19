@@ -34,7 +34,7 @@ const MobileNavigation = () => {
           <li
             key={label}
             sx={{
-              fontFamily: 'header',
+              fontFamily: 'heading',
               fontSize: 3,
               marginX: [2, 3],
               color: 'text',

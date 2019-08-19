@@ -12,8 +12,14 @@ const Index = () => {
   return (
     <Layout>
       <SEO seoTitle="Home" />
-      <div>{description}</div>
-      <Colors />
+      <div
+        sx={{
+          fontFamily: 'body',
+          color: 'text',
+        }}
+      >
+        {description}
+      </div>
     </Layout>
   )
 }

@@ -22,7 +22,7 @@ const Articles = () => {
           <Link
             to={node.fields.slug}
             css={css({
-              fontFamily: `header`,
+              fontFamily: 'heading',
               fontSize: 3,
               color: `text`,
               textDecoration: `none`,

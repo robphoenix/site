@@ -17,7 +17,13 @@ export default {
   },
   fonts: {
     body: 'Karla, sans-serif',
-    header: 'Overpass Mono, monospace',
+    heading: 'Overpass Mono, monospace',
+    modes: {
+      dark: {
+        body: 'Overpass Mono, monospace',
+        heading: 'Karla, sans-serif',
+      },
+    },
   },
   borders: [
     0,

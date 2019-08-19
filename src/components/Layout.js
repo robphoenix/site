@@ -2,74 +2,86 @@
 import { jsx } from 'theme-ui'
 
 import React from 'react'
-import { ColorMode } from 'theme-ui'
+import { ThemeProvider } from 'emotion-theming'
 import { Link } from 'gatsby'
-import { Global, css } from '@emotion/core'
+import merge from 'lodash.merge'
+import get from 'lodash.get'
 
 import Navigation from './Navigation'
 import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import ColorModeToggle from './ColorModeToggle'
+
+import baseTheme from '../theme'
+import Reset from './Reset'
+
+const modes = ['light', 'dark']
+
+const getTheme = mode =>
+  merge({}, baseTheme, {
+    colors: get(baseTheme.colors.modes, mode, baseTheme.colors),
+    fonts: get(baseTheme.fonts.modes, mode, baseTheme.fonts),
+  })
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
 
-  return (
-    <>
-      <Global
-        styles={css({
-          'html, body': {
-            margin: 0,
-            padding: 0,
-            boxSizing: 'border-box',
-          },
-          '*, *:: before, *::after': {
-            margin: 0,
-            padding: 0,
-            boxSizing: 'inherit',
-          },
-        })}
-      />
-      <ColorMode />
+  const [mode, setMode] = React.useState(modes[0])
+  const theme = getTheme(mode)
 
-      <div
-        sx={{
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: ['center', 'flex-start'],
-          padding: 4,
-        }}
-      >
-        <Link
-          to="/"
+  return (
+    <React.Fragment>
+      <ThemeProvider theme={theme}>
+        <Reset />
+        <div
           sx={{
-            color: 'text',
-            textDecoration: 'none',
-            marginX: 4,
+            height: '100vh',
+            backgroundColor: 'background',
           }}
         >
-          <h1
+          <div
             sx={{
-              fontFamily: 'header',
-              fontSize: [4, 5],
-              fontWeight: 'normal',
-              color: 'text',
-              padding: 0,
-              textTransform: 'uppercase',
-              letterSpacing: 'tracked',
+              display: 'flex',
+              alignItems: 'baseline',
+              justifyContent: ['center', 'flex-start'],
+              padding: 4,
             }}
           >
-            {title}
-          </h1>
-        </Link>
-        <Navigation />
-        <ColorModeToggle />
-      </div>
-
-      {children}
-
-      <MobileNavigation />
-    </>
+            <Link
+              to="/"
+              sx={{
+                color: 'text',
+                textDecoration: 'none',
+                marginX: 4,
+              }}
+            >
+              <h1
+                sx={{
+                  fontFamily: 'heading',
+                  fontSize: [4, 5],
+                  fontWeight: 'normal',
+                  color: 'text',
+                  padding: 0,
+                  textTransform: 'uppercase',
+                  letterSpacing: 'tracked',
+                }}
+              >
+                {title}
+              </h1>
+            </Link>
+            <Navigation />
+            <button
+              onClick={() => {
+                setMode(mode === 'light' ? 'dark' : 'light')
+              }}
+            >
+              Toggle {mode === 'light' ? 'Dark' : 'Light'}
+            </button>
+          </div>
+          {children}
+          <MobileNavigation />
+        </div>
+      </ThemeProvider>
+    </React.Fragment>
   )
 }
 
