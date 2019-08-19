@@ -6,12 +6,15 @@ import { useThemeUI, useColorMode } from 'theme-ui'
 const Colors = () => {
   const { theme } = useThemeUI()
   const [colorMode] = useColorMode()
-  const currentMode = theme.colors.modes[colorMode]
+  const { text, background, primary } = theme.colors
+  const initialColorMode = { text, background, primary }
+  const currentMode = theme.colors.modes[colorMode] || initialColorMode
   const colors = Object.keys(currentMode)
 
   return (
     <div>
       <h2>Colours</h2>
+
       <div
         sx={{
           display: 'flex',

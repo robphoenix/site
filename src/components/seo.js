@@ -8,7 +8,7 @@ const SEO = ({ meta, seoTitle, seoDescription, seoKeywords, lang }) => {
   const { title, description, keywords, author } = useSiteMetadata()
 
   const metaDescription = seoDescription || description
-  const metaKeywords = [...seoKeywords, ...keywords]
+  const metaKeywords = keywords
 
   return (
     <Helmet

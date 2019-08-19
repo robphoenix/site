@@ -6,7 +6,7 @@ const ColorModeToggle = () => {
 
   return (
     <button
-      onClick={e => {
+      onClick={() => {
         setColorMode(colorMode === 'light' ? 'dark' : 'light')
       }}
     >

@@ -6,7 +6,7 @@ module.exports = {
     keywords: [`blog`, `gatsby`, `javascript`, `react`],
     bio: `A frontend developer, working remote in rural North Wales, building UIs for forensic monitoring systems. A former artist, network engineer and backend developer, currently having a lot of fun with HTML, CSS & JS/TS.`,
     lang: `en`,
-    siteUrl: ``,
+    siteUrl: `https://robphoenix.com`,
     social: {
       twitter: `brdltbrncle`,
       github: `robphoenix`,
@@ -16,6 +16,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-theme-style-guide`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
