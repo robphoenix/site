@@ -3,9 +3,9 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import SEO from '../../components/seo'
 
-const ArtWorkPage = ({ location }) => {
+const ArtWorkPage = () => {
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO seoTitle="Artwork" />
       <h1>Art Work</h1>
     </Layout>

@@ -13,6 +13,6 @@ export default [
   },
   {
     label: `Art`,
-    href: `/art/work/`,
+    href: `/art/`,
   },
 ]

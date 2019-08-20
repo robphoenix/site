@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 import topLevelNavigation from '../data/top-level-navigation'
 
-const NavLink = props => (
+const NavLink = ({ current, to, ...props }) => (
   <Link
     sx={{
       color: 'text',
@@ -16,7 +16,7 @@ const NavLink = props => (
         content: '""',
         position: 'absolute',
         right: 0,
-        width: 0,
+        width: current ? '100%' : 0,
         bottom: 0,
         backgroundColor: 'primary',
         height: '2px',
@@ -28,9 +28,14 @@ const NavLink = props => (
         width: '100%',
       },
     }}
+    to={to}
     {...props}
   />
 )
+
+const currentPage = label =>
+  label.toLowerCase() ===
+  window.location.pathname.replace(/\//g, ``).toLowerCase()
 
 const Navigation = () => {
   return (
@@ -57,7 +62,9 @@ const Navigation = () => {
               letterSpacing: 'tracked',
             }}
           >
-            <NavLink to={href}>{label}</NavLink>
+            <NavLink to={href} current={currentPage(label)}>
+              {label}
+            </NavLink>
           </li>
         ))}
       </ul>
