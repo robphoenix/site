@@ -5,7 +5,7 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
 
 import baseTheme from '../theme'
 
-const modes = ['light', 'dark']
+const modes = ['amara', 'elliot', 'marie']
 
 const getTheme = mode =>
   merge({}, baseTheme, {
@@ -34,7 +34,7 @@ const ThemeProvider = React.memo(({ children }) => {
 
   return (
     <EmotionThemeProvider theme={theme}>
-      <ThemeContext.Provider value={{ mode, setMode, fonts, colors }}>
+      <ThemeContext.Provider value={{ mode, setMode, modes, fonts, colors }}>
         {children}
       </ThemeContext.Provider>
     </EmotionThemeProvider>

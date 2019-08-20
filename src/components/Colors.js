@@ -9,7 +9,14 @@ const Colors = () => {
 
   return (
     <div>
-      <h2>Colours</h2>
+      <h2
+        sx={{
+          fontFamily: 'heading',
+          color: 'text',
+        }}
+      >
+        Colours
+      </h2>
 
       <div
         sx={{
