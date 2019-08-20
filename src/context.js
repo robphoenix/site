@@ -5,7 +5,17 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
 
 import baseTheme from './theme'
 
+// So much of this is lifted wholesale from theme-ui, props very much due
+// https://github.com/system-ui/theme-ui/blob/master/packages/theme-ui/src/color-modes.js
+
 const modes = ['amara', 'elliot', 'marie']
+
+const STORAGE_KEY = 'robphoenix-theme'
+
+const storage = {
+  get: init => window.localStorage.getItem(STORAGE_KEY) || init,
+  set: value => window.localStorage.setItem(STORAGE_KEY, value),
+}
 
 const getTheme = mode =>
   merge({}, baseTheme, {
@@ -23,17 +33,32 @@ const useTheme = () => {
   return context
 }
 
-const ThemeProvider = React.memo(({ children }) => {
-  const [mode, setMode] = React.useState(modes[0])
+const useThemeState = () => {
+  const initialMode = storage.get(modes[0])
+  const [mode, setMode] = React.useState(initialMode)
   const theme = getTheme(mode)
 
   const { fonts, colors } = theme
   delete fonts.modes
   delete colors.modes
 
+  React.useEffect(
+    () => {
+      if (!mode) return
+      storage.set(mode)
+    },
+    [mode]
+  )
+
+  return { theme, mode, setMode, fonts, colors }
+}
+
+const ThemeProvider = React.memo(({ children }) => {
+  const { theme, ...rest } = useThemeState()
+
   return (
     <EmotionThemeProvider theme={theme}>
-      <ThemeContext.Provider value={{ mode, setMode, modes, fonts, colors }}>
+      <ThemeContext.Provider value={{ modes, ...rest }}>
         {children}
       </ThemeContext.Provider>
     </EmotionThemeProvider>
