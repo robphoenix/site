@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { useThemeUI, useColorMode } from 'theme-ui'
-import { useTheme } from '../context/theme'
+import { useTheme } from '../context'
 
 const Colors = () => {
-  const { colors, fonts, mode } = useTheme()
+  const { colors } = useTheme()
 
   return (
     <div>

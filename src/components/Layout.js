@@ -3,31 +3,16 @@ import { jsx } from 'theme-ui'
 
 import React from 'react'
 import { Link } from 'gatsby'
-import merge from 'lodash.merge'
-import get from 'lodash.get'
 
 import Navigation from './Navigation'
 import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import { ThemeProvider, useTheme } from '../context/theme'
-
-import baseTheme from '../theme'
+import { ThemeProvider } from '../context'
 import Reset from './Reset'
-import ColorModeToggle from './ColorModeToggle'
-
-// const modes = ['light', 'dark']
-
-// const getTheme = mode =>
-//   merge({}, baseTheme, {
-//     colors: get(baseTheme.colors.modes, mode, baseTheme.colors),
-//     fonts: get(baseTheme.fonts.modes, mode, baseTheme.fonts),
-//   })
+import ToggleTheme from './ToggleTheme'
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
-
-  // const [mode, setMode] = React.useState(modes[0])
-  // const theme = getTheme(mode)
 
   return (
     <React.Fragment>
@@ -70,7 +55,7 @@ const Layout = ({ children }) => {
               </h1>
             </Link>
             <Navigation />
-            <ColorModeToggle />
+            <ToggleTheme />
           </div>
           {children}
           <MobileNavigation />

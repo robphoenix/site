@@ -1,7 +1,7 @@
 import React from 'react'
-import { useTheme } from '../context/theme'
+import { useTheme } from '../context'
 
-const ColorModeToggle = () => {
+const ToggleTheme = () => {
   const { mode, setMode, modes } = useTheme()
 
   return (
@@ -17,4 +17,4 @@ const ColorModeToggle = () => {
   )
 }
 
-export default ColorModeToggle
+export default ToggleTheme

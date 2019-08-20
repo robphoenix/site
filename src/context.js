@@ -3,7 +3,7 @@ import merge from 'lodash.merge'
 import get from 'lodash.get'
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
 
-import baseTheme from '../theme'
+import baseTheme from './theme'
 
 const modes = ['amara', 'elliot', 'marie']
 
@@ -27,9 +27,8 @@ const ThemeProvider = React.memo(({ children }) => {
   const [mode, setMode] = React.useState(modes[0])
   const theme = getTheme(mode)
 
-  const fonts = theme.fonts
+  const { fonts, colors } = theme
   delete fonts.modes
-  const colors = theme.colors
   delete colors.modes
 
   return (
