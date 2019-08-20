@@ -5,6 +5,33 @@ import { Link } from 'gatsby'
 
 import topLevelNavigation from '../data/top-level-navigation'
 
+const NavLink = props => (
+  <Link
+    sx={{
+      color: 'text',
+      textDecoration: 'none',
+      position: 'relative',
+      paddingBottom: 1,
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        right: 0,
+        width: 0,
+        bottom: 0,
+        backgroundColor: 'primary',
+        height: '2px',
+        transition: 'width 0.3s ease-out',
+      },
+      '&:hover::after': {
+        left: 0,
+        right: 'auto',
+        width: '100%',
+      },
+    }}
+    {...props}
+  />
+)
+
 const Navigation = () => {
   return (
     <nav
@@ -30,20 +57,7 @@ const Navigation = () => {
               letterSpacing: 'tracked',
             }}
           >
-            <Link
-              to={href}
-              sx={{
-                color: 'text',
-                textDecoration: 'none',
-                borderBottom: 2,
-                borderColor: 'background',
-                ':hover': {
-                  borderColor: 'primary',
-                },
-              }}
-            >
-              {label}
-            </Link>
+            <NavLink to={href}>{label}</NavLink>
           </li>
         ))}
       </ul>
