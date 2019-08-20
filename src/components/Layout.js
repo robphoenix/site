@@ -9,7 +9,7 @@ import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import { ThemeProvider } from '../context'
 import Reset from './Reset'
-import ToggleTheme from './ToggleTheme'
+import CycleTheme from './CycleTheme'
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
               </h1>
             </Link>
             <Navigation />
-            <ToggleTheme />
+            <CycleTheme />
           </div>
           {children}
           <MobileNavigation />

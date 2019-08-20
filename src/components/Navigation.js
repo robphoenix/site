@@ -43,6 +43,8 @@ const Navigation = () => {
       role="navigation"
       sx={{
         display: ['none', 'flex'],
+        alignItems: 'center',
+        height: 4,
       }}
     >
       <ul
