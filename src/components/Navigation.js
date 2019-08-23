@@ -12,16 +12,16 @@ const Navigation = () => {
     <nav
       role="navigation"
       sx={{
-        display: ['none', 'flex'],
+        display: 'flex',
         alignItems: 'center',
-        height: 4,
+        height: 3,
       }}
     >
       <NavLink
         to="/blog/"
         current={currentPage('blog')}
         sx={{
-          fontSize: 3,
+          fontSize: [1, 2, 3],
         }}
       >
         blog

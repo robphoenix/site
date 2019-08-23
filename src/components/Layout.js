@@ -20,42 +20,64 @@ const Layout = ({ children }) => {
       <ThemeProvider>
         <Reset />
         <Background />
-
         <div
           sx={{
             display: 'flex',
-            alignItems: 'baseline',
-            justifyContent: ['center', 'flex-start'],
-            padding: 4,
+            flexDirection: 'column',
           }}
         >
-          <Link
-            to="/"
+          <div
             sx={{
-              color: 'text',
-              textDecoration: 'none',
-              marginX: 4,
+              padding: [2, 3],
+              borderBottom: 1,
+              borderColor: 'text',
+              display: 'flex',
+              justifyContent: 'center',
             }}
           >
-            <h1
+            <div
               sx={{
-                fontFamily: 'heading',
-                fontSize: [4, 5],
-                fontWeight: 'normal',
-                color: 'text',
-                padding: 0,
-                textTransform: 'uppercase',
-                letterSpacing: 'tracked',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                width: '100%',
+                maxWidth: 8,
               }}
             >
-              {title}
-            </h1>
-          </Link>
-          <Navigation />
-          <CycleTheme />
+              <div
+                sx={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                }}
+              >
+                <Link
+                  to="/"
+                  sx={{
+                    color: 'text',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <h1
+                    sx={{
+                      fontFamily: 'heading',
+                      fontSize: [3, 4, 5],
+                      fontWeight: 'normal',
+                      color: 'text',
+                      textTransform: 'uppercase',
+                      letterSpacing: 'tracked',
+                    }}
+                  >
+                    {title}
+                  </h1>
+                </Link>
+                <Navigation />
+              </div>
+
+              <CycleTheme />
+            </div>
+          </div>
+          {children}
         </div>
-        {children}
-        <MobileNavigation />
       </ThemeProvider>
     </React.Fragment>
   )
