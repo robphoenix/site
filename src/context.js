@@ -8,13 +8,14 @@ import baseTheme from './theme'
 // So much of this is lifted wholesale from theme-ui, props very much due
 // https://github.com/system-ui/theme-ui/blob/master/packages/theme-ui/src/color-modes.js
 
-const modes = ['amara', 'elliot', 'marie']
+const modes = [`amara`, `elliot`, `marie`]
 
-const STORAGE_KEY = 'robphoenix-theme'
+const STORAGE_KEY = `robphoenix-theme`
+const isBrowser = typeof window !== `undefined`
 
 const storage = {
-  get: init => window.localStorage.getItem(STORAGE_KEY) || init,
-  set: value => window.localStorage.setItem(STORAGE_KEY, value),
+  get: init => (isBrowser && window.localStorage.getItem(STORAGE_KEY)) || init,
+  set: value => isBrowser && window.localStorage.setItem(STORAGE_KEY, value),
 }
 
 const getTheme = mode =>

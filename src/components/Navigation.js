@@ -5,7 +5,8 @@ import NavLink from './NavLink'
 
 const currentPage = label =>
   label.toLowerCase() ===
-  window.location.pathname.replace(/\//g, ``).toLowerCase()
+  (typeof window !== `undefined` &&
+    window.location.pathname.replace(/\//g, ``).toLowerCase())
 
 const Navigation = () => {
   return (
