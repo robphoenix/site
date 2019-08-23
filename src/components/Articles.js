@@ -1,8 +1,12 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
 import React from 'react'
 import { Link } from 'gatsby'
 import { useAllMarkdownRemark } from '../hooks/use-all-markdown-remark'
 import css from '@styled-system/css'
 import { Box } from 'rebass'
+import NavLink from './NavLink'
 
 const Articles = () => {
   const { edges } = useAllMarkdownRemark()
@@ -10,31 +14,18 @@ const Articles = () => {
   return edges.map(({ node }) => {
     const { title, date } = node.frontmatter
     return (
-      <ul>
+      <ul key={node.id}>
         <Box
           as="li"
           key={node.fields.slug}
           mb={3}
-          css={{
+          sx={{
             listStyle: `none`,
           }}
         >
-          <Link
-            to={node.fields.slug}
-            css={css({
-              fontFamily: 'heading',
-              fontSize: 3,
-              color: `text`,
-              textDecoration: `none`,
-              borderBottom: `3px solid`,
-              borderColor: `background`,
-              ':hover': {
-                borderColor: `primary`,
-              },
-            })}
-          >
+          <NavLink to={node.fields.slug} current={false}>
             {title}
-          </Link>
+          </NavLink>
         </Box>
       </ul>
     )

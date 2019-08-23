@@ -1,37 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { Link } from 'gatsby'
-
-import topLevelNavigation from '../data/top-level-navigation'
-
-const NavLink = ({ current, to, ...props }) => (
-  <Link
-    sx={{
-      color: 'text',
-      textDecoration: 'none',
-      position: 'relative',
-      paddingBottom: 1,
-      '&::after': {
-        content: '""',
-        position: 'absolute',
-        right: 0,
-        width: current ? '100%' : 0,
-        bottom: 0,
-        backgroundColor: 'primary',
-        height: '2px',
-        transition: 'width 0.3s ease-out',
-      },
-      '&:hover::after': {
-        left: 0,
-        right: 'auto',
-        width: '100%',
-      },
-    }}
-    to={to}
-    {...props}
-  />
-)
+import NavLink from './NavLink'
 
 const currentPage = label =>
   label.toLowerCase() ===
@@ -47,29 +17,15 @@ const Navigation = () => {
         height: 4,
       }}
     >
-      <ul
+      <NavLink
+        to="/blog/"
+        current={currentPage('blog')}
         sx={{
-          display: 'flex',
-          listStyle: 'none',
+          fontSize: 3,
         }}
       >
-        {topLevelNavigation.map(({ href, label }) => (
-          <li
-            key={label}
-            sx={{
-              fontFamily: 'heading',
-              fontSize: 3,
-              marginX: 3,
-              textTransform: 'uppercase',
-              letterSpacing: 'tracked',
-            }}
-          >
-            <NavLink to={href} current={currentPage(label)}>
-              {label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+        blog
+      </NavLink>
     </nav>
   )
 }
