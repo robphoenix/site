@@ -10,6 +10,7 @@ import { useSiteMetadata } from '../hooks/use-site-metadata'
 import { ThemeProvider } from '../context'
 import Reset from './Reset'
 import CycleTheme from './CycleTheme'
+import Background from './Background'
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <ThemeProvider>
         <Reset />
+        <Background />
 
         <div
           sx={{
