@@ -18,48 +18,42 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <ThemeProvider>
         <Reset />
+
         <div
           sx={{
-            height: '100vh',
-            backgroundColor: 'background',
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: ['center', 'flex-start'],
+            padding: 4,
           }}
         >
-          <div
+          <Link
+            to="/"
             sx={{
-              display: 'flex',
-              alignItems: 'baseline',
-              justifyContent: ['center', 'flex-start'],
-              padding: 4,
+              color: 'text',
+              textDecoration: 'none',
+              marginX: 4,
             }}
           >
-            <Link
-              to="/"
+            <h1
               sx={{
+                fontFamily: 'heading',
+                fontSize: [4, 5],
+                fontWeight: 'normal',
                 color: 'text',
-                textDecoration: 'none',
-                marginX: 4,
+                padding: 0,
+                textTransform: 'uppercase',
+                letterSpacing: 'tracked',
               }}
             >
-              <h1
-                sx={{
-                  fontFamily: 'heading',
-                  fontSize: [4, 5],
-                  fontWeight: 'normal',
-                  color: 'text',
-                  padding: 0,
-                  textTransform: 'uppercase',
-                  letterSpacing: 'tracked',
-                }}
-              >
-                {title}
-              </h1>
-            </Link>
-            <Navigation />
-            <CycleTheme />
-          </div>
-          {children}
-          <MobileNavigation />
+              {title}
+            </h1>
+          </Link>
+          <Navigation />
+          <CycleTheme />
         </div>
+        {children}
+        <MobileNavigation />
       </ThemeProvider>
     </React.Fragment>
   )
