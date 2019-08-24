@@ -1,12 +1,21 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+import React from 'react'
 import { HoverMorphIcon } from 'react-svg-buttons'
 
 import { useTheme } from '../context'
 
 const CycleTheme = () => {
   const { mode, setMode, modes, colors } = useTheme()
+
+  React.useEffect(
+    () => {
+      console.log({ mode })
+      setMode(mode)
+    },
+    [mode]
+  )
 
   return (
     <button

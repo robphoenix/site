@@ -4,11 +4,27 @@ import { jsx } from 'theme-ui'
 import { useTheme } from '../context'
 
 const Colors = () => {
-  const { colors, fonts } = useTheme()
+  const { colors, fonts, mode } = useTheme()
 
   return (
     <div>
       <div>
+        <h2
+          sx={{
+            fontFamily: 'heading',
+            color: 'text',
+          }}
+        >
+          Theme: {mode}
+        </h2>
+        <h2
+          sx={{
+            fontFamily: 'heading',
+            color: 'background',
+          }}
+        >
+          Theme: {mode}
+        </h2>
         <h2
           sx={{
             fontFamily: 'heading',

@@ -14,13 +14,20 @@ const Index = () => {
       <SEO seoTitle="Home" />
       <div
         sx={{
-          fontFamily: 'body',
-          color: 'text',
+          width: '100%',
+          maxWidth: 8,
         }}
       >
-        {description}
+        <h2
+          sx={{
+            fontFamily: 'heading',
+            color: 'text',
+          }}
+        >
+          {description}
+        </h2>
+        <Colors />
       </div>
-      <Colors />
     </Layout>
   )
 }

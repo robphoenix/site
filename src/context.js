@@ -1,7 +1,8 @@
 import React from 'react'
 import merge from 'lodash.merge'
 import get from 'lodash.get'
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
+import { ThemeProvider as Emotion } from 'emotion-theming'
+import { ThemeProvider as ThemeUI } from 'theme-ui'
 
 import baseTheme from './theme'
 
@@ -46,6 +47,7 @@ const useThemeState = () => {
   React.useEffect(
     () => {
       if (!mode) return
+
       storage.set(mode)
     },
     [mode]
@@ -56,13 +58,14 @@ const useThemeState = () => {
 
 const ThemeProvider = React.memo(({ children }) => {
   const { theme, ...rest } = useThemeState()
+  console.log(theme.colors)
 
   return (
-    <EmotionThemeProvider theme={theme}>
-      <ThemeContext.Provider value={{ modes, ...rest }}>
+    <Emotion theme={theme}>
+      <ThemeContext.Provider value={{ modes, theme, ...rest }}>
         {children}
       </ThemeContext.Provider>
-    </EmotionThemeProvider>
+    </Emotion>
   )
 })
 
