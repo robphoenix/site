@@ -9,14 +9,6 @@ import { useTheme } from '../context'
 const CycleTheme = () => {
   const { mode, setMode, modes, colors } = useTheme()
 
-  React.useEffect(
-    () => {
-      console.log({ mode })
-      setMode(mode)
-    },
-    [mode]
-  )
-
   return (
     <button
       sx={{
