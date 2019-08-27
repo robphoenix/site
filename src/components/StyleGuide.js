@@ -11,7 +11,8 @@ const StyleGuide = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(8, 1fr)',
-        columnGap: '16px',
+        columnGap: '32px',
+        marginBottom: 5,
       }}
     >
       <h2
@@ -45,7 +46,7 @@ const StyleGuide = () => {
       </h3>
       <div
         sx={{
-          gridColumn: '2/-1',
+          gridColumn: '3/-1',
           display: 'flex',
           flexDirection: ['column', 'row'],
           justifyContent: 'flex-start',
@@ -69,7 +70,7 @@ const StyleGuide = () => {
                 border: 1,
                 borderColor: 'text',
                 borderRadius: '50%',
-                marginRight: [3, 4, 5],
+                marginRight: [2, 3, 4],
                 marginBottom: [1, 2, 3],
               }}
             />
@@ -79,14 +80,14 @@ const StyleGuide = () => {
                 flexDirection: 'column',
                 alignItems: ['flex-start', 'center'],
                 gridColumn: `${i + 1}/${i + 2}`,
-                marginRight: [3, 4, 5],
+                marginRight: [2, 3, 4],
               }}
             >
               <span
                 sx={{
                   justifySelf: 'center',
                   color: 'text',
-                  fontFamily: 'body',
+                  fontFamily: 'heading',
                   fontSize: [1, 2, 3],
                   textTransform: 'uppercase',
                   letterSpacing: 'tracked',
@@ -109,68 +110,57 @@ const StyleGuide = () => {
         ))}
       </div>
 
-      {/* {Object.keys(colors).map((color, i) => (
-        <span
-          key={color}
-          sx={{
-            gridColumn: `${i + 1}/${i + 2}`,
-            justifySelf: 'center',
-            color: 'text',
-            fontFamily: 'body',
-            textTransform: 'uppercase',
-            letterSpacing: 'tracked',
-          }}
-        >
-          {color}
-        </span>
-      ))}
-      {Object.keys(colors).map((color, i) => (
-        <span
-          key={color}
-          sx={{
-            gridColumn: `${i + 1}/${i + 2}`,
-            justifySelf: 'center',
-            color: 'text',
-            fontFamily: 'body',
-          }}
-        >
-          {colors[color]}
-        </span>
-      ))} */}
-      <div
+      <h3
         sx={{
-          gridColumn: '1/-1',
+          gridColumn: '1/1',
+          fontFamily: 'heading',
+          fontSize: [1, 2, 3],
+          color: 'text',
+          textTransform: 'uppercase',
+          letterSpacing: 'tracked',
+          marginBottom: 3,
         }}
       >
-        <h3
-          sx={{
-            fontFamily: 'heading',
-            color: 'text',
-          }}
-        >
-          Fonts
-        </h3>
+        Typography
+      </h3>
 
-        <div
-          sx={{
-            display: 'flex',
-          }}
-        >
-          <ul>
-            {Object.keys(fonts).map((font, i) => (
-              <li
-                key={`${font}${i}`}
-                sx={{
-                  fontFamily: font,
-                  color: 'text',
-                }}
-              >
-                {font}: {fonts[font]}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul
+        sx={{
+          gridColumn: '3/-1',
+          listStyle: 'none',
+        }}
+      >
+        {Object.keys(fonts).map((font, i) => (
+          <li
+            key={`${font}${i}`}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              color: 'text',
+              marginBottom: 3,
+            }}
+          >
+            <span
+              sx={{
+                fontFamily: 'heading',
+                textTransform: 'uppercase',
+                letterSpacing: 'tracked',
+                fontSize: [1, 2, 3],
+              }}
+            >
+              {font}
+            </span>
+            <span
+              sx={{
+                fontFamily: font,
+                fontSize: [3, 4, 5],
+              }}
+            >
+              {fonts[font]}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
