@@ -10,14 +10,6 @@ import baseTheme from './theme'
 
 const modes = [`amara`, `elliot`, `marie`]
 
-const STORAGE_KEY = `robphoenix-theme`
-const isBrowser = typeof window !== `undefined`
-
-const storage = {
-  get: init => (isBrowser && window.localStorage.getItem(STORAGE_KEY)) || init,
-  set: value => isBrowser && window.localStorage.setItem(STORAGE_KEY, value),
-}
-
 const getTheme = mode =>
   merge({}, baseTheme, {
     colors: get(baseTheme.colors.modes, mode, baseTheme.colors),
@@ -35,21 +27,12 @@ const useTheme = () => {
 }
 
 const useThemeState = () => {
-  const initialMode = storage.get(modes[0])
-  const [mode, setMode] = React.useState(initialMode)
+  const [mode, setMode] = React.useState(modes[0])
   const theme = getTheme(mode)
 
   const { fonts, colors } = theme
   delete fonts.modes
   delete colors.modes
-
-  React.useEffect(
-    () => {
-      if (!mode) return
-      storage.set(mode)
-    },
-    [mode]
-  )
 
   return { theme, mode, setMode, fonts, colors }
 }

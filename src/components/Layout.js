@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
               justifyContent: 'center',
               marginBottom: 4,
               backgroundColor: 'text',
+              paddingX: [3, 4, 5],
             }}
           >
             <div
