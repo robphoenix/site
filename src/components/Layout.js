@@ -5,7 +5,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Navigation from './Navigation'
-import MobileNavigation from './MobileNavigation'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import { ThemeProvider } from '../context'
 import Reset from './Reset'
