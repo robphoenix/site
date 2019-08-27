@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 
 import { useTheme } from '../context'
 
-const Colors = () => {
+const StyleGuide = () => {
   const { colors, fonts } = useTheme()
 
   return (
@@ -81,4 +81,4 @@ const Colors = () => {
   )
 }
 
-export default Colors
+export default StyleGuide

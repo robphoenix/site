@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import Colors from '../components/Colors'
+import StyleGuide from '../components/StyleGuide'
 
 const Index = () => {
   const { description } = useSiteMetadata()
@@ -14,13 +14,30 @@ const Index = () => {
       <SEO seoTitle="Home" />
       <div
         sx={{
-          fontFamily: 'body',
-          color: 'text',
+          width: '100%',
+          maxWidth: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
         }}
       >
-        {description}
+        <div
+          sx={{
+            display: 'grid',
+            gridTemplateRows: '1fr',
+          }}
+        >
+          <h2
+            sx={{
+              fontFamily: 'body',
+              color: 'text',
+            }}
+          >
+            {description}
+          </h2>
+        </div>
+        <StyleGuide />
       </div>
-      <Colors />
     </Layout>
   )
 }
