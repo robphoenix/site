@@ -3,40 +3,33 @@ import { jsx } from 'theme-ui'
 
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
-import { useSiteMetadata } from '../hooks/use-site-metadata'
 import StyleGuide from '../components/StyleGuide'
+import About from '../components/About'
 
 const Index = () => {
-  const { description } = useSiteMetadata()
-
   return (
     <Layout>
       <SEO seoTitle="Home" />
       <div
         sx={{
-          width: '100%',
-          maxWidth: 8,
           display: 'flex',
-          flexDirection: 'column',
           justifyContent: 'center',
         }}
       >
         <div
           sx={{
-            display: 'grid',
-            gridTemplateRows: '1fr',
+            width: '100%',
+            maxWidth: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingX: [1, 2, 3],
           }}
         >
-          <h2
-            sx={{
-              fontFamily: 'body',
-              color: 'text',
-            }}
-          >
-            {description}
-          </h2>
+          <About />
+
+          <StyleGuide />
         </div>
-        <StyleGuide />
       </div>
     </Layout>
   )

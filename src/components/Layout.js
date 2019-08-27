@@ -27,15 +27,15 @@ const Layout = ({ children }) => {
         >
           <div
             sx={{
-              padding: [2, 3],
-              borderBottom: 1,
-              borderColor: 'text',
               display: 'flex',
               justifyContent: 'center',
+              marginBottom: 4,
+              backgroundColor: 'text',
             }}
           >
             <div
               sx={{
+                padding: [1, 2, 3],
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
                 <Link
                   to="/"
                   sx={{
-                    color: 'text',
+                    color: 'background',
                     textDecoration: 'none',
                   }}
                 >
@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
                       fontFamily: 'heading',
                       fontSize: [3, 4, 5],
                       fontWeight: 'normal',
-                      color: 'text',
+                      color: 'background',
                       textTransform: 'uppercase',
                       letterSpacing: 'tracked',
                     }}
@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
               <CycleTheme />
             </div>
           </div>
-          {children}
+          <div sx={{ paddingX: [3, 4, 5] }}>{children}</div>
         </div>
       </ThemeProvider>
     </React.Fragment>
