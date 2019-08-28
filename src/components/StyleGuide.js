@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
+import contrast from 'get-contrast'
+
 import { useTheme } from '../context'
 
 const StyleGuide = () => {
@@ -11,7 +13,7 @@ const StyleGuide = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(8, 1fr)',
-        columnGap: '32px',
+        columnGap: [2, 3, 4],
         marginBottom: 5,
       }}
     >
@@ -39,7 +41,6 @@ const StyleGuide = () => {
           color: 'text',
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
-          marginBottom: 3,
         }}
       >
         Colours
@@ -118,7 +119,38 @@ const StyleGuide = () => {
           color: 'text',
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
-          marginBottom: 3,
+        }}
+      >
+        Colour Contrast
+      </h3>
+      <div
+        sx={{
+          gridColumn: '3/-1',
+          alignSelf: 'start',
+          display: 'flex',
+          alignItems: 'baseline',
+          marginBottom: 5,
+          fontFamily: 'body',
+          color: 'text',
+          lineHeight: 1,
+        }}
+      >
+        <span sx={{ height: 'auto', fontSize: [6, 7, 8], marginRight: 3 }}>
+          {contrast.ratio(colors.text, colors.background).toFixed(2)}
+        </span>
+        <span sx={{ fontSize: [5, 6, 7] }}>
+          {contrast.score(colors.text, colors.background)}
+        </span>
+      </div>
+
+      <h3
+        sx={{
+          gridColumn: '1/1',
+          fontFamily: 'heading',
+          fontSize: [1, 2, 3],
+          color: 'text',
+          textTransform: 'uppercase',
+          letterSpacing: 'tracked',
         }}
       >
         Typography
