@@ -15,7 +15,6 @@ const Navigation = () => {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        height: 3,
       }}
     >
       <NavLink

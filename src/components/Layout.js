@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
               marginBottom: 4,
               backgroundColor: 'text',
               paddingX: [3, 4, 5],
+              paddingY: [1, 2, 3],
             }}
           >
             <div
@@ -65,6 +66,7 @@ const Layout = ({ children }) => {
                       color: 'background',
                       textTransform: 'uppercase',
                       letterSpacing: 'tracked',
+                      lineHeight: 1,
                     }}
                   >
                     {title}
