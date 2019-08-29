@@ -21,7 +21,7 @@ const Typography = () => {
               display: 'flex',
               flexDirection: 'column',
               color: 'text',
-              marginBottom: i ? 0 : [1, 2, 3],
+              marginBottom: i ? 0 : [3, 4, 5],
             }}
           >
             <span
@@ -30,6 +30,7 @@ const Typography = () => {
                 textTransform: 'uppercase',
                 letterSpacing: 'tracked',
                 fontSize: [1, 2, 3],
+                marginBottom: [1, 2, 3],
               }}
             >
               {font}

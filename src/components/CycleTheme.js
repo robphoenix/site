@@ -12,9 +12,17 @@ const CycleTheme = () => {
   return (
     <div
       sx={{
+        width: '100%',
+        position: 'fixed',
+        bottom: 0,
+        borderTop: [1, 1, 0],
+        borderColor: 'primary',
+        paddingX: [3, 3, 4],
+        paddingY: [2, 2, 4],
         display: 'flex',
+        justifyContent: 'flex-end',
+        backgroundColor: ['background', 'background', 'transparent'],
         alignItems: 'center',
-        justifyContent: 'space-between',
       }}
     >
       <span
@@ -23,7 +31,7 @@ const CycleTheme = () => {
           fontFamily: 'body',
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
-          marginRight: 1,
+          marginRight: 2,
         }}
       >
         {mode}

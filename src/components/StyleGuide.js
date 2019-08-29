@@ -6,6 +6,7 @@ import ColourContrast from './ColourContrast'
 import Colours from './Colours'
 import TypeScale from './TypeScale'
 import Spacing from './Spacing'
+import { useTheme } from '../context'
 
 const SectionHeading = props => (
   <h3
@@ -32,6 +33,7 @@ const Section = props => (
 )
 
 const StyleGuide = () => {
+  const { mode } = useTheme()
   return (
     <div
       sx={{
@@ -55,7 +57,7 @@ const StyleGuide = () => {
           paddingBottom: 2,
         }}
       >
-        Style Guide
+        style guide
       </h2>
 
       <SectionHeading>Colours</SectionHeading>

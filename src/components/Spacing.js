@@ -5,11 +5,11 @@ import { useTheme } from '../context'
 const Spacing = () => {
   const { space } = useTheme()
   const mobileLimit = space[7]
-  space.shift()
+  const [, ...rest] = space
 
   return (
     <ul sx={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
-      {space.map(s => (
+      {rest.map(s => (
         <li
           key={s}
           sx={{
