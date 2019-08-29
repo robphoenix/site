@@ -10,27 +10,8 @@ const Index = () => {
   return (
     <Layout>
       <SEO seoTitle="Home" />
-      <div
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          sx={{
-            width: '100%',
-            maxWidth: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            paddingX: [1, 2, 3],
-          }}
-        >
-          <About />
-
-          <StyleGuide />
-        </div>
-      </div>
+      <About />
+      <StyleGuide />
     </Layout>
   )
 }

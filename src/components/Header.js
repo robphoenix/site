@@ -10,15 +10,15 @@ const Header = () => {
       sx={{
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         marginBottom: 4,
         backgroundColor: 'text',
         paddingX: [3, 4, 0],
-        paddingY: 3,
+        height: [4, 4, 5],
       }}
     >
       <div
         sx={{
-          padding: [1, 2, 3],
           width: '100%',
           display: 'flex',
           alignItems: 'baseline',

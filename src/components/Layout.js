@@ -9,9 +9,23 @@ import CycleTheme from './CycleTheme'
 import Background from './Background'
 import Header from './Header'
 
+const Wrapper = props => (
+  <div
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+    {...props}
+  />
+)
 const Content = props => (
   <div
     sx={{
+      width: '100%',
+      maxWidth: 8,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       paddingX: [3, 4, 0],
     }}
     {...props}
@@ -25,7 +39,9 @@ const Layout = ({ children }) => {
         <Reset />
         <Background />
         <Header />
-        <Content>{children}</Content>
+        <Wrapper>
+          <Content>{children}</Content>
+        </Wrapper>
         <CycleTheme />
       </ThemeProvider>
     </>
