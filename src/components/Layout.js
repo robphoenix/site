@@ -47,8 +47,10 @@ const Layout = ({ children }) => {
             >
               <div
                 sx={{
+                  width: '100%',
                   display: 'flex',
                   alignItems: 'baseline',
+                  justifyContent: 'space-between',
                 }}
               >
                 <Link
@@ -74,11 +76,18 @@ const Layout = ({ children }) => {
                 </Link>
                 <Navigation />
               </div>
-
-              <CycleTheme />
             </div>
           </div>
           <div sx={{ paddingX: [3, 4, 5] }}>{children}</div>
+          <div
+            sx={{
+              position: 'fixed',
+              bottom: 3,
+              right: 3,
+            }}
+          >
+            <CycleTheme />
+          </div>
         </div>
       </ThemeProvider>
     </React.Fragment>

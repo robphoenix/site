@@ -16,6 +16,7 @@ const About = () => {
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
           marginBottom: 3,
+          lineHeight: 1.5,
         }}
       >
         {description}

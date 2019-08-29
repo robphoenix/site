@@ -27,6 +27,7 @@ const Spacing = () => {
               fontSize: [1, 2, 2],
               display: 'flex',
               alignItems: 'center',
+              color: 'text',
             }}
           >
             {s}px
