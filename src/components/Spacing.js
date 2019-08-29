@@ -4,9 +4,8 @@ import { useTheme } from '../context'
 
 const Spacing = () => {
   const { space } = useTheme()
+  const mobileLimit = space[7]
   space.shift()
-
-  const mobileLimit = 128
 
   return (
     <ul sx={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
