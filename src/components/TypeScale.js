@@ -14,6 +14,7 @@ const TypeScale = () => {
     >
       {fontSizes.map((fontSize, i) => (
         <div
+          key={fontSize}
           sx={{
             fontSize: i,
             fontFamily: 'body',
