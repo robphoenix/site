@@ -30,11 +30,11 @@ const useThemeState = () => {
   const [mode, setMode] = React.useState(modes[0])
   const theme = getTheme(mode)
 
-  const { fonts, colors } = theme
+  const { fonts, colors, fontSizes } = theme
   delete fonts.modes
   delete colors.modes
 
-  return { theme, mode, setMode, fonts, colors }
+  return { theme, mode, setMode, fonts, colors, fontSizes }
 }
 
 const ThemeProvider = React.memo(({ children }) => {
