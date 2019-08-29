@@ -5,6 +5,7 @@ import Typography from './Typography'
 import ColourContrast from './ColourContrast'
 import Colours from './Colours'
 import TypeScale from './TypeScale'
+import Spacing from './Spacing'
 
 const SectionHeading = props => (
   <h3
@@ -75,6 +76,11 @@ const StyleGuide = () => {
       <SectionHeading>Type Scale</SectionHeading>
       <Section>
         <TypeScale />
+      </Section>
+
+      <SectionHeading>Spacing</SectionHeading>
+      <Section>
+        <Spacing />
       </Section>
     </div>
   )
