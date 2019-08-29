@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import { useAllMarkdownRemark } from '../hooks/use-all-markdown-remark'
 import NavLink from './NavLink'
 
-const Articles = () => {
+const Posts = () => {
   const { edges } = useAllMarkdownRemark()
 
   return (
@@ -48,4 +48,4 @@ const Articles = () => {
   )
 }
 
-export default Articles
+export default Posts

@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 const AboutPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO seoTitle="About" />
+      <SEO subtitle="About" />
       <h1>About</h1>
     </Layout>
   )

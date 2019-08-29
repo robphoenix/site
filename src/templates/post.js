@@ -5,15 +5,14 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
-class Article extends React.Component {
+class Post extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle} background="hotpink">
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+      <Layout>
+        <SEO subtitle={post.frontmatter.title} seoDescription={post.excerpt} />
         {post.frontmatter.title}
         {post.frontmatter.date}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -38,10 +37,10 @@ class Article extends React.Component {
   }
 }
 
-export default Article
+export default Post
 
 export const pageQuery = graphql`
-  query ArticleBySlug($slug: String!) {
+  query PostBySlug($slug: String!) {
     site {
       siteMetadata {
         title

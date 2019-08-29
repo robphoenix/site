@@ -9,7 +9,7 @@ import About from '../components/About'
 const Index = () => {
   return (
     <Layout>
-      <SEO seoTitle="Home" />
+      <SEO subtitle="Home" />
       <About />
       <StyleGuide />
     </Layout>

@@ -6,7 +6,7 @@ import SEO from '../../components/seo'
 const ArtWorkPage = () => {
   return (
     <Layout>
-      <SEO seoTitle="Artwork" />
+      <SEO subtitle="Artwork" />
       <h1>Art Work</h1>
     </Layout>
   )

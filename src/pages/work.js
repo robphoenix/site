@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 const WorkPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO seoTitle="About" />
+      <SEO subtitle="About" />
       <h1>Work</h1>
     </Layout>
   )
