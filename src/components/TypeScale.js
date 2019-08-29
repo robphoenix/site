@@ -5,43 +5,36 @@ import { useTheme } from '../context'
 
 const TypeScale = () => {
   const { fontSizes } = useTheme()
-  const scale = [...fontSizes].reverse()
   return (
     <div
       sx={{
-        display: 'grid',
-        gridTemplateRows: 'repeat(2, 1fr)',
-        gridTemplateColumns: `repeat(${fontSizes.length}, 1fr)`,
-        columnGap: [1, 2, 3],
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
-      {scale.map((fontSize, i) => (
-        <span
+      {fontSizes.map((fontSize, i) => (
+        <div
           sx={{
-            gridRow: '1/2',
-            gridColumn: `${i + 1}/${i + 2}`,
-            fontSize: fontSize,
-            fontFamily: 'body',
-            color: 'text',
-            alignSelf: 'baseline',
-            justifySelf: 'start',
-          }}
-        >
-          A
-        </span>
-      ))}
-      {scale.map((fontSize, i) => (
-        <span
-          sx={{
-            gridRow: '2/3',
-            gridColumn: `${i + 1}/${i + 2}`,
-            fontSize: [1, 2, 3],
+            fontSize: i,
             fontFamily: 'body',
             color: 'text',
           }}
         >
-          {fontSize}px
-        </span>
+          <span
+            sx={{
+              marginRight: `${fontSize}px`,
+            }}
+          >
+            {fontSize}px
+          </span>
+          <span
+            sx={{
+              display: ['none', 'none', 'inline'],
+            }}
+          >
+            Hamburgefons
+          </span>
+        </div>
       ))}
     </div>
   )

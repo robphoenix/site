@@ -32,7 +32,7 @@ const Colours = () => {
               borderColor: 'text',
               borderRadius: '50%',
               marginRight: [2, 3, 4],
-              marginBottom: [2, 3, 3],
+              marginBottom: 3,
             }}
           />
           <div
@@ -62,6 +62,7 @@ const Colours = () => {
                 color: 'text',
                 fontFamily: 'body',
                 fontSize: [1, 2, 3],
+                marginBottom: [3, 3, 0],
               }}
             >
               {colors[color]}

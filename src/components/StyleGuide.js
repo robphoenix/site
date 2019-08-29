@@ -9,7 +9,7 @@ import TypeScale from './TypeScale'
 const SectionHeading = props => (
   <h3
     sx={{
-      gridColumn: '1/2',
+      gridColumn: '1/1',
       fontFamily: 'heading',
       fontSize: [1, 2, 3],
       color: 'text',
@@ -23,8 +23,8 @@ const SectionHeading = props => (
 const Section = props => (
   <section
     sx={{
-      gridColumn: '3/-1',
-      marginBottom: [3, 4, 5],
+      gridColumn: '2/-1',
+      marginBottom: [4, 4, 5],
     }}
     {...props}
   />
@@ -36,7 +36,7 @@ const StyleGuide = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(8, 1fr)',
-        columnGap: [1, 2, 3],
+        columnGap: [3, 4, 5],
         marginBottom: 5,
       }}
     >
