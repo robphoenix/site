@@ -23,6 +23,7 @@ const CycleTheme = () => {
         justifyContent: 'flex-end',
         backgroundColor: ['background', 'background', 'transparent'],
         alignItems: 'center',
+        zIndex: [10, 10, 2]
       }}
     >
       <span

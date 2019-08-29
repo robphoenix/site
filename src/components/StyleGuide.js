@@ -6,7 +6,6 @@ import ColourContrast from './ColourContrast'
 import Colours from './Colours'
 import TypeScale from './TypeScale'
 import Spacing from './Spacing'
-import { useTheme } from '../context'
 
 const SectionHeading = props => (
   <h3
@@ -33,14 +32,12 @@ const Section = props => (
 )
 
 const StyleGuide = () => {
-  const { mode } = useTheme()
   return (
     <div
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(8, 1fr)',
         columnGap: [3, 4, 5],
-        marginBottom: 5,
       }}
     >
       <h2

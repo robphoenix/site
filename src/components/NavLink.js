@@ -9,12 +9,11 @@ const NavLink = ({ current, to, ...props }) => (
       color: 'background',
       textDecoration: 'none',
       position: 'relative',
-      paddingBottom: 1,
       fontFamily: 'heading',
-      marginX: 3,
       textTransform: 'uppercase',
       letterSpacing: 'tracked',
-      '&::after': {
+      paddingBottom: 1,
+      '::after': {
         content: '""',
         position: 'absolute',
         right: 0,
@@ -24,7 +23,7 @@ const NavLink = ({ current, to, ...props }) => (
         height: '2px',
         transition: 'width 0.3s ease-out',
       },
-      '&:hover::after': {
+      ':hover::after,:focus::after,:active::after': {
         left: 0,
         right: 'auto',
         width: '100%',

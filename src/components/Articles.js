@@ -8,22 +8,24 @@ const Articles = () => {
   const { edges } = useAllMarkdownRemark()
 
   return (
-    <div>
-      <ul
-        sx={{
-          listStyle: 'none',
-        }}
-      >
-        {edges.map(edge => (
-          <li
-            key={edge.node.id}
-            sx={{
-              marginBottom: 2,
-              fontFamily: 'heading',
-              color: 'text',
-            }}
-          >
-            <span>{edge.node.frontmatter.date}</span>
+    <ol
+      sx={{
+        listStyle: 'none',
+      }}
+    >
+      {edges.map(edge => (
+        <li
+          key={edge.node.id}
+          sx={{
+            marginX: 0,
+            marginBottom: 3,
+            fontFamily: 'heading',
+            color: 'text',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <div>
             <NavLink
               to={edge.node.fields.slug}
               current={false}
@@ -32,34 +34,18 @@ const Articles = () => {
                 textTransform: 'uppercase',
                 letterSpacing: 'tracked',
                 color: 'text',
+                ':visited': {
+                  color: 'primary',
+                },
               }}
             >
               {edge.node.frontmatter.title}
             </NavLink>
-          </li>
-        ))}
-      </ul>
-    </div>
+          </div>
+        </li>
+      ))}
+    </ol>
   )
-
-  // return edges.map(({ node }) => {
-  //   const { title, date } = node.frontmatter
-  //   return (
-  //     <ul key={node.id}>
-  //       <li
-  //         key={node.fields.slug}
-  //         sx={{
-  //           marginBottom: 3,
-  //           listStyle: `none`,
-  //         }}
-  //       >
-  //         <NavLink to={node.fields.slug} current={false}>
-  //           {title}
-  //         </NavLink>
-  //       </li>
-  //     </ul>
-  //   )
-  // })
 }
 
 export default Articles
