@@ -21,7 +21,7 @@ const Typography = () => {
               display: 'flex',
               flexDirection: 'column',
               color: 'text',
-              marginBottom: 3,
+              marginBottom: i ? 0 : [1, 2, 3],
             }}
           >
             <span

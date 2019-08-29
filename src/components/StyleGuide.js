@@ -4,6 +4,7 @@ import { jsx } from 'theme-ui'
 import Typography from './Typography'
 import ColourContrast from './ColourContrast'
 import Colours from './Colours'
+import TypeScale from './TypeScale'
 
 const SectionHeading = props => (
   <h3
@@ -69,6 +70,11 @@ const StyleGuide = () => {
       <SectionHeading>Typography</SectionHeading>
       <Section>
         <Typography />
+      </Section>
+
+      <SectionHeading>Type Scale</SectionHeading>
+      <Section>
+        <TypeScale />
       </Section>
     </div>
   )
