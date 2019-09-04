@@ -16,7 +16,14 @@ const getTheme = mode =>
     fonts: get(baseTheme.fonts.modes, mode, baseTheme.fonts),
   })
 
-const ThemeContext = React.createContext({})
+const { fonts, colors } = baseTheme
+delete fonts.modes
+delete colors.modes
+const ThemeContext = React.createContext({
+  ...baseTheme,
+  fonts,
+  colors,
+})
 
 const useTheme = () => {
   const context = React.useContext(ThemeContext)
@@ -28,7 +35,8 @@ const useTheme = () => {
 
 const ThemeProvider = React.memo(({ children }) => {
   const [mode, setMode] = React.useState(modes[0])
-  const theme = getTheme(mode)
+  const theme = getTheme(mode) || baseTheme
+  console.log({ theme })
 
   const { fonts, colors, fontSizes, space } = theme
   delete fonts.modes

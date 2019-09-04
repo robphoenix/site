@@ -8,6 +8,7 @@ import CycleTheme from './CycleTheme'
 import Background from './Background'
 import Header from './Header'
 import InterTypeface from './InterTypeface'
+import { ThemeProvider } from '../context'
 
 const Wrapper = props => (
   <div
@@ -37,6 +38,7 @@ const Content = props => (
 const Layout = ({ children }) => {
   return (
     <>
+      {/* <ThemeProvider> */}
       <Reset />
       <InterTypeface />
       <Background />
@@ -45,6 +47,7 @@ const Layout = ({ children }) => {
         <Content>{children}</Content>
       </Wrapper>
       <CycleTheme />
+      {/* </ThemeProvider> */}
     </>
   )
 }

@@ -19,10 +19,10 @@ const ColourContrast = () => {
       }}
     >
       <span sx={{ height: 'auto', fontSize: [5, 6, 7], marginRight: 3 }}>
-        {contrast.ratio(colors.text, colors.background).toFixed(2)}
+        {colors && contrast.ratio(colors.text, colors.background).toFixed(2)}
       </span>
       <span sx={{ fontSize: [4, 5, 6] }}>
-        {contrast.score(colors.text, colors.background)}
+        {colors && contrast.score(colors.text, colors.background)}
       </span>
     </div>
   )

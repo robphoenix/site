@@ -5,11 +5,13 @@ import { useTheme } from '../context'
 
 const Background = () => {
   const { colors } = useTheme()
+  console.log({ colors })
+
   return (
     <Global
       styles={{
         body: {
-          background: colors.background,
+          background: colors && colors.background,
         },
       }}
     />

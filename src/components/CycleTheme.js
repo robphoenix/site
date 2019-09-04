@@ -23,7 +23,7 @@ const CycleTheme = () => {
         justifyContent: 'flex-end',
         backgroundColor: ['background', 'background', 'transparent'],
         alignItems: 'center',
-        zIndex: [10, 10, 2]
+        zIndex: [10, 10, 2],
       }}
     >
       <span
@@ -53,7 +53,7 @@ const CycleTheme = () => {
         <HoverMorphIcon
           baseType="ban"
           hoverType="fwd"
-          color={colors.primary}
+          color={colors && colors.primary}
           size={32}
           title="Cycle Theme"
         />

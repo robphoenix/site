@@ -12,31 +12,32 @@ const TypeScale = () => {
         flexDirection: 'column',
       }}
     >
-      {fontSizes.map((fontSize, i) => (
-        <div
-          key={fontSize}
-          sx={{
-            fontSize: i,
-            fontFamily: 'body',
-            color: 'text',
-          }}
-        >
-          <span
+      {fontSizes &&
+        fontSizes.map((fontSize, i) => (
+          <div
+            key={fontSize}
             sx={{
-              marginRight: `${fontSize}px`,
+              fontSize: i,
+              fontFamily: 'body',
+              color: 'text',
             }}
           >
-            {fontSize}px
-          </span>
-          <span
-            sx={{
-              display: ['none', 'none', 'inline'],
-            }}
-          >
-            Hamburgefons
-          </span>
-        </div>
-      ))}
+            <span
+              sx={{
+                marginRight: `${fontSize}px`,
+              }}
+            >
+              {fontSize}px
+            </span>
+            <span
+              sx={{
+                display: ['none', 'none', 'inline'],
+              }}
+            >
+              Hamburgefons
+            </span>
+          </div>
+        ))}
     </div>
   )
 }

@@ -4,8 +4,8 @@ import { useTheme } from '../context'
 
 const Spacing = () => {
   const { space } = useTheme()
-  const mobileLimit = space[7]
-  const [, ...rest] = space
+  const mobileLimit = space && space[7]
+  const [, ...rest] = space || []
 
   return (
     <ul sx={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
