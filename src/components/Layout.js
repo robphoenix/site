@@ -8,6 +8,7 @@ import Reset from './Reset'
 import CycleTheme from './CycleTheme'
 import Background from './Background'
 import Header from './Header'
+import InterTypeface from './InterTypeface'
 
 const Wrapper = props => (
   <div
@@ -39,6 +40,7 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider>
         <Reset />
+        <InterTypeface />
         <Background />
         <Header />
         <Wrapper>

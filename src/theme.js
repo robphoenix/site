@@ -16,16 +16,16 @@ export default {
     mega: '0.25em',
   },
   fonts: {
-    body: 'Karla, sans-serif',
     heading: 'Overpass Mono, monospace',
+    body: 'Karla, sans-serif',
     modes: {
       elliot: {
-        body: 'Overpass Mono, monospace',
-        heading: 'Karla, sans-serif',
+        heading: 'Inter, sans-serif',
+        body: 'system-ui, sans-serif',
       },
       marie: {
-        body: 'system-ui, sans-serif',
         heading: 'Space Mono, monospace',
+        body: 'system-ui, sans-serif',
       },
     },
   },

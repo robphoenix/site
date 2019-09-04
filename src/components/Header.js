@@ -14,7 +14,7 @@ const Header = () => {
         marginBottom: 4,
         backgroundColor: 'text',
         paddingX: [3, 4, 0],
-        height: [4, 4, 5],
+        height: 4,
       }}
     >
       <div
