@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui'
 
 import React from 'react'
 
-import { ThemeProvider } from '../context'
 import Reset from './Reset'
 import CycleTheme from './CycleTheme'
 import Background from './Background'
@@ -38,16 +37,14 @@ const Content = props => (
 const Layout = ({ children }) => {
   return (
     <>
-      <ThemeProvider>
-        <Reset />
-        <InterTypeface />
-        <Background />
-        <Header />
-        <Wrapper>
-          <Content>{children}</Content>
-        </Wrapper>
-        <CycleTheme />
-      </ThemeProvider>
+      <Reset />
+      <InterTypeface />
+      <Background />
+      <Header />
+      <Wrapper>
+        <Content>{children}</Content>
+      </Wrapper>
+      <CycleTheme />
     </>
   )
 }

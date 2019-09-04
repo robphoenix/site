@@ -26,7 +26,7 @@ const useTheme = () => {
   return context
 }
 
-const useThemeState = () => {
+const ThemeProvider = React.memo(({ children }) => {
   const [mode, setMode] = React.useState(modes[0])
   const theme = getTheme(mode)
 
@@ -34,15 +34,19 @@ const useThemeState = () => {
   delete fonts.modes
   delete colors.modes
 
-  return { theme, mode, setMode, fonts, colors, fontSizes, space }
-}
-
-const ThemeProvider = React.memo(({ children }) => {
-  const { theme, ...rest } = useThemeState()
-
   return (
     <EmotionThemeProvider theme={theme}>
-      <ThemeContext.Provider value={{ modes, ...rest }}>
+      <ThemeContext.Provider
+        value={{
+          modes,
+          mode,
+          setMode,
+          fonts,
+          colors,
+          fontSizes,
+          space,
+        }}
+      >
         {children}
       </ThemeContext.Provider>
     </EmotionThemeProvider>
