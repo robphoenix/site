@@ -1,13 +1,13 @@
+// @ts-nocheck
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 
-import React from 'react'
 import { HoverMorphIcon } from 'react-svg-buttons'
 
-import { useTheme } from '../context'
-
 const CycleTheme = () => {
-  const { mode, setMode, modes, colors } = useTheme()
+  const modes = [`light`, `dark`]
+  const { theme, colorMode, setColorMode } = useThemeUI()
+  const { colors } = theme
 
   return (
     <div
@@ -35,7 +35,7 @@ const CycleTheme = () => {
           marginRight: 2,
         }}
       >
-        {mode}
+        {colorMode}
       </span>
       <button
         sx={{
@@ -45,9 +45,9 @@ const CycleTheme = () => {
           border: 0,
         }}
         onClick={() => {
-          const index = modes.indexOf(mode)
+          const index = modes.indexOf(colorMode)
           const next = modes[(index + 1) % modes.length]
-          setMode(next)
+          setColorMode(next)
         }}
       >
         <HoverMorphIcon

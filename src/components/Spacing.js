@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { useTheme } from '../context'
+import { jsx, useThemeUI } from 'theme-ui'
 
 const Spacing = () => {
-  const { space } = useTheme()
+  const { theme } = useThemeUI()
+  const { space } = theme
   const mobileLimit = space && space[7]
   const [, ...rest] = space || []
 

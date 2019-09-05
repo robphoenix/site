@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-
-import { useTheme } from '../context'
+import { jsx, useThemeUI } from 'theme-ui'
 
 const TypeScale = () => {
-  const { fontSizes } = useTheme()
+  const { theme } = useThemeUI()
+  const { fontSizes } = theme
+
   return (
     <div
       sx={{

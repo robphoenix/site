@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 
 import contrast from 'get-contrast'
-import { useTheme } from '../context'
 
 const ColourContrast = () => {
-  const { colors } = useTheme()
+  const { theme } = useThemeUI()
+  const { colors } = theme
 
   return (
     <div

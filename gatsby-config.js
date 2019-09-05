@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

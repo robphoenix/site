@@ -16,18 +16,8 @@ export default {
     mega: '0.25em',
   },
   fonts: {
-    heading: 'Overpass Mono, monospace',
+    heading: 'Inter, sans-serif',
     body: 'Karla, sans-serif',
-    modes: {
-      elliot: {
-        heading: 'Inter, sans-serif',
-        body: 'system-ui, sans-serif',
-      },
-      marie: {
-        heading: 'Space Mono, monospace',
-        body: 'system-ui, sans-serif',
-      },
-    },
   },
   borders: [
     0,
@@ -38,22 +28,17 @@ export default {
     '16px solid',
     '32px solid',
   ],
-  initialColorMode: 'amara',
+  initialColorMode: 'light',
   useCustomProperties: true,
   colors: {
     text: '#1e2327',
     background: '#fafafa',
     primary: `#00b8a9`,
     modes: {
-      elliot: {
+      dark: {
         text: '#fafafa',
         background: '#1e2327',
         primary: '#0cf',
-      },
-      marie: {
-        text: 'hotpink',
-        background: 'whitesmoke',
-        primary: 'black',
       },
     },
   },

@@ -54,10 +54,10 @@ const StyleGuide = () => {
           paddingBottom: 2,
         }}
       >
-        style guide
+        design tokens
       </h2>
 
-      <SectionHeading>Colours</SectionHeading>
+      <SectionHeading>Colour Palette</SectionHeading>
       <Section>
         <Colours />
       </Section>

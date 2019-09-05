@@ -1,10 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useThemeUI } from 'theme-ui'
 
 import { useTheme } from '../context'
 
 const Colours = () => {
-  const { colors } = useTheme()
+  const { theme } = useThemeUI()
+  const { colors } = theme
+  delete colors.modes
 
   return (
     <div

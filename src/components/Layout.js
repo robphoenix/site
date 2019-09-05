@@ -5,10 +5,7 @@ import React from 'react'
 
 import Reset from './Reset'
 import CycleTheme from './CycleTheme'
-import Background from './Background'
 import Header from './Header'
-import InterTypeface from './InterTypeface'
-import { ThemeProvider } from '../context'
 
 const Wrapper = props => (
   <div
@@ -19,6 +16,7 @@ const Wrapper = props => (
     {...props}
   />
 )
+
 const Content = props => (
   <div
     sx={{
@@ -38,16 +36,12 @@ const Content = props => (
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <ThemeProvider> */}
       <Reset />
-      <InterTypeface />
-      <Background />
       <Header />
       <Wrapper>
         <Content>{children}</Content>
       </Wrapper>
       <CycleTheme />
-      {/* </ThemeProvider> */}
     </>
   )
 }
