@@ -37,6 +37,8 @@ const Typography = () => {
               sx={{
                 fontFamily: font,
                 fontSize: [3, 4, 5],
+                fontWeight: 'normal',
+                maxWidth: [6, 6, '100%'],
               }}
             >
               {fonts[font]}

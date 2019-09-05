@@ -32,7 +32,7 @@ const About = () => {
         sx={{
           fontFamily: 'body',
           color: 'text',
-          fontSize: [1, 2, 3],
+          fontSize: [2, 3, 3],
           lineHeight: 1.5,
         }}
       >

@@ -10,20 +10,20 @@ const Header = () => {
     <div
       sx={{
         display: 'flex',
-        alignItems: 'center',
+        alignItems: ['flex-start', 'center'],
         justifyContent: 'space-between',
         marginBottom: [4, 5],
-        paddingX: [3, 4, 0],
       }}
     >
       <div
         sx={{
           display: 'flex',
           alignItems: 'baseline',
+          flexDirection: ['column', 'column', 'row'],
           flex: 2,
         }}
       >
-        <Title sx={{ marginRight: 3 }} />
+        <Title sx={{ marginRight: [0, 0, 3], marginBottom: [2, 2, 0] }} />
         <Navigation />
       </div>
       <CycleTheme sx={{ flex: 1 }} />

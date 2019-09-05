@@ -24,7 +24,7 @@ const Content = props => (
       flexDirection: 'column',
       justifyContent: 'center',
       paddingX: [3, 4, 6],
-      paddingTop: [3, 4, 5],
+      paddingTop: [4, 4, 5],
       marginBottom: 5,
       zIndex: 9,
     }}

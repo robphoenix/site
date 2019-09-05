@@ -26,6 +26,7 @@ const Title = props => {
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
           lineHeight: 1,
+          display: 'inline-block',
         }}
       >
         {title}

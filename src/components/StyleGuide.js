@@ -35,24 +35,9 @@ const StyleGuide = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(8, 1fr)',
-        columnGap: [3, 4, 5],
+        columnGap: 5,
       }}
     >
-      {/* <h2
-        sx={{
-          gridColumn: '1/-1',
-          display: 'inline-block',
-          fontFamily: 'heading',
-          fontSize: [2, 3, 4],
-          color: 'text',
-          textTransform: 'uppercase',
-          letterSpacing: 'tracked',
-          marginBottom: 4,
-        }}
-      >
-        design tokens
-      </h2> */}
-
       <SectionHeading>Colour Palette</SectionHeading>
       <Section>
         <Colours />

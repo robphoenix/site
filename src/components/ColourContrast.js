@@ -8,9 +8,16 @@ const ColourContrast = () => {
   const { colors } = theme
 
   return (
-    <div sx={{ display: 'flex' }}>
-      <div sx={{ marginRight: 5 }}>
-        <span sx={{ fontFamily: 'body', color: 'text' }}>
+    <div sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'] }}>
+      <div sx={{ marginRight: [0, 0, 5], marginBottom: [3, 3, 0] }}>
+        <span
+          sx={{
+            fontFamily: 'body',
+            color: 'text',
+            display: 'inline-block',
+            marginBottom: 2,
+          }}
+        >
           text on background
         </span>
         <div
@@ -33,7 +40,14 @@ const ColourContrast = () => {
         </div>
       </div>
       <div>
-        <span sx={{ fontFamily: 'body', color: 'primary' }}>
+        <span
+          sx={{
+            fontFamily: 'body',
+            color: 'primary',
+            display: 'inline-block',
+            marginBottom: 2,
+          }}
+        >
           primary on background
         </span>
         <div

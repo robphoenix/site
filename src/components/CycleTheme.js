@@ -10,14 +10,20 @@ const CycleTheme = props => {
   const { colors } = theme
 
   return (
-    <div
+    <button
       sx={{
-        width: '100%',
+        cursor: 'pointer',
+        bg: 'transparent',
+        color: 'inherit',
+        border: 0,
         display: 'flex',
-        justifyContent: 'flex-end',
         alignItems: 'center',
       }}
-      {...props}
+      onClick={() => {
+        const index = modes.indexOf(colorMode)
+        const next = modes[(index + 1) % modes.length]
+        setColorMode(next)
+      }}
     >
       <span
         sx={{
@@ -26,32 +32,19 @@ const CycleTheme = props => {
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
           marginRight: 2,
+          fontSize: [1, 2, 2],
         }}
       >
         {colorMode}
       </span>
-      <button
-        sx={{
-          cursor: 'pointer',
-          bg: 'transparent',
-          color: 'inherit',
-          border: 0,
-        }}
-        onClick={() => {
-          const index = modes.indexOf(colorMode)
-          const next = modes[(index + 1) % modes.length]
-          setColorMode(next)
-        }}
-      >
-        <HoverMorphIcon
-          baseType="ban"
-          hoverType="fwd"
-          color={colors && colors.primary}
-          size={32}
-          title="Cycle Theme"
-        />
-      </button>
-    </div>
+      <HoverMorphIcon
+        baseType="ban"
+        hoverType="fwd"
+        color={colors && colors.primary}
+        size={24}
+        title="Cycle Theme"
+      />
+    </button>
   )
 }
 
