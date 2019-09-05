@@ -20,7 +20,7 @@ const Title = props => {
       <h1
         sx={{
           fontFamily: 'heading',
-          fontSize: [4, 4, 5],
+          fontSize: [4, 4, 6],
           fontWeight: 'normal',
           color: 'text',
           textTransform: 'uppercase',

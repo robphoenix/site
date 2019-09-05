@@ -16,8 +16,9 @@ export default {
     mega: '0.25em',
   },
   fonts: {
-    heading: 'Overpass Mono, monospace',
+    heading: 'Inter, system-ui, sans-serif',
     body: 'Karla, sans-serif',
+    monospace: 'Overpass Mono, monospace',
   },
   borders: [0, '1px solid', '2px solid', '4px solid'],
   initialColorMode: 'light',

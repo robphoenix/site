@@ -19,12 +19,12 @@ const Typography = () => {
               display: 'flex',
               flexDirection: 'column',
               color: 'text',
-              marginBottom: i ? 0 : [3, 4, 4],
+              marginBottom: i > Object.keys(fonts).length - 2 ? 0 : [3, 4, 4],
             }}
           >
             <span
               sx={{
-                fontFamily: 'heading',
+                fontFamily: 'body',
                 textTransform: 'uppercase',
                 letterSpacing: 'tracked',
                 fontSize: [1, 2, 3],

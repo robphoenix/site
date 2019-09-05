@@ -13,12 +13,13 @@ const TypeScale = () => {
       }}
     >
       {fontSizes &&
+        // @ts-ignore
         fontSizes.map((fontSize, i) => (
           <div
             key={fontSize}
             sx={{
               fontSize: i,
-              fontFamily: 'body',
+              fontFamily: 'heading',
               color: 'text',
             }}
           >

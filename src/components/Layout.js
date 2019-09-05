@@ -6,6 +6,7 @@ import React from 'react'
 import Reset from './Reset'
 import CycleTheme from './CycleTheme'
 import Header from './Header'
+import InterTypeface from './InterTypeface'
 
 const Wrapper = props => (
   <div
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Reset />
+      <InterTypeface />
       <Content>
         <Header />
         {children}

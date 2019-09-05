@@ -13,9 +13,13 @@ const ColourContrast = () => {
         <span
           sx={{
             fontFamily: 'body',
+            fontSize: [1, 2, 3],
             color: 'text',
             display: 'inline-block',
             marginBottom: 2,
+            maxWidth: [5, 6, '100%'],
+            textTransform: 'uppercase',
+            letterSpacing: 'tracked',
           }}
         >
           text on background
@@ -46,6 +50,10 @@ const ColourContrast = () => {
             color: 'primary',
             display: 'inline-block',
             marginBottom: 2,
+            maxWidth: [5, 6, '100%'],
+            textTransform: 'uppercase',
+            letterSpacing: 'tracked',
+            fontSize: [1, 2, 3],
           }}
         >
           primary on background

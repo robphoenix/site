@@ -49,9 +49,10 @@ const Colours = () => {
                 sx={{
                   justifySelf: 'center',
                   color: 'text',
-                  fontFamily: 'heading',
+                  fontFamily: 'body',
                   fontSize: [1, 2, 3],
-                  textTransform: 'capitalize',
+                  textTransform: 'uppercase',
+                  letterSpacing: 'tracked',
                 }}
               >
                 {color}
