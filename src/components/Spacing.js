@@ -14,24 +14,27 @@ const Spacing = () => {
           key={s}
           sx={{
             display: s > mobileLimit ? ['none', 'flex'] : 'flex',
+            alignItems: 'center',
           }}
         >
           <div
             sx={{
-              height: 2,
+              height: [2, 3],
               width: `${s}px`,
               backgroundColor: 'primary',
               marginBottom: 2,
               marginRight: 1,
+            }}
+          />
+          <span
+            sx={{
               fontFamily: 'body',
               fontSize: [1, 2, 2],
-              display: 'flex',
-              alignItems: 'center',
               color: 'text',
             }}
           >
             {s}px
-          </div>
+          </span>
         </li>
       ))}
     </ul>

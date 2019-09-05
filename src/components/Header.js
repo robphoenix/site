@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 
 import Navigation from './Navigation'
 import Title from './Title'
+import CycleTheme from './CycleTheme'
 
 const Header = () => {
   return (
@@ -10,21 +11,22 @@ const Header = () => {
       sx={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'space-between',
         marginBottom: [4, 5],
         paddingX: [3, 4, 0],
       }}
     >
       <div
         sx={{
-          width: '100%',
           display: 'flex',
           alignItems: 'baseline',
-          justifyContent: 'space-between',
+          flex: 2,
         }}
       >
-        <Title />
+        <Title sx={{ marginRight: 3 }} />
         <Navigation />
       </div>
+      <CycleTheme sx={{ flex: 1 }} />
     </div>
   )
 }

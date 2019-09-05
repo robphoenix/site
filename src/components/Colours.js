@@ -51,8 +51,7 @@ const Colours = () => {
                   color: 'text',
                   fontFamily: 'heading',
                   fontSize: [1, 2, 3],
-                  textTransform: 'uppercase',
-                  letterSpacing: 'tracked',
+                  textTransform: 'capitalize',
                 }}
               >
                 {color}

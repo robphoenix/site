@@ -4,7 +4,7 @@ import { jsx, useThemeUI } from 'theme-ui'
 
 import { HoverMorphIcon } from 'react-svg-buttons'
 
-const CycleTheme = () => {
+const CycleTheme = props => {
   const modes = [`light`, `dark`]
   const { theme, colorMode, setColorMode } = useThemeUI()
   const { colors } = theme
@@ -13,18 +13,11 @@ const CycleTheme = () => {
     <div
       sx={{
         width: '100%',
-        position: 'fixed',
-        bottom: 0,
-        borderTop: [1, 1, 0],
-        borderColor: 'primary',
-        paddingX: [3, 3, 4],
-        paddingY: [2, 2, 4],
         display: 'flex',
         justifyContent: 'flex-end',
-        backgroundColor: ['background', 'background', 'transparent'],
         alignItems: 'center',
-        zIndex: [10, 10, 2],
       }}
+      {...props}
     >
       <span
         sx={{

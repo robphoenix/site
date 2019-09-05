@@ -7,14 +7,21 @@ const About = () => {
   const { description, bio } = useSiteMetadata()
 
   return (
-    <div sx={{ marginBottom: 5 }}>
+    <div
+      sx={{
+        borderTop: 2,
+        borderBottom: 2,
+        borderColor: 'text',
+        paddingY: 4,
+        marginBottom: 5,
+      }}
+    >
       <h2
         sx={{
           fontFamily: 'heading',
-          fontSize: [2, 3, 4],
+          fontSize: [3, 4, 5],
           color: 'text',
-          textTransform: 'uppercase',
-          letterSpacing: 'tracked',
+          fontWeight: 'normal',
           marginBottom: 3,
           lineHeight: 1.5,
         }}

@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-const Title = () => {
+const Title = props => {
   const { title } = useSiteMetadata()
 
   return (
@@ -15,6 +15,7 @@ const Title = () => {
         color: 'text',
         textDecoration: 'none',
       }}
+      {...props}
     >
       <h1
         sx={{

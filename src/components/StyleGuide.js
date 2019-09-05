@@ -10,12 +10,10 @@ import Spacing from './Spacing'
 const SectionHeading = props => (
   <h3
     sx={{
-      gridColumn: '1/1',
+      gridColumn: '1/3',
       fontFamily: 'heading',
       fontSize: [1, 2, 3],
       color: 'text',
-      textTransform: 'uppercase',
-      letterSpacing: 'tracked',
     }}
     {...props}
   />
@@ -24,7 +22,7 @@ const SectionHeading = props => (
 const Section = props => (
   <section
     sx={{
-      gridColumn: '2/-1',
+      gridColumn: '3/-1',
       marginBottom: [4, 4, 5],
     }}
     {...props}
@@ -40,22 +38,20 @@ const StyleGuide = () => {
         columnGap: [3, 4, 5],
       }}
     >
-      <h2
+      {/* <h2
         sx={{
           gridColumn: '1/-1',
+          display: 'inline-block',
           fontFamily: 'heading',
           fontSize: [2, 3, 4],
           color: 'text',
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
-          borderBottom: 1,
-          borderColor: 'primary',
           marginBottom: 4,
-          paddingBottom: 2,
         }}
       >
         design tokens
-      </h2>
+      </h2> */}
 
       <SectionHeading>Colour Palette</SectionHeading>
       <Section>

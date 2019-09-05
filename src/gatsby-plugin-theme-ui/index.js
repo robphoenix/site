@@ -19,15 +19,7 @@ export default {
     heading: 'Overpass Mono, monospace',
     body: 'Karla, sans-serif',
   },
-  borders: [
-    0,
-    '1px solid',
-    '2px solid',
-    '4px solid',
-    '8px solid',
-    '16px solid',
-    '32px solid',
-  ],
+  borders: [0, '1px solid', '2px solid', '4px solid'],
   initialColorMode: 'light',
   useCustomProperties: true,
   colors: {
