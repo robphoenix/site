@@ -16,7 +16,7 @@ export default {
     mega: '0.25em',
   },
   fonts: {
-    heading: 'Inter, sans-serif',
+    heading: 'Overpass Mono, monospace',
     body: 'Karla, sans-serif',
   },
   borders: [

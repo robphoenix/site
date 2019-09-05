@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
 
-import { useTheme } from '../context'
-
 const Colours = () => {
   const { theme } = useThemeUI()
   const { colors } = theme

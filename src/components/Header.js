@@ -9,12 +9,9 @@ const Header = () => {
     <div
       sx={{
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 4,
-        backgroundColor: 'text',
+        marginBottom: [4, 5],
         paddingX: [3, 4, 0],
-        height: 4,
       }}
     >
       <div
@@ -23,7 +20,6 @@ const Header = () => {
           display: 'flex',
           alignItems: 'baseline',
           justifyContent: 'space-between',
-          maxWidth: 8,
         }}
       >
         <Title />

@@ -12,7 +12,7 @@ const Title = () => {
     <Link
       to="/"
       sx={{
-        color: 'background',
+        color: 'text',
         textDecoration: 'none',
       }}
     >
@@ -21,7 +21,7 @@ const Title = () => {
           fontFamily: 'heading',
           fontSize: [4, 4, 5],
           fontWeight: 'normal',
-          color: 'background',
+          color: 'text',
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
           lineHeight: 1,

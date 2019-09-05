@@ -26,6 +26,7 @@ const Content = props => (
       flexDirection: 'column',
       justifyContent: 'center',
       paddingX: [3, 4, 0],
+      paddingTop: [3, 4, 5],
       marginBottom: 5,
       zIndex: 9,
     }}
@@ -37,9 +38,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Reset />
-      <Header />
       <Wrapper>
-        <Content>{children}</Content>
+        <Content>
+          <Header />
+          {children}
+        </Content>
       </Wrapper>
       <CycleTheme />
     </>

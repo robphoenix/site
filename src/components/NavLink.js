@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 const NavLink = ({ current, to, ...props }) => (
   <Link
     sx={{
-      color: 'background',
+      color: 'text',
       textDecoration: 'none',
       position: 'relative',
       fontFamily: 'heading',
