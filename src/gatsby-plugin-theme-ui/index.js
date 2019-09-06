@@ -1,3 +1,5 @@
+import nightOwl from '@theme-ui/prism/presets/night-owl.json'
+
 export default {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 192, 256, 512],
@@ -43,6 +45,9 @@ export default {
       color: 'primary',
       mt: 4,
       mb: 2,
+    },
+    pre: {
+      ...nightOwl,
     },
   },
 }
