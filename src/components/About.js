@@ -18,7 +18,7 @@ const About = () => {
       <h2
         sx={{
           fontFamily: 'heading',
-          fontSize: [3, 4, 6],
+          fontSize: [4, 5, 6],
           color: 'text',
           fontWeight: 'normal',
           marginBottom: 3,
