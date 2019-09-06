@@ -4,4 +4,4 @@ import 'typeface-karla'
 import 'typeface-space-mono'
 
 // syntax highlighting
-require('prismjs/themes/prism-tomorrow.css')
+require('prismjs/themes/prism-okaidia.css')

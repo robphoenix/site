@@ -17,10 +17,24 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-theme-ui`,
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve(`./src/components/Layout.js`),
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/posts`,
       },
     },
     {
@@ -48,9 +62,6 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-prismjs`,
-            options: {
-              showLineNumbers: true,
-            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
