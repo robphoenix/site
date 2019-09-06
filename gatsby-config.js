@@ -16,6 +16,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -52,7 +53,6 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
