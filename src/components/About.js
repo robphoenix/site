@@ -9,9 +9,8 @@ const About = () => {
   return (
     <div
       sx={{
-        borderTop: 2,
-        borderBottom: 2,
-        borderColor: 'text',
+        borderBottom: 1,
+        borderColor: 'primary',
         paddingY: 4,
         marginBottom: 5,
       }}
