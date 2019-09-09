@@ -31,7 +31,7 @@ const About = () => {
         sx={{
           display: 'grid',
           gridTemplateColumns: 'repeat(8, 1fr)',
-          columnGap: 5,
+          columnGap: [2, 4, 5],
         }}
       >
         <div

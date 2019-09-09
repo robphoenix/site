@@ -27,7 +27,7 @@ const Content = props => (
       justifyContent: 'center',
       marginBottom: 5,
       marginTop: 6,
-      paddingX: [3, 4, 5],
+      paddingX: [3, 4, 0],
     }}
     {...props}
   />

@@ -26,7 +26,7 @@ const SectionHeading = props => (
 const Section = props => (
   <section
     sx={{
-      gridColumn: '3/-1',
+      gridColumn: ['4/-1', '3/-1'],
       marginBottom: [4, 4, 5],
     }}
     {...props}
@@ -39,7 +39,7 @@ const StyleGuide = () => {
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(8, 1fr)',
-        columnGap: 5,
+        columnGap: [2, 4, 5],
       }}
     >
       <h3
