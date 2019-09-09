@@ -25,7 +25,7 @@ const Avatar = () => {
     <div
       sx={{
         width: '100%',
-        maxWidth: 5,
+        maxWidth: 6,
       }}
     >
       <Image

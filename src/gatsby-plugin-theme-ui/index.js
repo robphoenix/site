@@ -49,5 +49,11 @@ export default {
     pre: {
       ...nightOwl,
     },
+    a: {
+      color: 'text',
+      ':hover,:focus': {
+        color: 'primary',
+      },
+    },
   },
 }

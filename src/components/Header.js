@@ -36,7 +36,7 @@ const Header = () => {
           display: 'flex',
           alignItems: ['flex-start', 'center'],
           justifyContent: 'space-between',
-          paddingX: 5,
+          paddingX: [3, 4, 5],
         }}
       >
         <div

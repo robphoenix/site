@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx, useThemeUI, Styled } from 'theme-ui'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import Avatar from './Avatar'
@@ -12,9 +12,9 @@ const Link = props => {
         color: 'text',
         textDecoration: 'none',
         cursor: 'pointer',
-        backgroundImage: `linear-gradient(180deg, ${theme.colors.primary}, ${
-          theme.colors.primary
-        })`,
+        backgroundImage: `linear-gradient(
+          ${theme.colors.primary},
+           ${theme.colors.primary})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 bottom',
         backgroundSize: '100% 8%',
@@ -62,7 +62,7 @@ const About = () => {
         <div
           sx={{
             gridColumn: '1/3',
-            display: 'flex',
+            display: ['none', 'flex'],
             alignItems: 'center',
           }}
         >
@@ -70,7 +70,7 @@ const About = () => {
         </div>
         <div
           sx={{
-            gridColumn: '3/-1',
+            gridColumn: ['1/-1', '3/-1'],
           }}
         >
           <p
@@ -79,7 +79,7 @@ const About = () => {
               color: 'text',
               fontSize: [2, 3, 3],
               lineHeight: 'copy',
-              textAlign: 'justify',
+              textAlign: ['left', 'justify'],
               marginBottom: 3,
             }}
           >

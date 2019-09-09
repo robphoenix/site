@@ -12,7 +12,7 @@ const SectionHeading = props => (
     sx={{
       gridColumn: '1/3',
       fontFamily: 'heading',
-      fontSize: 2,
+      fontSize: [1, 2],
       fontWeight: 4,
       textTransform: 'uppercase',
       letterSpacing: 'tracked',
