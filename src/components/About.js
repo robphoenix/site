@@ -1,33 +1,8 @@
 /** @jsx jsx */
-import { jsx, useThemeUI, Styled } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import Avatar from './Avatar'
-
-const Link = props => {
-  const { theme } = useThemeUI()
-  return (
-    <a
-      sx={{
-        color: 'text',
-        textDecoration: 'none',
-        cursor: 'pointer',
-        backgroundImage: `linear-gradient(
-          ${theme.colors.primary},
-           ${theme.colors.primary})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '0 bottom',
-        backgroundSize: '100% 8%',
-        transition: 'all 0.2s ease-in-out',
-        ':hover,:focus': {
-          backgroundSize: '100% 100%',
-          color: 'background',
-        },
-      }}
-      {...props}
-    />
-  )
-}
 
 const About = () => {
   const { description, bio, social } = useSiteMetadata()
@@ -100,20 +75,22 @@ const About = () => {
             }}
           >
             <li>
-              <Link href="http://rm-phoenix.co.uk/">art</Link>
+              <Styled.a href="http://rm-phoenix.co.uk/">art</Styled.a>
             </li>
             <li>
-              <Link href={`https://twitter.com/${social.twitter}`}>
+              <Styled.a href={`https://twitter.com/${social.twitter}`}>
                 twitter
-              </Link>
+              </Styled.a>
             </li>
             <li>
-              <Link href={`https://github.com/${social.github}`}>github</Link>
+              <Styled.a href={`https://github.com/${social.github}`}>
+                github
+              </Styled.a>
             </li>
             <li>
-              <Link href={`https://www.linkedin.com/in/${social.linkedin}`}>
+              <Styled.a href={`https://www.linkedin.com/in/${social.linkedin}`}>
                 linkedin
-              </Link>
+              </Styled.a>
             </li>
           </ul>
         </div>

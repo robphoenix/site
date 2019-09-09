@@ -51,8 +51,18 @@ export default {
     },
     a: {
       color: 'text',
+      textDecoration: 'none',
+      cursor: 'pointer',
+      backgroundImage: theme => `linear-gradient(
+          ${theme.colors.primary},
+           ${theme.colors.primary})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '0 bottom',
+      backgroundSize: '100% 8%',
+      transition: 'all 0.2s ease-in-out',
       ':hover,:focus': {
-        color: 'primary',
+        backgroundSize: '100% 100%',
+        color: 'background',
       },
     },
   },
