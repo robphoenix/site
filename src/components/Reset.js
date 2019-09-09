@@ -9,6 +9,7 @@ const Reset = () => {
           margin: 0,
           padding: 0,
           boxSizing: 'border-box',
+          transition: 'all 0.2s ease-out 0s',
         },
         '*, *:: before, *::after': {
           margin: 0,

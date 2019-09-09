@@ -26,6 +26,7 @@ const Header = () => {
           backgroundColor: 'background',
           opacity: '0.85',
           backdropFilter: 'blur(12px)',
+          transition: 'all 0.2s ease-out 0s',
         }}
       />
       <div
