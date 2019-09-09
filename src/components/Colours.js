@@ -11,7 +11,7 @@ const Colours = () => {
       sx={{
         display: 'flex',
         flexDirection: ['column', 'row'],
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
       }}
     >
       {colors &&
@@ -26,13 +26,12 @@ const Colours = () => {
           >
             <div
               sx={{
-                height: [3, 4, 5],
-                width: [3, 4, 5],
+                height: [3, 4, 6],
+                width: [3, 4, 6],
                 backgroundColor: colors[color],
                 border: 1,
                 borderColor: 'text',
                 borderRadius: '50%',
-                marginRight: [2, 3, 4],
                 marginBottom: 3,
               }}
             />
@@ -42,7 +41,6 @@ const Colours = () => {
                 flexDirection: 'column',
                 alignItems: ['flex-start', 'center'],
                 gridColumn: `${i + 1}/${i + 2}`,
-                marginRight: [2, 3, 4],
               }}
             >
               <span

@@ -21,7 +21,7 @@ const Navigation = () => {
         to="/blog/"
         current={currentPage('blog')}
         sx={{
-          fontSize: [1, 2, 3],
+          fontSize: 1,
         }}
       >
         blog

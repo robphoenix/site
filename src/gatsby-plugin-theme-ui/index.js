@@ -3,7 +3,7 @@ import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 export default {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 192, 256, 512],
-  sizes: [0, 16, 24, 32, 64, 128, 256, 512, 768, 1024],
+  sizes: [0, 16, 24, 32, 64, 96, 128, 256, 512, 768, 1024],
   fontSizes: [12, 14, 16, 18, 24, 32, 40, 48, 64],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
   lineHeights: {

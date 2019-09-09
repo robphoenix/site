@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
+import Avatar from './Avatar'
 
 const About = () => {
   const { description, bio } = useSiteMetadata()
@@ -9,34 +10,52 @@ const About = () => {
   return (
     <div
       sx={{
-        borderBottom: 1,
-        borderColor: 'primary',
-        paddingY: 4,
-        marginBottom: 5,
+        marginBottom: 6,
       }}
     >
       <h2
         sx={{
           fontFamily: 'heading',
-          fontSize: [4, 5, 6],
+          fontSize: 4,
           color: 'text',
-          fontWeight: 'normal',
-          marginBottom: 3,
-          lineHeight: 1.5,
+          fontWeight: 7,
+          marginBottom: 4,
+          lineHeight: 'title',
+          textTransform: 'uppercase',
+          letterSpacing: 'tracked',
         }}
       >
         {description}
       </h2>
-      <p
+      <div
         sx={{
-          fontFamily: 'body',
-          color: 'text',
-          fontSize: [2, 3, 3],
-          lineHeight: 1.5,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(8, 1fr)',
+          columnGap: 5,
         }}
       >
-        {bio}
-      </p>
+        <div
+          sx={{
+            gridColumn: '1/3',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar />
+        </div>
+        <p
+          sx={{
+            gridColumn: '3/-1',
+            fontFamily: 'body',
+            color: 'text',
+            fontSize: [2, 3, 3],
+            lineHeight: 'copy',
+            textAlign: 'justify',
+          }}
+        >
+          {bio}
+        </p>
+      </div>
     </div>
   )
 }

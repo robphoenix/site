@@ -31,6 +31,8 @@ const CycleTheme = props => {
           fontFamily: 'body',
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
+          lineHeight: 'solid',
+          fontWeight: 4,
           marginRight: 2,
           fontSize: [1, 2, 2],
         }}
