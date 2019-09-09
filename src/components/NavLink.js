@@ -10,7 +10,7 @@ const NavLink = ({ current, to, ...props }) => (
       textDecoration: 'none',
       position: 'relative',
       fontFamily: 'heading',
-      fontWeight: 4,
+      fontWeight: 'body',
       textTransform: 'uppercase',
       letterSpacing: 'tracked',
       paddingBottom: 1,

@@ -68,11 +68,21 @@ const ColourContrast = () => {
             lineHeight: 1,
           }}
         >
-          <span sx={{ height: 'auto', fontSize: [5, 6, 7], marginRight: 3 }}>
+          <span
+            sx={{
+              height: 'auto',
+              fontSize: [5, 6, 7],
+              marginRight: 3,
+            }}
+          >
             {colors &&
               contrast.ratio(colors.primary, colors.background).toFixed(2)}
           </span>
-          <span sx={{ fontSize: [4, 5, 6] }}>
+          <span
+            sx={{
+              fontSize: [4, 5, 6],
+            }}
+          >
             {colors && contrast.score(colors.primary, colors.background)}
           </span>
         </div>

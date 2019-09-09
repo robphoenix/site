@@ -21,10 +21,10 @@ const Title = props => {
         sx={{
           fontFamily: 'heading',
           fontSize: 3,
-          fontWeight: 7,
+          fontWeight: 'heading',
           color: 'text',
           textTransform: 'uppercase',
-          letterSpacing: 'tracked',
+          letterSpacing: 'mega',
           lineHeight: 'solid',
           display: 'inline-block',
         }}

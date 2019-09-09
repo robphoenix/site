@@ -18,7 +18,7 @@ const About = () => {
           fontFamily: 'heading',
           fontSize: 4,
           color: 'text',
-          fontWeight: 7,
+          fontWeight: 'heading',
           marginBottom: 4,
           lineHeight: 'title',
           textTransform: 'uppercase',

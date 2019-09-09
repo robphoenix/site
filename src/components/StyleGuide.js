@@ -6,6 +6,8 @@ import ColourContrast from './ColourContrast'
 import Colours from './Colours'
 import TypeScale from './TypeScale'
 import Spacing from './Spacing'
+import FontWeights from './FontWeights'
+import LetterSpacings from './LetterSpacings'
 
 const SectionHeading = props => (
   <h4
@@ -13,7 +15,7 @@ const SectionHeading = props => (
       gridColumn: '1/3',
       fontFamily: 'heading',
       fontSize: [1, 2],
-      fontWeight: 4,
+      fontWeight: 'body',
       textTransform: 'uppercase',
       letterSpacing: 'tracked',
       color: 'text',
@@ -47,7 +49,7 @@ const StyleGuide = () => {
           gridColumn: '1/-1',
           fontFamily: 'heading',
           fontSize: 3,
-          fontWeight: 7,
+          fontWeight: 'heading',
           lineHeight: 'title',
           color: 'text',
           textTransform: 'uppercase',
@@ -75,6 +77,16 @@ const StyleGuide = () => {
       <SectionHeading>Type Scale</SectionHeading>
       <Section>
         <TypeScale />
+      </Section>
+
+      <SectionHeading>Font Weights</SectionHeading>
+      <Section>
+        <FontWeights />
+      </Section>
+
+      <SectionHeading>letter spacings</SectionHeading>
+      <Section>
+        <LetterSpacings />
       </Section>
 
       <SectionHeading>Spacing</SectionHeading>

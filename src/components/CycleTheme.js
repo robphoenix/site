@@ -32,7 +32,7 @@ const CycleTheme = props => {
           textTransform: 'uppercase',
           letterSpacing: 'tracked',
           lineHeight: 'solid',
-          fontWeight: 4,
+          fontWeight: 'body',
           padding: 2,
           fontSize: [1, 2, 2],
         }}
