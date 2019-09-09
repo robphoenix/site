@@ -22,7 +22,7 @@ export default {
     body: 'Karla, sans-serif',
     monospace: 'Overpass Mono, monospace',
   },
-  borders: [0, '1px solid', '2px solid', '4px solid'],
+  borders: [0, '1px solid', '2px solid'],
   initialColorMode: 'light',
   useCustomProperties: true,
   colors: {

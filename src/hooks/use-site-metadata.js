@@ -12,6 +12,11 @@ export const useSiteMetadata = () => {
             keywords
             author
             lang
+            social {
+              twitter
+              github
+              linkedin
+            }
           }
         }
       }

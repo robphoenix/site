@@ -22,7 +22,7 @@ const ColourContrast = () => {
             letterSpacing: 'tracked',
           }}
         >
-          text on background
+          text & background
         </span>
         <div
           sx={{
@@ -56,7 +56,7 @@ const ColourContrast = () => {
             fontSize: [1, 2, 3],
           }}
         >
-          primary on background
+          primary & background
         </span>
         <div
           sx={{
