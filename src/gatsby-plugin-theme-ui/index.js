@@ -30,7 +30,7 @@ export default {
       },
       dark: {
         body: 'Inter, system-ui, sans-serif',
-        monospace: 'Karla, sans-serif',
+        monospace: 'Space Mono, monospace',
         heading: 'Overpass Mono, monospace',
       },
     },
@@ -61,6 +61,12 @@ export default {
     },
     pre: {
       ...nightOwl,
+      fontFamily: 'monospace',
+      fontSize: [1, 2, 3],
+      overflowX: 'auto',
+      borderRadius: 5,
+      padding: 4,
+      marginY: 4,
     },
     a: {
       color: 'text',

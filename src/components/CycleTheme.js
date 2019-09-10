@@ -8,9 +8,7 @@ import { HoverMorphIcon } from 'react-svg-buttons'
 
 const CycleTheme = props => {
   const modes = [`light`, `dark`]
-  const context = useThemeUI()
-
-  const { theme, colorMode, setColorMode, setTheme } = context
+  const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { colors, fonts } = theme
 
   React.useEffect(
