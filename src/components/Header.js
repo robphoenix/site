@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx,  } from 'theme-ui'
 
 import Navigation from './Navigation'
 import Title from './Title'
@@ -42,7 +42,7 @@ const Header = () => {
           />
           <Navigation />
         </div>
-        <CycleTheme sx={{ flex: 1 }} />
+        <CycleTheme />
       </div>
     </div>
   )

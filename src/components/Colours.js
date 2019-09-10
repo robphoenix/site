@@ -4,7 +4,8 @@ import { jsx, useThemeUI } from 'theme-ui'
 const Colours = () => {
   const { theme } = useThemeUI()
   const { colors } = theme
-  delete colors.modes
+  const colours = {...colors}
+  delete colours.modes
 
   return (
     <div
@@ -14,10 +15,10 @@ const Colours = () => {
         justifyContent: 'space-between',
       }}
     >
-      {colors &&
-        Object.keys(colors).map((color, i) => (
+      {colours &&
+        Object.keys(colours).map((colour, i) => (
           <div
-            key={color}
+            key={colour}
             sx={{
               display: 'flex',
               flexDirection: ['row', 'column'],
@@ -28,7 +29,7 @@ const Colours = () => {
               sx={{
                 height: [3, 4, 6],
                 width: [3, 4, 6],
-                backgroundColor: colors[color],
+                backgroundColor: colours[colour],
                 border: 1,
                 borderColor: 'text',
                 borderRadius: '50%',
@@ -54,7 +55,7 @@ const Colours = () => {
                   letterSpacing: 'tracked',
                 }}
               >
-                {color}
+                {colour}
               </span>
               <span
                 sx={{
@@ -65,7 +66,7 @@ const Colours = () => {
                   marginBottom: [3, 3, 0],
                 }}
               >
-                {colors[color]}
+                {colors[colour]}
               </span>
             </div>
           </div>

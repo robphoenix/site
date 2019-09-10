@@ -22,6 +22,18 @@ export default {
     heading: 'Inter, system-ui, sans-serif',
     body: 'Karla, sans-serif',
     monospace: 'Overpass Mono, monospace',
+    modes: {
+      light: {
+        heading: 'Inter, system-ui, sans-serif',
+        body: 'Karla, sans-serif',
+        monospace: 'Overpass Mono, monospace',
+      },
+      dark: {
+        body: 'Inter, system-ui, sans-serif',
+        monospace: 'Karla, sans-serif',
+        heading: 'Overpass Mono, monospace',
+      },
+    },
   },
   borders: [0, '1px solid'],
   initialColorMode: 'light',

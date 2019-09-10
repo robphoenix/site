@@ -4,6 +4,8 @@ import { jsx, useThemeUI } from 'theme-ui'
 const Typography = () => {
   const { theme } = useThemeUI()
   const { fonts } = theme
+  const typography = { ...fonts }
+  delete typography['modes']
 
   return (
     <ul
@@ -11,15 +13,16 @@ const Typography = () => {
         listStyle: 'none',
       }}
     >
-      {fonts &&
-        Object.keys(fonts).map((font, i) => (
+      {typography &&
+        Object.keys(typography).map((font, i) => (
           <li
             key={`${font}${i}`}
             sx={{
               display: 'flex',
               flexDirection: 'column',
               color: 'text',
-              marginBottom: i > Object.keys(fonts).length - 2 ? 0 : [3, 4, 4],
+              marginBottom:
+                i > Object.keys(typography).length - 2 ? 0 : [3, 4, 4],
             }}
           >
             <span
@@ -41,7 +44,7 @@ const Typography = () => {
                 maxWidth: [7, 7, '100%'],
               }}
             >
-              {fonts[font]}
+              {typography[font]}
             </span>
           </li>
         ))}
