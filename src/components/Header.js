@@ -10,25 +10,12 @@ const Header = () => {
     <div
       sx={{
         marginBottom: 4,
-        position: 'fixed',
         width: '100%',
         height: 5,
-        zIndex: 10,
         display: 'flex',
         alignItems: 'center',
       }}
     >
-      <div
-        sx={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'background',
-          opacity: [1, '0.85'],
-          backdropFilter: 'blur(12px)',
-          transition: 'all 0.2s ease-out 0s',
-        }}
-      />
       <div
         sx={{
           position: 'absolute',
