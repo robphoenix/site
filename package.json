@@ -45,6 +45,7 @@
     "theme-ui": "^0.2.35",
     "typeface-karla": "0.0.72",
     "typeface-overpass-mono": "0.0.71",
+    "typeface-pt-sans": "0.0.72",
     "typeface-space-mono": "0.0.71"
   },
   "devDependencies": {

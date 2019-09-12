@@ -54,7 +54,6 @@ const About = () => {
               color: 'text',
               fontSize: [2, 3, 3],
               lineHeight: 'copy',
-              textAlign: ['left', 'justify'],
               marginBottom: 3,
             }}
           >

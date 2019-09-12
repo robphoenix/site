@@ -19,17 +19,17 @@ export default {
     mega: '0.25em',
   },
   fonts: {
-    heading: 'Inter, system-ui, sans-serif',
+    heading: 'Inter, sans-serif',
     body: 'Karla, sans-serif',
     monospace: 'Overpass Mono, monospace',
     modes: {
       light: {
-        heading: 'Inter, system-ui, sans-serif',
+        heading: 'Inter, sans-serif',
         body: 'Karla, sans-serif',
         monospace: 'Overpass Mono, monospace',
       },
       dark: {
-        body: 'Inter, system-ui, sans-serif',
+        body: 'system-ui, sans-serif',
         monospace: 'Space Mono, monospace',
         heading: 'Overpass Mono, monospace',
       },
@@ -41,12 +41,12 @@ export default {
   colors: {
     text: '#26242C',
     background: '#fafafa',
-    primary: `#a2005e`,
+    primary: 'hsl(325, 86%, 34%)',
     modes: {
       dark: {
         text: '#f8f9f9',
         background: '#1e2327',
-        primary: '#0cf',
+        primary: 'hsl(55, 100%, 67%)',
       },
     },
   },
