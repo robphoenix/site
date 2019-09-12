@@ -39,12 +39,12 @@ export default {
   initialColorMode: 'light',
   useCustomProperties: true,
   colors: {
-    text: '#1e2327',
+    text: '#26242C',
     background: '#fafafa',
-    primary: `#00b8a9`,
+    primary: `#a2005e`,
     modes: {
       dark: {
-        text: '#fafafa',
+        text: '#f8f9f9',
         background: '#1e2327',
         primary: '#0cf',
       },
