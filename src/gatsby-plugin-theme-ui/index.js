@@ -70,19 +70,30 @@ export default {
     },
     a: {
       color: 'text',
-      textDecoration: 'none',
       cursor: 'pointer',
-      backgroundImage: theme => `linear-gradient(
-          ${theme.colors.primary},
-           ${theme.colors.primary})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: '0 bottom',
-      backgroundSize: '100% 8%',
-      transition: 'all 0.2s ease-in-out',
-      ':hover,:focus': {
-        backgroundSize: '100% 100%',
-        color: 'background',
-      },
+      textDecoration: 'none',
+      paddingBottom: 1,
+      // ':after': {
+      //   content: '""',
+      //   position: 'absolute',
+      //   left: 0,
+      //   width: '100%',
+      //   bottom: 0,
+      //   background: 'hotpink',
+      //   height: '2px',
+      //   transition: 'width 0.3s ease-out',
+      // },
+      // backgroundImage: theme => `linear-gradient(
+      //     ${theme.colors.primary},
+      //      ${theme.colors.primary})`,
+      // backgroundRepeat: 'no-repeat',
+      // backgroundPosition: '0 bottom',
+      // backgroundSize: '100% 8%',
+      // transition: 'all 0.2s ease-in-out',
+      // ':hover,:focus': {
+      //   backgroundSize: '100% 100%',
+      //   color: 'background',
+      // },
     },
   },
 }

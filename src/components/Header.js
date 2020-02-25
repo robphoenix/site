@@ -1,47 +1,71 @@
 /** @jsx jsx */
-import { jsx,  } from 'theme-ui'
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
 
-import Navigation from './Navigation'
-import Title from './Title'
 import CycleTheme from './CycleTheme'
+import Social from './Social'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Header = () => {
+  const { description, title } = useSiteMetadata()
   return (
     <div
       sx={{
-        marginBottom: 4,
         width: '100%',
-        height: 5,
+        maxWidth: 9,
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: 'column',
+        marginBottom: 5,
       }}
     >
-      <div
+      <Link
+        to="/"
         sx={{
-          position: 'absolute',
-          width: '100%',
-          display: 'flex',
-          alignItems: ['flex-start', 'center'],
-          justifyContent: 'space-between',
-          paddingX: [3, 4, 5],
+          color: 'text',
+          textDecoration: 'none',
         }}
       >
-        <div
+        <h1
           sx={{
-            display: 'flex',
-            alignItems: 'baseline',
-            flexDirection: ['column', 'column', 'row'],
-            flex: 2,
+            fontFamily: 'heading',
+            fontSize: 3,
+            fontWeight: 'heading',
+            color: 'text',
+            textTransform: 'uppercase',
+            letterSpacing: 'mega',
+            lineHeight: 'solid',
+            display: 'inline-block',
+            marginBottom: 4,
           }}
         >
-          <Title
-            sx={{
-              marginRight: [0, 0, 3],
-              marginBottom: [2, 2, 0],
-            }}
-          />
-          <Navigation />
-        </div>
+          {title}
+        </h1>
+      </Link>
+      <h2
+        sx={{
+          fontFamily: 'heading',
+          fontSize: 6,
+          color: 'text',
+          fontWeight: 'heading',
+          lineHeight: 'title',
+          textTransform: 'uppercase',
+          letterSpacing: 'tracked',
+          marginBottom: 4,
+        }}
+      >
+        {description}
+      </h2>
+      <Social />
+      <div
+        sx={{
+          display: ['none', 'flex'],
+          zIndex: 1,
+          top: 0,
+          right: 0,
+          position: 'fixed',
+          padding: 5,
+        }}
+      >
         <CycleTheme />
       </div>
     </div>

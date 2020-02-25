@@ -6,19 +6,16 @@ import React from 'react'
 
 import { HoverMorphIcon } from 'react-svg-buttons'
 
-const CycleTheme = props => {
+const CycleTheme = () => {
   const modes = [`light`, `dark`]
   const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { colors, fonts } = theme
 
-  React.useEffect(
-    () => {
-      setTheme({
-        fonts: fonts.modes[colorMode],
-      })
-    },
-    [colorMode]
-  )
+  React.useEffect(() => {
+    setTheme({
+      fonts: fonts.modes[colorMode],
+    })
+  }, [colorMode])
 
   return (
     <button
@@ -48,7 +45,7 @@ const CycleTheme = props => {
           fontSize: [1, 2, 2],
         }}
       >
-        {colorMode}
+        {colorMode} theme
       </span>
       <HoverMorphIcon
         baseType="ban"

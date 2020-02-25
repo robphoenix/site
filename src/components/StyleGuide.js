@@ -57,7 +57,7 @@ const StyleGuide = () => {
           marginBottom: 4,
         }}
       >
-        design tokens
+        site design tokens
       </h3>
       <SectionHeading>Colour Palette</SectionHeading>
       <Section>

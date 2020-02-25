@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Rob Phoenix`,
     author: `Rob Phoenix`,
-    description: `Frontend developer, working remote in rural North Wales.`,
+    description: `Frontend developer.`,
     keywords: [`blog`, `gatsby`, `javascript`, `react`],
     bio: `I used to be a practising artist, then, in my late thirties, studied to be a network engineer and started learning how to write code. After some time exploring a number of backend languages I realised my passion was for the frontend; UI/UX, Design Systems, Typography, a11y, JavaScript, HTML, and, yes, after some hate, CSS. Currently, I'm building internal enterprise UIs with React, GraphQL & CSS-in-JS.`,
     lang: `en`,

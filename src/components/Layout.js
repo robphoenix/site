@@ -6,27 +6,16 @@ import React from 'react'
 import Reset from './Reset'
 import Header from './Header'
 import InterTypeface from './InterTypeface'
-
-const Wrapper = props => (
-  <div
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-    }}
-    {...props}
-  />
-)
+import MobileFixedMenu from './MobileFixedMenu'
+import CycleTheme from './CycleTheme'
 
 const Content = props => (
   <div
     sx={{
-      width: '100%',
       maxWidth: 9,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      marginBottom: 5,
-      paddingX: [3, 4, 0],
     }}
     {...props}
   />
@@ -34,14 +23,24 @@ const Content = props => (
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <React.Fragment>
       <Reset />
       <InterTypeface />
-      <Header />
-      <Wrapper>
+      <div
+        sx={{
+          minHeight: '100%',
+          padding: [2, 3, 5],
+        }}
+      >
+        <Header />
+
         <Content>{children}</Content>
-      </Wrapper>
-    </>
+
+        <MobileFixedMenu>
+          <CycleTheme />
+        </MobileFixedMenu>
+      </div>
+    </React.Fragment>
   )
 }
 

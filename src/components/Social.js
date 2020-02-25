@@ -1,39 +1,73 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+/** @jsx jsx */
+import { jsx, Styled } from 'theme-ui'
 
-const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        social {
-          twitter
-          github
-          linkedin
-        }
-      }
-    }
-  }
-`
+import { useSiteMetadata } from '../hooks/use-site-metadata'
+import NavLink from './NavLink'
 
 const Social = () => {
-  const { site } = useStaticQuery(query)
-  const { social } = site.siteMetadata
-  const iconSize = 24
+  const { social } = useSiteMetadata()
 
   return (
-    <div>
-      <a href={`https://twitter.com/${social.twitter}`}>
-        <FaTwitter size={iconSize} />
-      </a>
-      <a href={`https://github.com/${social.github}`}>
-        <FaGithub size={iconSize} />
-      </a>
-      <a href={`https://www.linkedin.com/in/${social.linkedin}`}>
-        <FaLinkedin size={iconSize} />
-      </a>
-    </div>
+    <ul
+      sx={{
+        listStyle: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        fontFamily: 'body',
+        color: 'text',
+        fontSize: [1, 2, 3],
+      }}
+    >
+      <SocialLink href="http://rm-phoenix.co.uk/">art</SocialLink>
+      <SocialLink href={`https://twitter.com/${social.twitter}`}>
+        twitter
+      </SocialLink>
+      <SocialLink href={`https://github.com/${social.github}`}>
+        github
+      </SocialLink>
+      <SocialLink href={`https://www.linkedin.com/in/${social.linkedin}`}>
+        linkedin
+      </SocialLink>
+    </ul>
   )
 }
+
+const SocialLink = ({ href, children }) => (
+  <li
+    sx={{
+      marginRight: 3,
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+  >
+    <a
+      href={href}
+      sx={{
+        color: 'text',
+        textDecoration: 'none',
+        cursor: 'pointer',
+        position: 'relative',
+        paddingBottom: 1,
+        '::after': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          bottom: 0,
+          backgroundColor: 'primary',
+          height: ['1px', '2px'],
+          transition: 'width 0.3s ease-out',
+          width: '100%',
+        },
+        ':hover::after,:focus::after,:active::after': {
+          left: 'auto',
+          right: 0,
+          width: 0,
+        },
+      }}
+    >
+      {children}
+    </a>
+  </li>
+)
 
 export default Social

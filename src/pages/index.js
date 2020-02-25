@@ -4,13 +4,11 @@ import { jsx } from 'theme-ui'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
 import StyleGuide from '../components/StyleGuide'
-import About from '../components/About'
 
 const Index = () => {
   return (
     <Layout>
       <SEO subtitle="Home" />
-      <About />
       <StyleGuide />
     </Layout>
   )
