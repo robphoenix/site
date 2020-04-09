@@ -3,19 +3,26 @@ import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
 import CycleTheme from './CycleTheme'
-import Social from './Social'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Header = () => {
-  const { description, title } = useSiteMetadata()
+  const { title } = useSiteMetadata()
   return (
     <div
       sx={{
         width: '100%',
-        maxWidth: 9,
         display: 'flex',
-        flexDirection: 'column',
-        marginBottom: 5,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        zIndex: 1,
+        top: 0,
+        right: 0,
+        position: 'fixed',
+        bg: 'background',
+        paddingX: [2, 3, 6],
+        paddingY: [2, 3, 4],
+        borderBottom: `2px solid`,
+        borderColor: 'text',
       }}
     >
       <Link
@@ -35,35 +42,14 @@ const Header = () => {
             letterSpacing: 'mega',
             lineHeight: 'solid',
             display: 'inline-block',
-            marginBottom: 4,
           }}
         >
           {title}
         </h1>
       </Link>
-      <h2
-        sx={{
-          fontFamily: 'heading',
-          fontSize: 6,
-          color: 'text',
-          fontWeight: 'heading',
-          lineHeight: 'title',
-          textTransform: 'uppercase',
-          letterSpacing: 'tracked',
-          marginBottom: 4,
-        }}
-      >
-        {description}
-      </h2>
-      <Social />
       <div
         sx={{
           display: ['none', 'flex'],
-          zIndex: 1,
-          top: 0,
-          right: 0,
-          position: 'fixed',
-          padding: 5,
         }}
       >
         <CycleTheme />

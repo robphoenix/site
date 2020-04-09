@@ -40,13 +40,13 @@ export default {
   useCustomProperties: true,
   colors: {
     text: '#26242C',
-    background: '#fafafa',
     primary: 'hsl(325, 86%, 34%)',
+    background: '#fafafa',
     modes: {
       dark: {
         text: '#f8f9f9',
-        background: '#1e2327',
         primary: 'hsl(55, 100%, 67%)',
+        background: '#1e2327',
       },
     },
   },

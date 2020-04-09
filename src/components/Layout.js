@@ -12,7 +12,6 @@ import CycleTheme from './CycleTheme'
 const Content = props => (
   <div
     sx={{
-      maxWidth: 9,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -26,14 +25,14 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <Reset />
       <InterTypeface />
+      <Header />
       <div
         sx={{
           minHeight: '100%',
-          padding: [2, 3, 5],
+          paddingX: [2, 3, 6],
+          paddingY: [2, 3, 5],
         }}
       >
-        <Header />
-
         <Content>{children}</Content>
 
         <MobileFixedMenu>

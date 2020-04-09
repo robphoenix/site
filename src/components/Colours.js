@@ -4,7 +4,7 @@ import { jsx, useThemeUI } from 'theme-ui'
 const Colours = () => {
   const { theme } = useThemeUI()
   const { colors } = theme
-  const colours = {...colors}
+  const colours = { ...colors }
   delete colours.modes
 
   return (
@@ -12,7 +12,6 @@ const Colours = () => {
       sx={{
         display: 'flex',
         flexDirection: ['column', 'row'],
-        justifyContent: 'space-between',
       }}
     >
       {colours &&
@@ -23,18 +22,17 @@ const Colours = () => {
               display: 'flex',
               flexDirection: ['row', 'column'],
               alignItems: 'center',
+              marginRight: 4,
             }}
           >
             <div
               sx={{
-                height: [3, 4, 6],
-                width: [3, 4, 6],
+                height: [3, 4, 5],
+                width: [3, 4, 7],
                 backgroundColor: colours[colour],
                 border: 1,
                 borderColor: 'text',
-                borderRadius: '50%',
                 marginBottom: 3,
-                marginRight: [3, 0],
               }}
             />
             <div
@@ -42,7 +40,6 @@ const Colours = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: ['flex-start', 'center'],
-                gridColumn: `${i + 1}/${i + 2}`,
               }}
             >
               <span
@@ -59,7 +56,6 @@ const Colours = () => {
               </span>
               <span
                 sx={{
-                  justifySelf: 'center',
                   color: 'text',
                   fontFamily: 'body',
                   fontSize: [1, 2, 3],
