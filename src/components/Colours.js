@@ -22,7 +22,7 @@ const Colours = () => {
               display: 'flex',
               flexDirection: ['row', 'column'],
               alignItems: 'center',
-              marginRight: 4,
+              marginRight: i < Object.keys(colours).length - 1 ? 4 : 'none',
             }}
           >
             <div

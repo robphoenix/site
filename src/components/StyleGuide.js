@@ -14,6 +14,7 @@ import { useSiteMetadata } from '../hooks/use-site-metadata'
 const SectionHeading = props => (
   <h4
     sx={{
+      width: 350,
       fontFamily: 'heading',
       fontSize: [1, 2, 4],
       fontWeight: 'body',
@@ -22,10 +23,6 @@ const SectionHeading = props => (
       color: 'text',
       lineHeight: 'solid',
       marginBottom: 5,
-      borderTop: `1px solid`,
-      borderColor: 'text',
-      width: '100%',
-      paddingTop: 5,
     }}
     {...props}
   />
@@ -34,7 +31,14 @@ const SectionHeading = props => (
 const Section = props => (
   <section
     sx={{
-      marginBottom: [4, 4, 5],
+      display: 'flex',
+      flexDirection: ['column', 'row'],
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      width: '100%',
+      paddingY: 5,
+      borderTop: `1px solid`,
+      borderColor: 'text',
     }}
     {...props}
   />
@@ -62,38 +66,38 @@ const StyleGuide = () => {
         <Social />
       </div>
       <div>
-        <SectionHeading>Colour Palette</SectionHeading>
         <Section>
+          <SectionHeading>Colour Palette</SectionHeading>
           <Colours />
         </Section>
 
-        <SectionHeading>Colour Contrast</SectionHeading>
         <Section>
+          <SectionHeading>Colour Contrast</SectionHeading>
           <ColourContrast />
         </Section>
 
-        <SectionHeading>Typography</SectionHeading>
         <Section>
+          <SectionHeading>Typography</SectionHeading>
           <Typography />
         </Section>
 
-        <SectionHeading>Type Scale</SectionHeading>
         <Section>
+          <SectionHeading>Type Scale</SectionHeading>
           <TypeScale />
         </Section>
 
-        <SectionHeading>Font Weights</SectionHeading>
         <Section>
+          <SectionHeading>Font Weights</SectionHeading>
           <FontWeights />
         </Section>
 
-        <SectionHeading>letter spacings</SectionHeading>
         <Section>
+          <SectionHeading>letter spacings</SectionHeading>
           <LetterSpacings />
         </Section>
 
-        <SectionHeading>Spacing</SectionHeading>
         <Section>
+          <SectionHeading>Spacing</SectionHeading>
           <Spacing />
         </Section>
       </div>
