@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import NavLink from './NavLink'
 
 const Social = () => {
   const { social } = useSiteMetadata()
@@ -18,15 +17,15 @@ const Social = () => {
         fontSize: [1, 2, 3],
       }}
     >
-      <SocialLink href="http://rm-phoenix.co.uk/">art</SocialLink>
-      <SocialLink href={`https://twitter.com/${social.twitter}`}>
-        twitter
-      </SocialLink>
+      <SocialLink href="http://rm-phoenix.co.uk/">Art</SocialLink>
       <SocialLink href={`https://github.com/${social.github}`}>
-        github
+        GitHub
+      </SocialLink>
+      <SocialLink href={`https://twitter.com/${social.twitter}`}>
+        Twitter
       </SocialLink>
       <SocialLink href={`https://www.linkedin.com/in/${social.linkedin}`}>
-        linkedin
+        LinkedIn
       </SocialLink>
     </ul>
   )
@@ -35,7 +34,7 @@ const Social = () => {
 const SocialLink = ({ href, children }) => (
   <li
     sx={{
-      marginRight: 3,
+      marginRight: 4,
       display: 'flex',
       justifyContent: 'center',
     }}

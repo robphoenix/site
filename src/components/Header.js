@@ -14,15 +14,15 @@ const Header = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        zIndex: 1,
+        // zIndex: 1,
         top: 0,
         right: 0,
         position: 'fixed',
-        bg: 'background',
-        paddingX: [2, 3, 6],
-        paddingY: [2, 3, 4],
-        borderBottom: `2px solid`,
-        borderColor: 'text',
+        // bg: `background`,
+        paddingX: [2, 3, 4],
+        paddingY: [2, 3, 5],
+        // borderBottom: `1px solid`,
+        // borderColor: 'text',
       }}
     >
       <Link

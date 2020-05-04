@@ -12,6 +12,9 @@ const NavLink = ({ current, to, ...props }) => (
       fontFamily: 'heading',
       fontWeight: 'body',
       paddingBottom: 1,
+      ':hover': {
+        fontStyle: `italic`,
+      },
       '::after': {
         content: '""',
         position: 'absolute',
@@ -26,9 +29,6 @@ const NavLink = ({ current, to, ...props }) => (
         left: 'auto',
         right: 0,
         width: 0,
-        // left: 0,
-        // right: 'auto',
-        // width: '100%',
       },
     }}
     to={to}

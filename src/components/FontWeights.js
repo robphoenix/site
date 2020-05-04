@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { Box } from '@theme-ui/components'
 
 const FontWeights = () => {
   const { theme } = useThemeUI()
@@ -20,14 +21,14 @@ const FontWeights = () => {
             marginBottom: i ? 0 : [1, 2, 3],
           }}
         >
-          <span
+          <Box
+            as="span"
             sx={{
-              marginRight: 3,
+              textTransform: `capitalize`,
             }}
           >
-            {fontWeights[fontWeight]}
-          </span>
-          <span>{fontWeight}</span>
+            {fontWeights[fontWeight]} {fontWeight}
+          </Box>
         </li>
       ))}
     </ul>

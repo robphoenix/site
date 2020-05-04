@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { Flex } from '@theme-ui/components'
 
 import React from 'react'
 
@@ -10,11 +11,12 @@ import MobileFixedMenu from './MobileFixedMenu'
 import CycleTheme from './CycleTheme'
 
 const Content = props => (
-  <div
+  <Flex
     sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
+      width: `100%`,
+      flexDirection: `column`,
+      alignItems: `center`,
+      justifyContent: `center`,
     }}
     {...props}
   />
@@ -26,9 +28,9 @@ const Layout = ({ children }) => {
       <Reset />
       <InterTypeface />
       <Header />
-      <div
+      <Flex
         sx={{
-          minHeight: '100%',
+          minHeight: `100%`,
           paddingX: [2, 3, 6],
           paddingY: [2, 3, 5],
         }}
@@ -38,7 +40,7 @@ const Layout = ({ children }) => {
         <MobileFixedMenu>
           <CycleTheme />
         </MobileFixedMenu>
-      </div>
+      </Flex>
     </React.Fragment>
   )
 }

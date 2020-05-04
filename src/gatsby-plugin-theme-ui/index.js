@@ -36,7 +36,7 @@ export default {
     },
   },
   borders: [0, '1px solid'],
-  initialColorMode: 'light',
+  initialColorMode: `light`,
   useCustomProperties: true,
   colors: {
     text: '#26242C',

@@ -1,6 +1,7 @@
 // @ts-nocheck
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { Box, Label, Radio } from '@theme-ui/components'
 
 import React from 'react'
 
@@ -11,6 +12,8 @@ const CycleTheme = () => {
   const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { colors, fonts } = theme
 
+  // we do this here otherwise the font wont be picked up on first load if the
+  // theme is not the default
   React.useEffect(() => {
     setTheme({
       fonts: fonts.modes[colorMode],
@@ -21,11 +24,27 @@ const CycleTheme = () => {
     <button
       sx={{
         cursor: 'pointer',
-        bg: 'transparent',
-        color: 'inherit',
-        border: 0,
-        display: 'flex',
-        alignItems: 'center',
+        bg: 'background',
+        color: 'primary',
+        // border: 0,
+        border: `1px solid`,
+        borderColor: 'primary',
+        outline: `none`,
+        // px: 3,
+        height: 3,
+        width: `160px`,
+        borderRadius: 3,
+        fontFamily: 'body',
+        textTransform: 'uppercase',
+        letterSpacing: 'tracked',
+        lineHeight: 'solid',
+        fontWeight: 'body',
+        fontSize: 1,
+        transition: `all 0.2s linear`,
+        ':hover': {
+          bg: 'primary',
+          color: 'background',
+        },
       }}
       onClick={() => {
         const index = modes.indexOf(colorMode)
@@ -33,27 +52,7 @@ const CycleTheme = () => {
         setColorMode(next)
       }}
     >
-      <span
-        sx={{
-          color: 'primary',
-          fontFamily: 'body',
-          textTransform: 'uppercase',
-          letterSpacing: 'tracked',
-          lineHeight: 'solid',
-          fontWeight: 'body',
-          padding: 2,
-          fontSize: [1, 2, 2],
-        }}
-      >
-        {colorMode} theme
-      </span>
-      <HoverMorphIcon
-        baseType="ban"
-        hoverType="fwd"
-        color={colors && colors.primary}
-        size={24}
-        title="Cycle Theme"
-      />
+      {colorMode} theme
     </button>
   )
 }

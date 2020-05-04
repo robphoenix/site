@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from 'theme-ui'
+import { Flex } from '@theme-ui/components'
 
 const Spacing = () => {
   const { theme } = useThemeUI()
@@ -10,10 +11,10 @@ const Spacing = () => {
   return (
     <ul sx={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
       {rest.map(s => (
-        <li
+        <Flex
+          as="li"
           key={s}
           sx={{
-            display: s > mobileLimit ? ['none', 'flex'] : 'flex',
             alignItems: 'center',
           }}
         >
@@ -22,7 +23,7 @@ const Spacing = () => {
               height: [2, 3],
               width: `${s}px`,
               backgroundColor: 'primary',
-              marginBottom: 2,
+              marginBottom: 3,
               marginRight: 1,
             }}
           />
@@ -35,7 +36,7 @@ const Spacing = () => {
           >
             {s}px
           </span>
-        </li>
+        </Flex>
       ))}
     </ul>
   )

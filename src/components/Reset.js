@@ -10,7 +10,7 @@ const Reset = () => {
           padding: 0,
           boxSizing: 'border-box',
           // for page transitions
-          transition: 'all 0.2s ease-out 0s',
+          transition: 'all 0.15s ease-out',
         },
         '*, *:: before, *::after': {
           margin: 0,
