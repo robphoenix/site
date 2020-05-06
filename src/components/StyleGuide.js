@@ -11,6 +11,7 @@ import FontWeights from './FontWeights'
 import LetterSpacings from './LetterSpacings'
 import Social from './Social'
 import { Stack } from './Stack'
+import ThemeSwitcher from './ThemeSwitcher'
 
 const SectionHeading = props => (
   <Heading
@@ -36,7 +37,7 @@ const Section = props => (
     sx={{
       width: '100%',
       paddingY: 5,
-      px: 4,
+      px: [0, 4],
       borderTop: `1px solid`,
       borderColor: 'text',
     }}
@@ -46,57 +47,42 @@ const Section = props => (
 
 const StyleGuide = () => {
   return (
-    <div sx={{ marginTop: 7, width: `100%` }}>
-      <div>
-        <Section>
-          <SectionHeading>Colour</SectionHeading>
-          <Colours />
-        </Section>
+    <Box sx={{ width: `100%` }}>
+      <Section>
+        <SectionHeading>colour</SectionHeading>
+        <Colours />
+      </Section>
 
-        <Section>
-          <SectionHeading>Colour Contrast</SectionHeading>
-          <ColourContrast />
-        </Section>
+      <Section>
+        <SectionHeading>colour contrast</SectionHeading>
+        <ColourContrast />
+      </Section>
 
-        <Section>
-          <SectionHeading>Typography</SectionHeading>
-          <Typography />
-        </Section>
+      <Section>
+        <SectionHeading>typography</SectionHeading>
+        <Typography />
+      </Section>
 
-        <Section>
-          <SectionHeading>Type Scale</SectionHeading>
-          <TypeScale />
-        </Section>
+      <Section>
+        <SectionHeading>type scale</SectionHeading>
+        <TypeScale />
+      </Section>
 
-        <Section>
-          <SectionHeading>Font Weights</SectionHeading>
-          <FontWeights />
-        </Section>
+      <Section>
+        <SectionHeading>font weights</SectionHeading>
+        <FontWeights />
+      </Section>
 
-        <Section>
-          <SectionHeading>letter spacing</SectionHeading>
-          <LetterSpacings />
-        </Section>
+      <Section>
+        <SectionHeading>letter spacing</SectionHeading>
+        <LetterSpacings />
+      </Section>
 
-        <Section>
-          <SectionHeading>Space</SectionHeading>
-          <Spacing />
-        </Section>
-      </div>
-      <Flex
-        as="section"
-        sx={{
-          width: '100%',
-          paddingY: 5,
-          px: 4,
-          borderTop: `1px solid`,
-          borderColor: 'text',
-          justifyContent: `center`,
-        }}
-      >
-        <Social />
-      </Flex>
-    </div>
+      <Section>
+        <SectionHeading>space</SectionHeading>
+        <Spacing />
+      </Section>
+    </Box>
   )
 }
 

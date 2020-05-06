@@ -13,7 +13,6 @@ const TypeScale = () => {
       }}
     >
       {fontSizes &&
-        // @ts-ignore
         fontSizes.map((fontSize, i) => (
           <div
             key={fontSize}
@@ -30,13 +29,7 @@ const TypeScale = () => {
             >
               {fontSize}px
             </span>
-            <span
-              sx={{
-                display: ['none', 'none', 'inline'],
-              }}
-            >
-              Hamburgefons
-            </span>
+            <span>Hamburgefons</span>
           </div>
         ))}
     </div>

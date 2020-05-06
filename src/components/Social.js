@@ -2,18 +2,21 @@
 import { jsx } from 'theme-ui'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
+import { Row } from './Stack'
 
 const Social = () => {
   const { social } = useSiteMetadata()
 
   return (
-    <ul
+    <Row
+      space={[3, 3, 4]}
+      as="ul"
       sx={{
-        listStyle: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        fontFamily: 'body',
-        color: 'text',
+        listStyle: `none`,
+        display: `flex`,
+        alignItems: `center`,
+        fontFamily: `body`,
+        color: `text`,
         fontSize: [1, 2, 3],
       }}
     >
@@ -27,14 +30,13 @@ const Social = () => {
       <SocialLink href={`https://www.linkedin.com/in/${social.linkedin}`}>
         LinkedIn
       </SocialLink>
-    </ul>
+    </Row>
   )
 }
 
 const SocialLink = ({ href, children }) => (
   <li
     sx={{
-      marginRight: 4,
       display: 'flex',
       justifyContent: 'center',
     }}

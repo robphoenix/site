@@ -13,7 +13,7 @@ const ThemeButton = props => (
       borderColor: `primary`,
       outline: `none`,
       height: 3,
-      width: `120px`,
+      width: `100%`,
       borderRadius: 3,
       fontFamily: `body`,
       textTransform: `uppercase`,
@@ -45,24 +45,29 @@ const ThemeSwitcher = () => {
   }, [colorMode])
 
   return (
-    <Stack
-      as="ul"
-      space={3}
-      align="center"
-      sx={{ p: 5, listStyle: `none`, position: `fixed`, bottom: 0, right: 0 }}
-    >
+    <Stack space={3} align="start">
       <Heading
         as="h3"
         sx={{
           textTransform: `uppercase`,
           letterSpacing: `tracked`,
           fontSize: 2,
-          fontWeight: `normal`,
         }}
       >
         theme
       </Heading>
-      <Stack space={2}>
+      <Stack as="ul" space={2} sx={{ listStyle: `none` }}>
+        <Box as="li">
+          <ThemeButton
+            onClick={() => {
+              const index = themes.indexOf(colorMode)
+              const next = themes[(index + 1) % themes.length]
+              setColorMode(next)
+            }}
+          >
+            next theme
+          </ThemeButton>
+        </Box>
         {themes.map(theme => (
           <Box as="li">
             <ThemeButton
