@@ -8,14 +8,14 @@ const Reset = () => {
         'html, body': {
           margin: 0,
           padding: 0,
-          boxSizing: 'border-box',
+          boxSizing: `border-box`,
           // for page transitions
-          transition: 'all 0.15s ease-out',
+          transition: `all 0.15s ease-out`,
         },
         '*, *:: before, *::after': {
           margin: 0,
           padding: 0,
-          boxSizing: 'inherit',
+          boxSizing: `inherit`,
         },
       })}
     />

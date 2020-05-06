@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Box, Flex } from '@theme-ui/components'
+import { Box, Flex, Heading } from '@theme-ui/components'
 
 import Typography from './Typography'
 import ColourContrast from './ColourContrast'
@@ -10,28 +10,30 @@ import Spacing from './Spacing'
 import FontWeights from './FontWeights'
 import LetterSpacings from './LetterSpacings'
 import Social from './Social'
+import { Stack } from './Stack'
 
 const SectionHeading = props => (
-  <h4
+  <Heading
+    as="h4"
     sx={{
-      fontFamily: 'heading',
-      fontSize: [1, 2, 5],
-      fontWeight: 'body',
+      // fontFamily: 'heading',
+      fontSize: [1, 2, 4],
+      // fontWeight: 'body',
       textTransform: 'uppercase',
       letterSpacing: 'tracked',
-      color: 'text',
+      // color: 'text',
       lineHeight: 'solid',
-      marginBottom: 5,
     }}
     {...props}
   />
 )
 
 const Section = props => (
-  <Flex
+  <Stack
     as="section"
+    space={4}
+    align="start"
     sx={{
-      flexDirection: `column`,
       width: '100%',
       paddingY: 5,
       px: 4,
@@ -44,25 +46,7 @@ const Section = props => (
 
 const StyleGuide = () => {
   return (
-    <div sx={{ marginTop: 7, width: `100%`, maxWidth: 900 }}>
-      <div sx={{ marginBottom: 7, px: 4 }}>
-        <Box
-          as="h2"
-          sx={{
-            fontFamily: `heading`,
-            fontSize: 8,
-            color: `text`,
-            fontWeight: `heading`,
-            lineHeight: `title`,
-            textTransform: `uppercase`,
-            letterSpacing: `tracked`,
-            maxWidth: `10ch`,
-            lineHeight: 1.5,
-          }}
-        >
-          frontend. developer. designer.
-        </Box>
-      </div>
+    <div sx={{ marginTop: 7, width: `100%` }}>
       <div>
         <Section>
           <SectionHeading>Colour</SectionHeading>

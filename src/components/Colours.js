@@ -1,5 +1,7 @@
-/** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import { useThemeUI } from 'theme-ui'
+import { Flex, Box, Text } from '@theme-ui/components'
+
+import { Row, Stack } from './Stack'
 
 const Colours = () => {
   const { theme } = useThemeUI()
@@ -8,66 +10,58 @@ const Colours = () => {
   delete colours.modes
 
   return (
-    <div
+    <Row
+      space={4}
       sx={{
-        display: 'flex',
         flexDirection: ['column', 'row'],
       }}
     >
       {colours &&
         Object.keys(colours).map((colour, i) => (
-          <div
+          <Stack
+            space={3}
             key={colour}
             sx={{
-              display: 'flex',
               flexDirection: ['row', 'column'],
-              alignItems: 'center',
-              marginRight: i < Object.keys(colours).length - 1 ? 4 : 'none',
             }}
           >
-            <div
-              sx={{
-                height: [3, 4, 5],
-                width: [3, 4, 7],
-                backgroundColor: colours[colour],
-                border: 1,
-                borderColor: 'text',
-                marginBottom: 3,
-              }}
-            />
-            <div
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: ['flex-start', 'center'],
-              }}
-            >
-              <span
+            <Stack space={1} align="start">
+              <Text
                 sx={{
-                  justifySelf: 'center',
-                  color: 'text',
-                  fontFamily: 'body',
+                  fontFamily: `heading`,
                   fontSize: [1, 2, 3],
+                  display: 'inline-block',
                   textTransform: 'uppercase',
                   letterSpacing: 'tracked',
                 }}
               >
                 {colour}
-              </span>
-              <span
+              </Text>
+              <Text
                 sx={{
-                  color: 'text',
-                  fontFamily: 'body',
+                  fontFamily: `heading`,
                   fontSize: [1, 2, 3],
-                  marginBottom: [3, 3, 0],
+                  display: 'inline-block',
+                  textTransform: 'uppercase',
+                  letterSpacing: 'tracked',
                 }}
               >
                 {colors[colour]}
-              </span>
-            </div>
-          </div>
+              </Text>
+            </Stack>
+            <Box
+              sx={{
+                height: [3, 4, 5],
+                width: [3, 4, 7],
+                backgroundColor: colours[colour],
+                border: 1,
+                borderColor: colours[colour],
+                borderRadius: 3,
+              }}
+            />
+          </Stack>
         ))}
-    </div>
+    </Row>
   )
 }
 
