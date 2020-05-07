@@ -18,20 +18,21 @@ export default {
     tracked: '0.1em',
     mega: '0.25em',
   },
+  boxShadows: {
+    button: `5px 5px 0 black`,
+  },
   fonts: {
-    heading: 'Inter, sans-serif',
-    body: 'Karla, sans-serif',
-    // monospace: 'Overpass Mono, monospace',
+    heading: 'Inter, system-ui, sans-serif',
+    body: 'Inter, system-ui, sans-serif',
     modes: {
       light: {
-        heading: 'Inter, sans-serif',
-        body: 'Karla, sans-serif',
-        // monospace: 'Overpass Mono, monospace',
+        // heading: 'Space Mono, monospace',
+        heading: 'Inter, system-ui, sans-serif',
+        body: 'Inter, system-ui, sans-serif',
       },
       dark: {
-        body: 'system-ui, sans-serif',
-        // monospace: 'Space Mono, monospace',
         heading: 'Overpass Mono, monospace',
+        body: 'Karla, sans-serif',
       },
     },
   },
@@ -39,14 +40,16 @@ export default {
   initialColorMode: `light`,
   useCustomProperties: true,
   colors: {
-    text: '#26242C',
-    primary: 'hsl(325, 86%, 34%)',
-    background: '#fafafa',
+    text: `hsl(248, 31%, 20%)`,
+    primary: 'hsl(180, 95%, 20%)',
+    offset: 'hsl(180, 50%, 90%)',
+    background: `hsl(60, 100%, 100%)`,
     modes: {
       dark: {
-        text: '#f8f9f9',
-        primary: 'hsl(55, 100%, 67%)',
-        background: '#1e2327',
+        text: `hsl(60, 100%, 100%)`,
+        primary: `hsl(32, 100%, 51%)`,
+        offset: `hsl(204, 60%, 21%)`,
+        background: `hsl(240, 8%, 9%)`,
       },
     },
   },

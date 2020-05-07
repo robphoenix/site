@@ -1,16 +1,16 @@
 import React from 'react'
 import { useThemeUI } from 'theme-ui'
-import { Box, Button, Heading } from '@theme-ui/components'
+import { Select, Button, Text, Flex } from '@theme-ui/components'
 
-import { Stack } from './Stack'
+import { Stack, Row } from './Stack'
 
 const ThemeButton = props => (
   <Button
     sx={{
       bg: props.current ? `primary` : `background`,
       color: props.current ? `background` : `primary`,
-      py: 3,
       border: `2px solid`,
+      py: 3,
       borderColor: `primary`,
       outline: `none`,
       width: 160,
@@ -25,9 +25,6 @@ const ThemeButton = props => (
       boxShadow: props.current
         ? `none`
         : `5px 5px 0 ${props.theme.colors.primary}`,
-      ':hover': {
-        bg: props.current ? `primary` : `offset`,
-      },
       ':active': {
         boxShadow: `none`,
       },
@@ -36,7 +33,7 @@ const ThemeButton = props => (
   />
 )
 
-const ThemeSwitcher = () => {
+const MobileThemeSwitcher = () => {
   const themes = [`light`, `dark`]
   const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { fonts } = theme
@@ -50,50 +47,47 @@ const ThemeSwitcher = () => {
   }, [colorMode])
 
   return (
-    <Stack space={3} align="start">
-      <Heading
-        as="h3"
+    <Row space={4} sx={{ color: `primary`, py: 3 }}>
+      <Select
+        value={colorMode}
+        onChange={event => setColorMode(event.currentTarget.value)}
         sx={{
+          width: 120,
+          border: `2px solid`,
+          borderColor: `primary`,
+          borderRadius: 0,
+          outline: `none`,
+          color: `primary`,
+          boxShadow: `5px 5px 0 ${theme.colors.primary}`,
+          fontFamily: `body`,
           textTransform: `uppercase`,
           letterSpacing: `tracked`,
+          lineHeight: `solid`,
+          fontWeight: `bold`,
           fontSize: 2,
-          color: `primary`,
+          ':active': {
+            boxShadow: `none`,
+          },
         }}
       >
-        theme
-        <Box as="span" sx={{ color: `text` }}>
-          .
-        </Box>
-      </Heading>
-      <Stack as="ul" space={3} sx={{ listStyle: `none` }}>
-        <Box as="li">
-          <ThemeButton
-            theme={theme}
-            onClick={() => {
-              const index = themes.indexOf(colorMode)
-              const next = themes[(index + 1) % themes.length]
-              setColorMode(next)
-            }}
-          >
-            next theme
-          </ThemeButton>
-        </Box>
         {themes.map(themeName => (
-          <Box as="li">
-            <ThemeButton
-              theme={theme}
-              current={colorMode === themeName}
-              onClick={() => {
-                setColorMode(themeName)
-              }}
-            >
-              {themeName}
-            </ThemeButton>
-          </Box>
+          <Text key={themeName} as="option" value={themeName}>
+            {themeName}
+          </Text>
         ))}
-      </Stack>
-    </Stack>
+      </Select>
+      <ThemeButton
+        theme={theme}
+        onClick={() => {
+          const index = themes.indexOf(colorMode)
+          const next = themes[(index + 1) % themes.length]
+          setColorMode(next)
+        }}
+      >
+        next theme
+      </ThemeButton>
+    </Row>
   )
 }
 
-export default ThemeSwitcher
+export default MobileThemeSwitcher

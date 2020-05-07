@@ -1,44 +1,38 @@
-/** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
-import { Flex } from '@theme-ui/components'
+import React from 'react'
+import { useThemeUI } from 'theme-ui'
+import { Box, Text } from '@theme-ui/components'
+
+import { Row, Stack } from './Stack'
 
 const Spacing = () => {
   const { theme } = useThemeUI()
   const { space } = theme
-  const mobileLimit = space && space[7]
-  const [, ...rest] = space || []
 
   return (
-    <ul sx={{ listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
-      {rest.map(s => (
-        <Flex
-          as="li"
-          key={s}
-          sx={{
-            alignItems: 'center',
-          }}
-        >
-          <div
+    <Stack space={3} as="ul" sx={{ listStyle: 'none' }}>
+      {space.map(s => (
+        <Row as="li" key={s} space={2} sx={{ alignItems: 'center' }}>
+          {s > 0 && (
+            <Box
+              sx={{
+                height: [2, 3],
+                minWidth: `${s}px`,
+                backgroundColor: `primary`,
+              }}
+            />
+          )}
+          <Text
             sx={{
-              height: [2, 3],
-              width: `${s}px`,
-              backgroundColor: 'primary',
-              marginBottom: 3,
-              marginRight: 1,
-            }}
-          />
-          <span
-            sx={{
-              fontFamily: 'body',
+              fontFamily: `heading`,
               fontSize: [1, 2, 2],
-              color: 'text',
+              color: `text`,
             }}
           >
             {s}px
-          </span>
-        </Flex>
+          </Text>
+        </Row>
       ))}
-    </ul>
+    </Stack>
   )
 }
 

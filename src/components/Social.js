@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import React from 'react'
+import { Flex, Box } from '@theme-ui/components'
 
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import { Row } from './Stack'
@@ -35,27 +35,24 @@ const Social = () => {
 }
 
 const SocialLink = ({ href, children }) => (
-  <li
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-    }}
-  >
-    <a
+  <Flex as="li">
+    <Box
+      as="a"
       href={href}
       sx={{
+        px: 2,
         color: 'text',
         textDecoration: 'none',
         cursor: 'pointer',
         position: 'relative',
-        paddingBottom: 1,
+        pb: 2,
         '::after': {
           content: '""',
           position: 'absolute',
           left: 0,
           bottom: 0,
           backgroundColor: 'primary',
-          height: ['1px', '2px'],
+          height: `3px`,
           transition: 'width 0.3s ease-out',
           width: '100%',
         },
@@ -67,8 +64,8 @@ const SocialLink = ({ href, children }) => (
       }}
     >
       {children}
-    </a>
-  </li>
+    </Box>
+  </Flex>
 )
 
 export default Social

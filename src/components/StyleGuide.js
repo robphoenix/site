@@ -1,29 +1,27 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Box, Flex, Heading } from '@theme-ui/components'
+import React from 'react'
+import { Box, Text, Heading } from '@theme-ui/components'
 
 import Typography from './Typography'
-import ColourContrast from './ColourContrast'
 import Colours from './Colours'
-import TypeScale from './TypeScale'
 import Spacing from './Spacing'
-import FontWeights from './FontWeights'
-import LetterSpacings from './LetterSpacings'
-import Social from './Social'
 import { Stack } from './Stack'
-import ThemeSwitcher from './ThemeSwitcher'
 
 const SectionHeading = props => (
   <Heading
     as="h4"
     sx={{
-      // fontFamily: 'heading',
-      fontSize: [2, 3, 4],
-      // fontWeight: 'body',
-      textTransform: 'uppercase',
-      letterSpacing: 'tracked',
+      width: `100%`,
+      fontFamily: 'heading',
+      fontSize: [3, 4, 5],
+      // textTransform: 'uppercase',
+      // letterSpacing: 'tracked',
+      textTransform: `capitalize`,
       color: `primary`,
       lineHeight: 'solid',
+      borderBottom: `3px solid`,
+      borderColor: `primary`,
+      pb: 3,
+      textAlign: `left`,
     }}
     {...props}
   />
@@ -31,15 +29,16 @@ const SectionHeading = props => (
 
 const Section = props => (
   <Stack
+    space={5}
     as="section"
-    space={4}
-    align="start"
     sx={{
+      justifyContent: `center`,
+      alignItems: `start`,
       width: '100%',
-      paddingY: 5,
-      px: [0, 4],
-      borderTop: `1px solid`,
-      borderColor: 'text',
+      // py: 4,
+      // px: [0, 4],
+      // borderTop: `1px solid`,
+      // borderColor: 'text',
     }}
     {...props}
   />
@@ -47,23 +46,44 @@ const Section = props => (
 
 const StyleGuide = () => {
   return (
-    <Box sx={{ width: `100%` }}>
+    <Stack space={6} sx={{ width: `100%` }}>
       <Section>
         <SectionHeading>colour</SectionHeading>
-        <Colours />
+        <Box sx={{ px: [0, 0, 4], width: `100%` }}>
+          <Colours />
+        </Box>
       </Section>
 
       <Section>
         <SectionHeading>typography</SectionHeading>
-        <Typography />
-        <TypeScale />
+        <Box sx={{ px: [0, 0, 4], width: `100%` }}>
+          <Typography />
+        </Box>
       </Section>
 
       <Section>
         <SectionHeading>space</SectionHeading>
-        <Spacing />
+        <Box sx={{ px: [0, 0, 4], width: `100%` }}>
+          <Spacing />
+        </Box>
       </Section>
-    </Box>
+      <Section>
+        <SectionHeading>foundations</SectionHeading>
+        <Box sx={{ px: [0, 0, 4], width: `100%` }}>
+          <Text
+            sx={{
+              fontFamily: `body`,
+              fontSize: [2, 3, 4],
+            }}
+          >
+            Laboris ex ea elit duis incididunt sunt quis occaecat id. Fugiat
+            tempor cillum anim veniam qui fugiat culpa elit culpa laboris elit
+            aliquip enim irure. Eiusmod laboris duis in amet exercitation cillum
+            duis laborum anim eu irure consectetur proident qui.
+          </Text>
+        </Box>
+      </Section>
+    </Stack>
   )
 }
 

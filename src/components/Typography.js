@@ -1,54 +1,70 @@
-/** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui'
+import React from 'react'
+import { useThemeUI } from 'theme-ui'
+import { Grid, Text, Flex } from '@theme-ui/components'
+
+import { Stack, Row } from './Stack'
 
 const Typography = () => {
   const { theme } = useThemeUI()
-  const { fonts } = theme
+  const { fonts, fontSizes } = theme
   const typography = { ...fonts }
   delete typography['modes']
 
   return (
-    <ul
-      sx={{
-        listStyle: 'none',
-      }}
-    >
-      {typography &&
-        Object.keys(typography).map((font, i) => (
-          <li
-            key={`${font}${i}`}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              color: 'text',
-              marginBottom:
-                i > Object.keys(typography).length - 2 ? 0 : [3, 4, 4],
-            }}
-          >
-            <span
+    <Stack space={5} align="start">
+      <Stack as="ul" space={2}>
+        {typography &&
+          Object.keys(typography).map((font, i) => (
+            <Grid
+              columns="1fr 2fr"
+              gap={1}
+              as="li"
+              key={`${font}${i}`}
+              sx={{ alignItems: `baseline` }}
+            >
+              <Text
+                sx={{
+                  fontFamily: `heading`,
+                  textTransform: 'uppercase',
+                  letterSpacing: 'tracked',
+                  fontSize: [2, 3, 4],
+                  marginBottom: [1, 2, 2],
+                }}
+              >
+                {font}
+              </Text>
+              <Text
+                sx={{
+                  fontFamily: font,
+                  fontSize: [3, 4, 5],
+                  fontWeight: 'normal',
+                  maxWidth: [7, 7, '100%'],
+                }}
+              >
+                {typography[font]}
+              </Text>
+            </Grid>
+          ))}
+      </Stack>
+      <Stack as="ul" space={2} sx={{ width: `max-content` }}>
+        {fontSizes &&
+          fontSizes.map((fontSize, i) => (
+            <Flex
+              as="li"
+              key={fontSize}
               sx={{
-                fontFamily: 'body',
-                textTransform: 'uppercase',
-                letterSpacing: 'tracked',
-                fontSize: [1, 2, 3],
-                marginBottom: [1, 2, 2],
+                alignItems: `baseline`,
+                fontSize: i,
+                fontFamily: 'heading',
+                color: 'text',
               }}
             >
-              {font}
-            </span>
-            <span
-              sx={{
-                fontFamily: font,
-                fontSize: [3, 4, 5],
-                fontWeight: 'normal',
-                maxWidth: [7, 7, '100%'],
-              }}
-            >
-              {typography[font]}
-            </span>
-          </li>
-        ))}
-    </ul>
+              <Text sx={{ mr: fontSize }}>{fontSize}px</Text>
+              <Text as="span">Hamburgefons</Text>
+            </Flex>
+          ))}
+      </Stack>
+    </Stack>
   )
 }
 

@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
               display: `inline-block`,
             }}
           >
-            {title}
+            rob phoenix
           </Heading>
         </Box>
 
@@ -76,78 +76,6 @@ const Layout = ({ children }) => {
         </Box>
         {children}
       </Stack>
-      {/* <Flex
-        sx={{
-          width: `100%`,
-          alignItems: `baseline`,
-          justifyContent: `space-between`,
-          p: [2, 3, 5],
-        }}
-      >
-        <Box
-          as={Link}
-          to="/"
-          sx={{
-            color: `text`,
-            textDecoration: `none`,
-          }}
-        >
-          <Heading
-            as="h1"
-            sx={{
-              fontSize: 3,
-              fontWeight: `heading`,
-              color: `text`,
-              textTransform: `uppercase`,
-              letterSpacing: `mega`,
-              lineHeight: `solid`,
-              display: `inline-block`,
-            }}
-          >
-            {title}
-          </Heading>
-        </Box>
-
-        <Flex sx={{ display: ['none', 'flex'] }}>
-          <ThemeSwitcher />
-        </Flex>
-      </Flex> */}
-      {/* <Flex
-        sx={{
-          minHeight: `100%`,
-          paddingX: [2, 3, 5],
-          paddingY: [2, 3, 5],
-        }}
-      >
-        <Flex
-          sx={{
-            width: `100%`,
-            flexDirection: `column`,
-            alignItems: `center`,
-            justifyContent: `center`,
-          }}
-        >
-          {children}
-        </Flex>
-        <Flex
-          sx={{
-            width: `100%`,
-            padding: 3,
-            display: [`flex`, `none`],
-            zIndex: 1,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            position: `fixed`,
-            backgroundColor: `background`,
-            borderTop: 1,
-            borderColor: `primary`,
-            justifyContent: `flex-end`,
-          }}
-        >
-          <ThemeSwitcher />
-        </Flex>
-      </Flex> */}
     </>
   )
 }
