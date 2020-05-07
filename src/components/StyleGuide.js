@@ -18,11 +18,11 @@ const SectionHeading = props => (
     as="h4"
     sx={{
       // fontFamily: 'heading',
-      fontSize: [1, 2, 4],
+      fontSize: [2, 3, 4],
       // fontWeight: 'body',
       textTransform: 'uppercase',
       letterSpacing: 'tracked',
-      // color: 'text',
+      color: `primary`,
       lineHeight: 'solid',
     }}
     {...props}
@@ -54,28 +54,9 @@ const StyleGuide = () => {
       </Section>
 
       <Section>
-        <SectionHeading>colour contrast</SectionHeading>
-        <ColourContrast />
-      </Section>
-
-      <Section>
         <SectionHeading>typography</SectionHeading>
         <Typography />
-      </Section>
-
-      <Section>
-        <SectionHeading>type scale</SectionHeading>
         <TypeScale />
-      </Section>
-
-      <Section>
-        <SectionHeading>font weights</SectionHeading>
-        <FontWeights />
-      </Section>
-
-      <Section>
-        <SectionHeading>letter spacing</SectionHeading>
-        <LetterSpacings />
       </Section>
 
       <Section>

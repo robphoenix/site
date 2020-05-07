@@ -18,13 +18,12 @@ const Layout = ({ children }) => {
       <Stack
         space={[6, 0]}
         sx={{
-          display: [`flex`, `grid`],
+          display: [`flex`, `flex`, `grid`],
           gap: 2,
           gridTemplateColumns: `1fr 3fr 1fr`,
           gridTemplateRows: `100vh 1fr`,
           flexDirection: `column`,
-          py: 5,
-          px: [4, 0],
+          px: [4, 2, 0],
           justifyItems: `center`,
           height: `100vh`,
         }}
@@ -33,6 +32,7 @@ const Layout = ({ children }) => {
           as={Link}
           to="/"
           sx={{
+            py: 5,
             color: `text`,
             textDecoration: `none`,
           }}
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
           <Heading
             as="h1"
             sx={{
-              fontSize: [1, 2, 3],
+              fontSize: 3,
               fontWeight: `heading`,
               color: `text`,
               textTransform: `uppercase`,
@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
             as="h2"
             sx={{
               fontFamily: `heading`,
-              fontSize: [5, 7, 8],
+              fontSize: [6, 6, 8],
               color: `text`,
               fontWeight: `heading`,
               lineHeight: `title`,
@@ -71,7 +71,7 @@ const Layout = ({ children }) => {
             frontend. developer. designer.
           </Heading>
         </Flex>
-        <Box sx={{ display: [`none`, `flex`] }}>
+        <Box sx={{ py: 5, display: [`none`, `none`, `flex`] }}>
           <ThemeSwitcher />
         </Box>
         {children}

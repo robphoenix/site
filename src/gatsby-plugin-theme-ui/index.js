@@ -21,16 +21,16 @@ export default {
   fonts: {
     heading: 'Inter, sans-serif',
     body: 'Karla, sans-serif',
-    monospace: 'Overpass Mono, monospace',
+    // monospace: 'Overpass Mono, monospace',
     modes: {
       light: {
         heading: 'Inter, sans-serif',
         body: 'Karla, sans-serif',
-        monospace: 'Overpass Mono, monospace',
+        // monospace: 'Overpass Mono, monospace',
       },
       dark: {
         body: 'system-ui, sans-serif',
-        monospace: 'Space Mono, monospace',
+        // monospace: 'Space Mono, monospace',
         heading: 'Overpass Mono, monospace',
       },
     },

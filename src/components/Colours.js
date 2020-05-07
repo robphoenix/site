@@ -1,5 +1,6 @@
 import { useThemeUI } from 'theme-ui'
 import { Flex, Box, Text } from '@theme-ui/components'
+import contrast from 'get-contrast'
 
 import { Row, Stack } from './Stack'
 
@@ -10,12 +11,7 @@ const Colours = () => {
   delete colours.modes
 
   return (
-    <Row
-      space={4}
-      sx={{
-        flexDirection: ['column', 'row'],
-      }}
-    >
+    <Row space={4}>
       {colours &&
         Object.keys(colours).map((colour, i) => (
           <Stack
@@ -29,24 +25,13 @@ const Colours = () => {
               <Text
                 sx={{
                   fontFamily: `heading`,
-                  fontSize: [1, 2, 3],
-                  display: 'inline-block',
-                  textTransform: 'uppercase',
-                  letterSpacing: 'tracked',
+                  fontSize: [2, 3, 4],
+                  display: `inline-block`,
+                  textTransform: `uppercase`,
+                  letterSpacing: `tracked`,
                 }}
               >
                 {colour}
-              </Text>
-              <Text
-                sx={{
-                  fontFamily: `heading`,
-                  fontSize: [1, 2, 3],
-                  display: 'inline-block',
-                  textTransform: 'uppercase',
-                  letterSpacing: 'tracked',
-                }}
-              >
-                {colors[colour]}
               </Text>
             </Stack>
             <Box
@@ -59,6 +44,37 @@ const Colours = () => {
                 borderRadius: 3,
               }}
             />
+            <Text
+              sx={{
+                fontFamily: `heading`,
+                fontSize: [1, 2, 3],
+                display: `inline-block`,
+                textTransform: `uppercase`,
+                letterSpacing: 'tracked',
+              }}
+            >
+              {colors[colour]}
+            </Text>
+            <Box
+              sx={{
+                alignSelf: 'start',
+                display: 'flex',
+                alignItems: 'baseline',
+                fontFamily: 'body',
+                color: colors[colour],
+                lineHeight: 1,
+              }}
+            >
+              <Text
+                sx={{ height: 'auto', fontSize: [2, 3, 4], marginRight: 3 }}
+              >
+                {colors &&
+                  contrast.ratio(colors[colour], colors.background).toFixed(2)}
+              </Text>
+              <Text sx={{ fontSize: [2, 3, 4] }}>
+                {colors && contrast.score(colors.text, colors.background)}
+              </Text>
+            </Box>
           </Stack>
         ))}
     </Row>

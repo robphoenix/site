@@ -10,20 +10,6 @@ const ColourContrast = () => {
   return (
     <div sx={{ display: 'flex', flexDirection: ['column', 'column', 'row'] }}>
       <div sx={{ marginRight: [0, 0, 5], marginBottom: [3, 3, 0] }}>
-        <span
-          sx={{
-            fontFamily: 'body',
-            fontSize: [1, 2, 3],
-            color: 'text',
-            display: 'inline-block',
-            marginBottom: 2,
-            maxWidth: [5, 6, '100%'],
-            textTransform: 'uppercase',
-            letterSpacing: 'tracked',
-          }}
-        >
-          text & background
-        </span>
         <div
           sx={{
             alignSelf: 'start',
@@ -44,20 +30,6 @@ const ColourContrast = () => {
         </div>
       </div>
       <div>
-        <span
-          sx={{
-            fontFamily: 'body',
-            color: 'primary',
-            display: 'inline-block',
-            marginBottom: 2,
-            maxWidth: [5, 6, '100%'],
-            textTransform: 'uppercase',
-            letterSpacing: 'tracked',
-            fontSize: [1, 2, 3],
-          }}
-        >
-          primary & background
-        </span>
         <div
           sx={{
             alignSelf: 'start',

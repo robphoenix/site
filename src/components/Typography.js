@@ -31,7 +31,7 @@ const Typography = () => {
                 textTransform: 'uppercase',
                 letterSpacing: 'tracked',
                 fontSize: [1, 2, 3],
-                marginBottom: [1, 2, 3],
+                marginBottom: [1, 2, 2],
               }}
             >
               {font}

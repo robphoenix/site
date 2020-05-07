@@ -9,17 +9,17 @@ const ThemeButton = props => (
     sx={{
       bg: props.current ? `primary` : `background`,
       color: props.current ? `background` : `primary`,
-      border: `1px solid`,
+      border: `3px solid`,
       borderColor: `primary`,
       outline: `none`,
-      height: 3,
+      // height: 3,
       width: `100%`,
-      borderRadius: 3,
+      borderRadius: 0,
       fontFamily: `body`,
       textTransform: `uppercase`,
       letterSpacing: `tracked`,
       lineHeight: `solid`,
-      fontWeight: `body`,
+      fontWeight: `bold`,
       fontSize: 1,
       transition: `all 0.2s linear`,
       ':hover': {
@@ -52,6 +52,7 @@ const ThemeSwitcher = () => {
           textTransform: `uppercase`,
           letterSpacing: `tracked`,
           fontSize: 2,
+          color: `primary`,
         }}
       >
         theme
