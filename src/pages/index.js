@@ -17,16 +17,16 @@ const Index = () => {
       <Reset />
       <InterTypeface />
       <Stack
-        space={[6, 0]}
+        space={6}
         sx={{
           display: [`flex`, `flex`, `grid`],
           gap: 2,
           gridTemplateColumns: `1fr 3fr 1fr`,
           gridTemplateRows: `100vh 1fr`,
           flexDirection: `column`,
-          px: [4, 2, 0],
+          px: 4,
           justifyItems: `center`,
-          height: `100vh`,
+          // height: `100vh`,
         }}
       >
         <Box
@@ -70,6 +70,7 @@ const Index = () => {
               letterSpacing: `tracked`,
               maxWidth: `10ch`,
               lineHeight: 1.5,
+              pt: 6,
             }}
           >
             frontend
