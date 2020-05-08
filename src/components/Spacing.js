@@ -24,7 +24,7 @@ const Spacing = () => {
           <Text
             sx={{
               fontFamily: `heading`,
-              fontSize: [1, 2, 2],
+              fontSize: [2, 2, 3],
               color: `text`,
             }}
           >

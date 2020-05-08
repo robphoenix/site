@@ -15,23 +15,23 @@ const Colours = () => {
         name="text"
         showContrast
       />
-      <Row space={3} align="start" sx={{ width: `100%` }}>
+      <Row space={[3, 3, 4]} align="start" sx={{ width: `100%` }}>
         <Box
           sx={{
-            height: 4,
-            minWidth: 4,
+            height: [4, 4, 5],
+            minWidth: [4, 4, 5],
             backgroundColor: `primary`,
-            border: 1,
           }}
         />
-        <Flex
+        <Stack
+          space={3}
           sx={{
             flexDirection: [`column`, `column`, `row`],
             width: `100%`,
             justifyContent: `space-between`,
           }}
         >
-          <Stack space={0} align="start" sx={{ mb: [2, 2, 0] }}>
+          <Stack space={1} align="start" sx={{ mb: [2, 2, 0] }}>
             <Text
               sx={{
                 fontFamily: `heading`,
@@ -57,7 +57,7 @@ const Colours = () => {
           </Stack>
 
           <Stack
-            space={0}
+            space={1}
             sx={{ alignItems: [`flex-start`, `flex-start`, `flex-end`] }}
           >
             <Text
@@ -65,8 +65,7 @@ const Colours = () => {
                 fontFamily: `heading`,
                 fontSize: [1, 1, 3],
                 display: `inline-block`,
-                textTransform: `uppercase`,
-                letterSpacing: `tracked`,
+                textTransform: `capitalize`,
               }}
             >
               contrast
@@ -82,7 +81,7 @@ const Colours = () => {
               />
             </Row>
           </Stack>
-        </Flex>
+        </Stack>
       </Row>
       <Colour
         colour={theme.colors.background}
@@ -101,13 +100,12 @@ const Colours = () => {
 }
 
 const Colour = ({ colour, background, name, showContrast }) => (
-  <Row space={3} align="start" sx={{ width: `100%` }}>
+  <Row space={[3, 3, 4]} align="start" sx={{ width: `100%` }}>
     <Box
       sx={{
-        height: 4,
-        minWidth: 4,
+        height: [4, 4, 5],
+        minWidth: [4, 4, 5],
         backgroundColor: colour,
-        border: 1,
       }}
     />
 
@@ -118,7 +116,7 @@ const Colour = ({ colour, background, name, showContrast }) => (
         flexDirection: [`column`, `column`, `row`],
       }}
     >
-      <Stack space={0} align="start" sx={{ mb: [2, 2, 0] }}>
+      <Stack space={1} align="start" sx={{ mb: [2, 2, 0] }}>
         <Text
           sx={{
             fontFamily: `heading`,
@@ -145,7 +143,7 @@ const Colour = ({ colour, background, name, showContrast }) => (
 
       {showContrast && (
         <Stack
-          space={0}
+          space={1}
           align="start"
           sx={{ alignItems: [`flex-start`, `flex-start`, `flex-end`] }}
         >
@@ -154,8 +152,7 @@ const Colour = ({ colour, background, name, showContrast }) => (
               fontFamily: `heading`,
               fontSize: [1, 1, 3],
               display: `inline-block`,
-              textTransform: `uppercase`,
-              letterSpacing: `tracked`,
+              textTransform: `capitalize`,
             }}
           >
             contrast
@@ -185,12 +182,12 @@ const Contrast = ({ text, background }) => (
     <Text
       sx={{
         height: 'auto',
-        fontSize: [2, 3, 3],
+        fontSize: [1, 2, 3],
       }}
     >
       {contrast.ratio(text, background).toFixed(2)}
     </Text>
-    <Text sx={{ fontSize: [2, 3, 3] }}>{contrast.score(text, background)}</Text>
+    <Text sx={{ fontSize: [1, 2, 3] }}>{contrast.score(text, background)}</Text>
   </Row>
 )
 

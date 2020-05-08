@@ -12,15 +12,13 @@ const SectionHeading = props => (
     sx={{
       width: `100%`,
       fontFamily: 'heading',
-      fontSize: [3, 4, 5],
-      // textTransform: 'uppercase',
-      // letterSpacing: 'tracked',
+      fontSize: [4, 4, 5],
       textTransform: `capitalize`,
       color: `primary`,
       lineHeight: 'solid',
       borderBottom: `3px solid`,
       borderColor: `primary`,
-      pb: 3,
+      pb: [3, 3, 4],
       textAlign: `left`,
     }}
     {...props}
@@ -29,16 +27,12 @@ const SectionHeading = props => (
 
 const Section = props => (
   <Stack
-    space={5}
+    space={[4, 4, 5]}
     as="section"
     sx={{
       justifyContent: `center`,
       alignItems: `start`,
       width: '100%',
-      // py: 4,
-      // px: [0, 4],
-      // borderTop: `1px solid`,
-      // borderColor: 'text',
     }}
     {...props}
   />
@@ -46,7 +40,7 @@ const Section = props => (
 
 const StyleGuide = () => {
   return (
-    <Stack space={6} sx={{ width: `100%` }}>
+    <Stack space={[5, 5, 6]} sx={{ width: `100%` }}>
       <Section>
         <SectionHeading>colour</SectionHeading>
         <Box sx={{ px: [0, 0, 4], width: `100%` }}>

@@ -37,7 +37,7 @@ const ThemeButton = props => (
 )
 
 const ThemeSwitcher = () => {
-  const themes = [`light`, `dark`]
+  const themes = [`light`, `dark`, `araf`]
   const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { fonts } = theme
 

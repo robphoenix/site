@@ -26,13 +26,16 @@ export default {
     body: 'Inter, system-ui, sans-serif',
     modes: {
       light: {
-        // heading: 'Space Mono, monospace',
         heading: 'Inter, system-ui, sans-serif',
         body: 'Inter, system-ui, sans-serif',
       },
       dark: {
         heading: 'Overpass Mono, monospace',
         body: 'Karla, sans-serif',
+      },
+      araf: {
+        heading: `Space Mono, monospace`,
+        body: `system-ui, sans-serif`,
       },
     },
   },
@@ -50,6 +53,13 @@ export default {
         primary: `hsl(32, 100%, 51%)`,
         offset: `hsl(204, 60%, 21%)`,
         background: `hsl(240, 8%, 9%)`,
+      },
+      araf: {
+        text: `#1f567a`,
+        primary: `hsl(337, 90%, 35%)`,
+        offset: `hsl(204, 32%, 84%)`,
+        background: `#ebf4fa
+        `,
       },
     },
   },

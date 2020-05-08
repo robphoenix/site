@@ -32,7 +32,7 @@ const Index = () => {
           as={Link}
           to="/"
           sx={{
-            py: [4, 4, 6],
+            py: [4, 4, 5],
             color: `text`,
             textDecoration: `none`,
           }}
@@ -69,6 +69,7 @@ const Index = () => {
               letterSpacing: `tracked`,
               maxWidth: `10ch`,
               lineHeight: 1.5,
+              mt: [0, 0, 6],
             }}
           >
             frontend
@@ -85,7 +86,7 @@ const Index = () => {
             </Box>
           </Heading>
         </Flex>
-        <Box sx={{ py: 5, display: [`none`, `none`, `flex`] }}>
+        <Box sx={{ py: [4, 4, 5], display: [`none`, `none`, `flex`] }}>
           <ThemeSwitcher />
         </Box>
         <SEO subtitle="Home" />
