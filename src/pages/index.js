@@ -70,7 +70,7 @@ const Index = () => {
               letterSpacing: `tracked`,
               maxWidth: `10ch`,
               lineHeight: 1.5,
-              pt: 6,
+              pt: [0, 0, 6],
             }}
           >
             frontend

@@ -15,26 +15,27 @@ const Colours = () => {
         name="text"
         showContrast
       />
-      <Row space={[2, 2, 3]} align="center" sx={{ width: `100%` }}>
+      <Row space={3} align="start" sx={{ width: `100%` }}>
         <Box
           sx={{
-            height: [3, 3, 4],
-            minWidth: [3, 3, 4],
+            height: 4,
+            minWidth: 4,
             backgroundColor: `primary`,
             border: 1,
           }}
         />
         <Flex
           sx={{
+            flexDirection: [`column`, `column`, `row`],
             width: `100%`,
             justifyContent: `space-between`,
           }}
         >
-          <Stack space={1} align="start">
+          <Stack space={0} align="start" sx={{ mb: [2, 2, 0] }}>
             <Text
               sx={{
                 fontFamily: `heading`,
-                fontSize: [1, 3, 4],
+                fontSize: [2, 3, 4],
                 display: `inline-block`,
                 textTransform: `uppercase`,
                 letterSpacing: `tracked`,
@@ -48,36 +49,39 @@ const Colours = () => {
                 fontSize: [1, 2, 3],
                 display: `inline-block`,
                 textTransform: `uppercase`,
-                letterSpacing: 'tracked',
+                letterSpacing: `tracked`,
               }}
             >
               {theme.colors.primary}
             </Text>
           </Stack>
-          <Row space={4} align="start">
-            <Stack space={1} align="end">
-              <Text
-                sx={{
-                  fontFamily: `heading`,
-                  fontSize: [1, 1, 3],
-                  display: `inline-block`,
-                  textTransform: `capitalize`,
-                }}
-              >
-                contrast
-              </Text>
-              <Row space={3}>
-                <Contrast
-                  text={theme.colors.primary}
-                  background={theme.colors.background}
-                />
-                <Contrast
-                  text={theme.colors.primary}
-                  background={theme.colors.offset}
-                />
-              </Row>
-            </Stack>
-          </Row>
+
+          <Stack
+            space={0}
+            sx={{ alignItems: [`flex-start`, `flex-start`, `flex-end`] }}
+          >
+            <Text
+              sx={{
+                fontFamily: `heading`,
+                fontSize: [1, 1, 3],
+                display: `inline-block`,
+                textTransform: `uppercase`,
+                letterSpacing: `tracked`,
+              }}
+            >
+              contrast
+            </Text>
+            <Row space={[2, 2, 3]}>
+              <Contrast
+                text={theme.colors.primary}
+                background={theme.colors.background}
+              />
+              <Contrast
+                text={theme.colors.primary}
+                background={theme.colors.offset}
+              />
+            </Row>
+          </Stack>
         </Flex>
       </Row>
       <Colour
@@ -97,11 +101,11 @@ const Colours = () => {
 }
 
 const Colour = ({ colour, background, name, showContrast }) => (
-  <Row space={[2, 2, 3]} align="center" sx={{ width: `100%` }}>
+  <Row space={3} align="start" sx={{ width: `100%` }}>
     <Box
       sx={{
-        height: [3, 3, 4],
-        minWidth: [3, 3, 4],
+        height: 4,
+        minWidth: 4,
         backgroundColor: colour,
         border: 1,
       }}
@@ -111,13 +115,14 @@ const Colour = ({ colour, background, name, showContrast }) => (
       sx={{
         width: `100%`,
         justifyContent: `space-between`,
+        flexDirection: [`column`, `column`, `row`],
       }}
     >
-      <Stack space={1} align="start">
+      <Stack space={0} align="start" sx={{ mb: [2, 2, 0] }}>
         <Text
           sx={{
             fontFamily: `heading`,
-            fontSize: [1, 3, 4],
+            fontSize: [2, 3, 4],
             display: `inline-block`,
             textTransform: `uppercase`,
             letterSpacing: `tracked`,
@@ -139,13 +144,18 @@ const Colour = ({ colour, background, name, showContrast }) => (
       </Stack>
 
       {showContrast && (
-        <Stack space={1} align="end">
+        <Stack
+          space={0}
+          align="start"
+          sx={{ alignItems: [`flex-start`, `flex-start`, `flex-end`] }}
+        >
           <Text
             sx={{
               fontFamily: `heading`,
               fontSize: [1, 1, 3],
               display: `inline-block`,
-              textTransform: `capitalize`,
+              textTransform: `uppercase`,
+              letterSpacing: `tracked`,
             }}
           >
             contrast
@@ -158,13 +168,17 @@ const Colour = ({ colour, background, name, showContrast }) => (
 )
 
 const Contrast = ({ text, background }) => (
-  <Flex
+  <Row
+    space={[2, 2, 3]}
     sx={{
-      alignItems: 'baseline',
-      fontFamily: 'body',
+      alignItems: `baseline`,
+      fontFamily: `body`,
       color: text,
-      lineHeight: 1,
-      p: 1,
+      letterSpacing: `tracked`,
+      py: 1,
+      px: 2,
+      border: 1,
+      borderColor: text,
       background,
     }}
   >
@@ -172,13 +186,12 @@ const Contrast = ({ text, background }) => (
       sx={{
         height: 'auto',
         fontSize: [2, 3, 4],
-        marginRight: 3,
       }}
     >
       {contrast.ratio(text, background).toFixed(2)}
     </Text>
     <Text sx={{ fontSize: [2, 3, 4] }}>{contrast.score(text, background)}</Text>
-  </Flex>
+  </Row>
 )
 
 export default Colours

@@ -79,7 +79,7 @@ const ThemeSwitcher = () => {
           </ThemeButton>
         </Box>
         {themes.map(themeName => (
-          <Box as="li">
+          <Box as="li" key={themeName}>
             <ThemeButton
               theme={theme}
               current={colorMode === themeName}
