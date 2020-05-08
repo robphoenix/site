@@ -26,9 +26,12 @@ const ThemeButton = props => (
         ? `none`
         : `5px 5px 0 ${props.theme.colors.primary}`,
       ':hover': {
-        bg: props.current ? `primary` : `offset`,
+        bg: `primary`,
+        color: `background`,
       },
       ':active': {
+        // bg: `background`,
+        // color: `primary`,
         boxShadow: `none`,
       },
     }}

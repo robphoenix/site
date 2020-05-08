@@ -75,10 +75,6 @@ const Colours = () => {
                 text={theme.colors.primary}
                 background={theme.colors.background}
               />
-              <Contrast
-                text={theme.colors.primary}
-                background={theme.colors.offset}
-              />
             </Row>
           </Stack>
         </Stack>
@@ -87,12 +83,6 @@ const Colours = () => {
         colour={theme.colors.background}
         background={theme.colors.background}
         name="background"
-        showColour
-      />
-      <Colour
-        colour={theme.colors.offset}
-        background={theme.colors.background}
-        name="offset"
         showColour
       />
     </Stack>

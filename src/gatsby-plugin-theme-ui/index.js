@@ -45,21 +45,17 @@ export default {
   colors: {
     text: `hsl(248, 31%, 20%)`,
     primary: 'hsl(180, 95%, 20%)',
-    offset: 'hsl(180, 50%, 90%)',
     background: `hsl(60, 100%, 100%)`,
     modes: {
       dark: {
         text: `hsl(60, 100%, 100%)`,
         primary: `hsl(32, 100%, 51%)`,
-        offset: `hsl(204, 60%, 21%)`,
         background: `hsl(240, 8%, 9%)`,
       },
       araf: {
-        text: `#1f567a`,
-        primary: `hsl(337, 90%, 35%)`,
-        offset: `hsl(204, 32%, 84%)`,
-        background: `#ebf4fa
-        `,
+        text: `hsl(346, 76%, 28%)`,
+        primary: `hsl(346, 86%, 45%)`,
+        background: `hsl(22, 66%, 94%)`,
       },
     },
   },
