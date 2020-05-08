@@ -185,12 +185,12 @@ const Contrast = ({ text, background }) => (
     <Text
       sx={{
         height: 'auto',
-        fontSize: [2, 3, 4],
+        fontSize: [2, 3, 3],
       }}
     >
       {contrast.ratio(text, background).toFixed(2)}
     </Text>
-    <Text sx={{ fontSize: [2, 3, 4] }}>{contrast.score(text, background)}</Text>
+    <Text sx={{ fontSize: [2, 3, 3] }}>{contrast.score(text, background)}</Text>
   </Row>
 )
 

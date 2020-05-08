@@ -26,14 +26,13 @@ const Index = () => {
           flexDirection: `column`,
           px: 4,
           justifyItems: `center`,
-          // height: `100vh`,
         }}
       >
         <Box
           as={Link}
           to="/"
           sx={{
-            py: 5,
+            py: [4, 4, 6],
             color: `text`,
             textDecoration: `none`,
           }}
@@ -70,7 +69,6 @@ const Index = () => {
               letterSpacing: `tracked`,
               maxWidth: `10ch`,
               lineHeight: 1.5,
-              pt: [0, 0, 6],
             }}
           >
             frontend
