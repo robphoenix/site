@@ -43,19 +43,19 @@ export default {
   initialColorMode: `light`,
   useCustomProperties: true,
   colors: {
-    text: `hsl(248, 31%, 20%)`,
-    primary: 'hsl(180, 95%, 20%)',
-    background: `hsl(60, 100%, 100%)`,
+    text: `#181E34`,
+    primary: `#26727E`,
+    background: `#F7F7F8`,
     modes: {
       dark: {
-        text: `hsl(60, 100%, 100%)`,
-        primary: `hsl(32, 100%, 51%)`,
-        background: `hsl(240, 8%, 9%)`,
+        text: `#f7f7f8`,
+        primary: `#EC93A2`,
+        background: `#151519`,
       },
       araf: {
-        text: `hsl(346, 76%, 28%)`,
-        primary: `hsl(346, 86%, 45%)`,
-        background: `hsl(22, 66%, 94%)`,
+        text: `#163D57`,
+        primary: `#8E4C9E`,
+        background: `#FAEDE6`,
       },
     },
   },
