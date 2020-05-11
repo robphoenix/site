@@ -1,6 +1,6 @@
 import React from 'react'
 import { useThemeUI } from 'theme-ui'
-import { Box, Button, Heading } from '@theme-ui/components'
+import { Box, Button, Text } from '@theme-ui/components'
 
 import { Stack } from './Stack'
 
@@ -40,7 +40,7 @@ const ThemeButton = props => (
 )
 
 const ThemeSwitcher = () => {
-  const themes = [`light`, `dark`, `araf`]
+  const themes = [`light`, `dark`, `araf`, `draig`, `bendigedig`]
   const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { fonts } = theme
 
@@ -53,10 +53,10 @@ const ThemeSwitcher = () => {
   }, [colorMode])
 
   return (
-    <Stack space={3} align="start">
-      <Heading
-        as="h3"
+    <Stack space={3} align="center">
+      <Text
         sx={{
+          fontFamily: `body`,
           textTransform: `uppercase`,
           letterSpacing: `tracked`,
           fontSize: 2,
@@ -64,10 +64,7 @@ const ThemeSwitcher = () => {
         }}
       >
         theme
-        <Box as="span" sx={{ color: `text` }}>
-          .
-        </Box>
-      </Heading>
+      </Text>
       <Stack as="ul" space={3} sx={{ listStyle: `none` }}>
         <Box as="li">
           <ThemeButton

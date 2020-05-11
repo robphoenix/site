@@ -34,7 +34,7 @@ const ThemeButton = props => (
 )
 
 const MobileThemeSwitcher = () => {
-  const themes = [`light`, `dark`, `araf`]
+  const themes = [`light`, `dark`, `araf`, `draig`, `bendigedig`]
   const { theme, colorMode, setColorMode, setTheme } = useThemeUI()
   const { fonts } = theme
 

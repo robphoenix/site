@@ -43,8 +43,11 @@
     "react-icons": "^3.3.0",
     "react-svg-buttons": "^0.4.0",
     "theme-ui": "^0.2.35",
+    "typeface-dm-sans": "^1.1.3",
     "typeface-karla": "0.0.72",
+    "typeface-major-mono-display": "^0.0.71",
     "typeface-overpass-mono": "0.0.71",
+    "typeface-pt-mono": "^0.0.72",
     "typeface-pt-sans": "0.0.72",
     "typeface-space-mono": "0.0.71"
   },

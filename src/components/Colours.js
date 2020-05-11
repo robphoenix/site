@@ -34,7 +34,7 @@ const Colours = () => {
           <Stack space={1} align="start" sx={{ mb: [2, 2, 0] }}>
             <Text
               sx={{
-                fontFamily: `heading`,
+                fontFamily: `body`,
                 fontSize: [2, 3, 4],
                 display: `inline-block`,
                 textTransform: `uppercase`,
@@ -45,7 +45,7 @@ const Colours = () => {
             </Text>
             <Text
               sx={{
-                fontFamily: `heading`,
+                fontFamily: `body`,
                 fontSize: [1, 2, 3],
                 display: `inline-block`,
                 textTransform: `uppercase`,
@@ -62,7 +62,7 @@ const Colours = () => {
           >
             <Text
               sx={{
-                fontFamily: `heading`,
+                fontFamily: `body`,
                 fontSize: [1, 1, 3],
                 display: `inline-block`,
                 textTransform: `capitalize`,
@@ -109,7 +109,7 @@ const Colour = ({ colour, background, name, showContrast }) => (
       <Stack space={1} align="start" sx={{ mb: [2, 2, 0] }}>
         <Text
           sx={{
-            fontFamily: `heading`,
+            fontFamily: `body`,
             fontSize: [2, 3, 4],
             display: `inline-block`,
             textTransform: `uppercase`,
@@ -120,7 +120,7 @@ const Colour = ({ colour, background, name, showContrast }) => (
         </Text>
         <Text
           sx={{
-            fontFamily: `heading`,
+            fontFamily: `body`,
             fontSize: [1, 2, 3],
             display: `inline-block`,
             textTransform: `uppercase`,
@@ -139,7 +139,7 @@ const Colour = ({ colour, background, name, showContrast }) => (
         >
           <Text
             sx={{
-              fontFamily: `heading`,
+              fontFamily: `body`,
               fontSize: [1, 1, 3],
               display: `inline-block`,
               textTransform: `capitalize`,

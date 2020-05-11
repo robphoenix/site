@@ -24,7 +24,7 @@ const Typography = () => {
             >
               <Text
                 sx={{
-                  fontFamily: `heading`,
+                  fontFamily: `body`,
                   textTransform: 'uppercase',
                   letterSpacing: 'tracked',
                   fontSize: [2, 3, 4],

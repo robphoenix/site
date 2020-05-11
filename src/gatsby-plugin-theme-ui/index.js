@@ -22,20 +22,28 @@ export default {
     button: `5px 5px 0 black`,
   },
   fonts: {
-    heading: 'Inter, system-ui, sans-serif',
-    body: 'Inter, system-ui, sans-serif',
+    heading: `Inter, system-ui, sans-serif`,
+    body: `Inter, system-ui, sans-serif`,
     modes: {
       light: {
-        heading: 'Inter, system-ui, sans-serif',
-        body: 'Inter, system-ui, sans-serif',
+        heading: `Inter, system-ui, sans-serif`,
+        body: `Inter, system-ui, sans-serif`,
       },
       dark: {
-        heading: 'Overpass Mono, monospace',
-        body: 'Karla, sans-serif',
+        heading: `Overpass Mono, monospace`,
+        body: `Karla, sans-serif`,
       },
       araf: {
         heading: `Space Mono, monospace`,
         body: `system-ui, sans-serif`,
+      },
+      draig: {
+        heading: `PT Mono, monospace`,
+        body: `PT Sans, sans-serif`,
+      },
+      bendigedig: {
+        heading: `Major Mono Display, monospace`,
+        body: `DM Sans, sans-serif`,
       },
     },
   },
@@ -53,6 +61,16 @@ export default {
         background: `#151519`,
       },
       araf: {
+        background: `#d8eefd`,
+        text: `#094067`,
+        primary: `#6246ea`,
+      },
+      draig: {
+        text: `#fffffe`,
+        primary: `#f9bc60`,
+        background: `#004643`,
+      },
+      bendigedig: {
         text: `#163D57`,
         primary: `#8E4C9E`,
         background: `#FAEDE6`,

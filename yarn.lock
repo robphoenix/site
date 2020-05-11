@@ -14295,15 +14295,40 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-dm-sans@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/typeface-dm-sans/-/typeface-dm-sans-1.1.3.tgz#bf955060c7b16ac9f360b1692acf2b0e66e9ac11"
+  integrity sha512-ejUMYBGVp7RIIm4w1KaTaOE01JXFv7ChV5QQmVjqWzLZaXte6bZDBaAjGGizW0lmRrphzjZ3MQxjn+KV2RLA/Q==
+
+typeface-ibm-plex-mono@^0.0.61:
+  version "0.0.61"
+  resolved "https://registry.yarnpkg.com/typeface-ibm-plex-mono/-/typeface-ibm-plex-mono-0.0.61.tgz#ee7f12643e2bfee5c5c6915350005d6dfdaa66fd"
+  integrity sha512-4Pzza33ihcW1l9qSs6WmRRb6FxVoDvpoTws55V9rwN7zVqURFh1c/i4qWCmHJ0Dyr0c+pYgQVyb/aAwsRjv2Lg==
+
 typeface-karla@0.0.72:
   version "0.0.72"
   resolved "https://registry.yarnpkg.com/typeface-karla/-/typeface-karla-0.0.72.tgz#b0eec7f2f13e638d274c0bac6bd0c82379c958e9"
   integrity sha512-PKqhkf7MxnRMCdWfLXYsY2eGY3R9aGO630P5CCXnndvmfTlEGgXtb6J6kx1UDcCgzNh115Cd0IP5AnFU8cCpKw==
 
+typeface-lobster@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-lobster/-/typeface-lobster-0.0.72.tgz#4036b3d0bcb1ff9f9fab2244886c461563fea784"
+  integrity sha512-7WKgGD1w4j1tSw2tom8n4n0s7gjJv+y4V2UpLGmmjDIZ9YeuBoBqk1A2snjpIvriScqBGOYCO0vhtr/RyHF2lw==
+
+typeface-major-mono-display@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/typeface-major-mono-display/-/typeface-major-mono-display-0.0.71.tgz#49eeed4fb5a924bb55959a697c93dbc6dfe71712"
+  integrity sha512-Ey4Zu402v7ajr5YtmZRffedE4GiHaVhcjukGhI6vw62uu9WM9HIG1rW+OjdvnVugDyZ0w9UftBlhMGvFCSsAKg==
+
 typeface-overpass-mono@0.0.71:
   version "0.0.71"
   resolved "https://registry.yarnpkg.com/typeface-overpass-mono/-/typeface-overpass-mono-0.0.71.tgz#9bfeb52ab8a2f509b7c414699daeeec0fb246bee"
   integrity sha512-o6y2riRoa2U5MdzEJy83YcML+LySS6JPfcWuycxXroGND7WfN8Iwa+T83Fk0S96tdtDsuxQT5a6ETxg4CVh7nw==
+
+typeface-pt-mono@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-pt-mono/-/typeface-pt-mono-0.0.72.tgz#1ce4a636d335c77bb01712ba136a99f764647a04"
+  integrity sha512-7AMVSvB0oT2TDPyCJlVKSIxPjspI08Rlhg/SEUwQORSyalZgtSt2pDJEvVZuJbBIak70oB2ts6vL4iunYPUGKA==
 
 typeface-pt-sans@0.0.72:
   version "0.0.72"
