@@ -53,7 +53,7 @@ export default {
   colors: {
     text: `#181E34`,
     primary: `#26727E`,
-    background: `#F7F7F8`,
+    background: `#fffffe`,
     modes: {
       dark: {
         text: `#f7f7f8`,

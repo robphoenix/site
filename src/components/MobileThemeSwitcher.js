@@ -1,8 +1,8 @@
 import React from 'react'
 import { useThemeUI } from 'theme-ui'
-import { Select, Button, Text, Flex } from '@theme-ui/components'
+import { Select, Button, Text } from '@theme-ui/components'
 
-import { Stack, Row } from './Stack'
+import { Row } from './Stack'
 
 const ThemeButton = props => (
   <Button
@@ -47,12 +47,12 @@ const MobileThemeSwitcher = () => {
   }, [colorMode])
 
   return (
-    <Row space={4} sx={{ color: `primary`, py: 3 }}>
+    <Row space={3} sx={{ color: `primary`, py: 2 }}>
       <Select
         value={colorMode}
         onChange={event => setColorMode(event.currentTarget.value)}
         sx={{
-          width: 120,
+          width: 160,
           border: `2px solid`,
           borderColor: `primary`,
           borderRadius: 0,

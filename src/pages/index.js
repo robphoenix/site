@@ -24,7 +24,7 @@ const Index = () => {
           gridTemplateColumns: `1fr 3fr 1fr`,
           gridTemplateRows: `100vh 1fr`,
           flexDirection: `column`,
-          px: 4,
+          px: [3, 3, 4],
           justifyItems: `center`,
         }}
       >
