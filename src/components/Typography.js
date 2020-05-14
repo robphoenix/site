@@ -46,17 +46,26 @@ const Typography = () => {
             </Grid>
           ))}
       </Stack>
-      <Stack as="ul" space={2} sx={{ width: `max-content` }}>
+      <Stack
+        as="ul"
+        space={2}
+        sx={{
+          width: `100%`,
+          pb: 4,
+          overflowX: `auto`,
+        }}
+      >
         {fontSizes &&
           fontSizes.map((fontSize, i) => (
             <Flex
               as="li"
               key={fontSize}
               sx={{
+                width: `max-content`,
                 alignItems: `baseline`,
                 fontSize: i,
-                fontFamily: 'heading',
-                color: 'text',
+                fontFamily: `heading`,
+                color: `text`,
               }}
             >
               <Text sx={{ mr: fontSize }}>{fontSize}px</Text>

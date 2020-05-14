@@ -52,7 +52,7 @@ export default {
   useCustomProperties: true,
   colors: {
     text: `#181E34`,
-    primary: `#26727E`,
+    primary: `#6741d9`,
     background: `#fffffe`,
     modes: {
       dark: {
@@ -61,19 +61,19 @@ export default {
         background: `#151519`,
       },
       araf: {
-        background: `#d8eefd`,
-        text: `#094067`,
-        primary: `#6246ea`,
+        background: `#ffd6e8`,
+        text: `#741d44`,
+        primary: `#63228d`,
       },
       draig: {
         text: `#fffffe`,
-        primary: `#f9bc60`,
+        primary: `#f9d003`,
         background: `#004643`,
       },
       bendigedig: {
         text: `#163D57`,
-        primary: `#8E4C9E`,
-        background: `#FAEDE6`,
+        primary: `#c90f97`,
+        background: `#e3f6f5`,
       },
     },
   },

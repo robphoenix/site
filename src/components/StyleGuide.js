@@ -43,7 +43,7 @@ const StyleGuide = () => {
     <Stack space={[5, 5, 6]} sx={{ width: `100%` }}>
       <Section>
         <SectionHeading>colour</SectionHeading>
-        <Box sx={{ px: [2, 2, 4], width: `100%` }}>
+        <Box sx={{ px: [2, 2, 0], width: `100%` }}>
           <Colours />
         </Box>
       </Section>
@@ -52,10 +52,8 @@ const StyleGuide = () => {
         <SectionHeading>typography</SectionHeading>
         <Box
           sx={{
-            px: [2, 2, 4],
+            px: [2, 2, 0],
             width: `100%`,
-            pb: 4,
-            overflowX: `auto`,
           }}
         >
           <Typography />
@@ -66,7 +64,7 @@ const StyleGuide = () => {
         <SectionHeading>space</SectionHeading>
         <Box
           sx={{
-            px: [2, 2, 4],
+            px: [2, 2, 0],
             width: `100%`,
             pb: 4,
             overflowX: `auto`,
@@ -77,7 +75,7 @@ const StyleGuide = () => {
       </Section>
       <Section>
         <SectionHeading>foundations</SectionHeading>
-        <Box sx={{ px: [2, 2, 4], width: `100%` }}>
+        <Box sx={{ px: [2, 2, 0], width: `100%` }}>
           <Text
             sx={{
               fontFamily: `body`,
