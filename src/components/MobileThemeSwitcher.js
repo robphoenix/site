@@ -7,11 +7,12 @@ import { Row } from './Stack'
 const ThemeButton = props => (
   <Button
     sx={{
-      bg: props.current ? `primary` : `background`,
-      color: props.current ? `background` : `primary`,
+      // bg: `background`,
+      bg: `transparent`,
+      color: `text`,
       border: `2px solid`,
       py: 3,
-      borderColor: `primary`,
+      borderColor: `text`,
       outline: `none`,
       width: 160,
       borderRadius: 0,
@@ -22,12 +23,12 @@ const ThemeButton = props => (
       fontWeight: `bold`,
       fontSize: 2,
       transition: `all 0.15s linear`,
-      boxShadow: props.current
-        ? `none`
-        : `5px 5px 0 ${props.theme.colors.primary}`,
-      ':active': {
-        boxShadow: `none`,
-      },
+      // boxShadow: props.current
+      //   ? `none`
+      //   : `5px 5px 0 ${props.theme.colors.primary}`,
+      // ':active': {
+      //   boxShadow: `none`,
+      // },
     }}
     {...props}
   />
@@ -47,27 +48,28 @@ const MobileThemeSwitcher = () => {
   }, [colorMode])
 
   return (
-    <Row space={3} sx={{ color: `primary`, py: 2 }}>
+    <Row space={3} sx={{ color: `primary`, py: 3 }}>
       <Select
         value={colorMode}
         onChange={event => setColorMode(event.currentTarget.value)}
         sx={{
           width: 160,
           border: `2px solid`,
-          borderColor: `primary`,
+          borderColor: `text`,
           borderRadius: 0,
           outline: `none`,
-          color: `primary`,
-          boxShadow: `5px 5px 0 ${theme.colors.primary}`,
+          color: `text`,
+          // boxShadow: `5px 5px 0 ${theme.colors.text}`,
           fontFamily: `body`,
           textTransform: `uppercase`,
           letterSpacing: `tracked`,
           lineHeight: `solid`,
           fontWeight: `bold`,
           fontSize: 2,
-          ':active': {
-            boxShadow: `none`,
-          },
+          transition: `all 0.15s linear`,
+          // ':active': {
+          //   boxShadow: `none`,
+          // },
         }}
       >
         {themes.map(themeName => (

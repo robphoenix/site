@@ -17,7 +17,7 @@ const Social = () => {
         alignItems: `center`,
         fontFamily: `body`,
         color: `text`,
-        fontSize: [2, 2, 4],
+        fontSize: [2, 2, 3],
       }}
     >
       <SocialLink href="http://rm-phoenix.co.uk/">Art</SocialLink>

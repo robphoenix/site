@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text, Heading } from '@theme-ui/components'
+import { Flex, Box, Text, Heading } from '@theme-ui/components'
 
 import Typography from './Typography'
 import Colours from './Colours'
@@ -75,19 +75,36 @@ const StyleGuide = () => {
       </Section>
       <Section>
         <SectionHeading>foundations</SectionHeading>
-        <Box sx={{ px: [2, 2, 0], width: `100%` }}>
-          <Text
-            sx={{
-              fontFamily: `body`,
-              fontSize: [2, 3, 4],
-            }}
-          >
-            Laboris ex ea elit duis incididunt sunt quis occaecat id. Fugiat
-            tempor cillum anim veniam qui fugiat culpa elit culpa laboris elit
-            aliquip enim irure. Eiusmod laboris duis in amet exercitation cillum
-            duis laborum anim eu irure consectetur proident qui.
-          </Text>
-        </Box>
+        <Stack
+          space={5}
+          sx={{ px: [2, 2, 0], width: `100%`, flexDirection: `column`, px: 4 }}
+        >
+          <Stack space={3} sx={{ px: 4 }}>
+            <Text sx={{ fontSize: [2, 3, 4] }}>
+              “Perfection is achieved, not when there is nothing more to add,
+              but when there is nothing left to take away.”
+            </Text>
+            <Text sx={{ fontSize: [2, 3, 3], alignSelf: `flex-end` }}>
+              ― Antoine de Saint-Exupéry
+            </Text>
+          </Stack>
+          <Stack space={3}>
+            <Text sx={{ fontSize: [2, 3, 3] }}>
+              I went to art school in the 1990's, then, after becoming a dad in
+              2010's, I went back to uni to study network engineering. I started
+              coding, automating networks with Python, then building systems
+              with Elixir & Go. In recent years I have moved closer to the user,
+              building web applications with JavaScript & TypeScript and have
+              found a passion for UX, Design Systems and, to my great surprise,
+              CSS.
+            </Text>
+            <Text sx={{ fontSize: [2, 3, 3] }}>
+              It's worth noting that I'm a straight, white, middle-class,
+              able-bodied, man. Everything I've done, no matter how hard I've
+              worked, has been enabled by my privilege.
+            </Text>
+          </Stack>
+        </Stack>
       </Section>
     </Stack>
   )

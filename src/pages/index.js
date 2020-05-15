@@ -110,17 +110,18 @@ const Index = () => {
 
         <Flex
           sx={{
-            width: '100vw',
-            display: ['flex', `flex`, 'none'],
+            width: `100vw`,
+            display: [`flex`, `flex`, `none`],
             zIndex: 1,
             bottom: 0,
             left: 0,
             right: 0,
-            position: 'fixed',
-            backgroundColor: 'background',
+            position: `fixed`,
+            backgroundColor: `background`,
             borderTop: `3px solid`,
-            borderColor: 'primary',
+            borderColor: `text`,
             justifyContent: `center`,
+            transition: `all 0.15s linear`,
           }}
         >
           <MobileThemeSwitcher />

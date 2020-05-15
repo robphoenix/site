@@ -4,6 +4,7 @@ import { Global, css } from '@emotion/core'
 
 const Reset = () => {
   const { theme } = useThemeUI()
+  console.log(theme.fonts.body)
   return (
     <Global
       styles={css({
@@ -12,7 +13,7 @@ const Reset = () => {
           padding: 0,
           boxSizing: `border-box`,
           // for page transitions
-          transition: `all 0.15s ease-out`,
+          transition: `all 0.15s ease-in-out`,
           fontFamily: theme.fonts.body,
         },
         'h1,h2,h3,h4,h5,h6': {

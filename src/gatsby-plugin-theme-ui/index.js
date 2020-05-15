@@ -57,7 +57,7 @@ export default {
     modes: {
       dark: {
         text: `#f7f7f8`,
-        primary: `#EC93A2`,
+        primary: `#ffa7c4`,
         background: `#151519`,
       },
       araf: {
