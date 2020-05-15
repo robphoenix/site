@@ -77,9 +77,9 @@ const StyleGuide = () => {
         <SectionHeading>foundations</SectionHeading>
         <Stack
           space={5}
-          sx={{ px: [2, 2, 0], width: `100%`, flexDirection: `column`, px: 4 }}
+          sx={{ px: [3, 3, 4], width: `100%`, flexDirection: `column` }}
         >
-          <Stack space={3} sx={{ px: 4 }}>
+          <Stack space={3} sx={{ px: [3, 3, 4] }}>
             <Text sx={{ fontSize: [2, 3, 4] }}>
               “Perfection is achieved, not when there is nothing more to add,
               but when there is nothing left to take away.”
@@ -91,12 +91,12 @@ const StyleGuide = () => {
           <Stack space={3}>
             <Text sx={{ fontSize: [2, 3, 3] }}>
               I went to art school in the 1990's, then, after becoming a dad in
-              2010's, I went back to uni to study network engineering. I started
-              coding, automating networks with Python, then building systems
-              with Elixir & Go. In recent years I have moved closer to the user,
-              building web applications with JavaScript & TypeScript and have
-              found a passion for UX, Design Systems and, to my great surprise,
-              CSS.
+              the 2010's, I went back to uni to study network engineering. I
+              started coding; automating networks with Python, then building
+              systems with Elixir & Go. In recent years I have moved closer to
+              the user, building web applications with JavaScript & TypeScript
+              and have found a passion for UX, Design Systems and, to my great
+              surprise, CSS.
             </Text>
             <Text sx={{ fontSize: [2, 3, 3] }}>
               It's worth noting that I'm a straight, white, middle-class,

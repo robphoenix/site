@@ -4,7 +4,6 @@ import { Global, css } from '@emotion/core'
 
 const Reset = () => {
   const { theme } = useThemeUI()
-  console.log(theme.fonts.body)
   return (
     <Global
       styles={css({
