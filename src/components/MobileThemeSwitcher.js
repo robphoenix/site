@@ -11,7 +11,7 @@ const ThemeButton = props => (
       color: `text`,
       border: `2px solid`,
       py: 3,
-      borderColor: `inherit`,
+      borderColor: `text`,
       outline: `none`,
       width: 160,
       borderRadius: 0,
