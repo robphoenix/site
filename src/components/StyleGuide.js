@@ -91,17 +91,16 @@ const StyleGuide = () => {
           <Stack space={3}>
             <Text sx={{ fontSize: [2, 3, 3] }}>
               I went to art school in the 1990's, then, after becoming a dad in
-              the 2010's, I went back to uni to study network engineering. I
-              started coding; automating networks with Python, then building
-              systems with Elixir & Go. In recent years I have moved closer to
-              the user, building web applications with JavaScript & TypeScript
-              and have found a passion for UX, Design Systems and, to my great
-              surprise, CSS.
+              the 2010's, I went back to uni to study network engineering and
+              ended up writing code; automating networks and then building
+              backend systems. In recent years I've moved closer to the user,
+              building web UI's, and finding a passion for UX, Design Systems
+              and, to my great surprise, CSS.
             </Text>
             <Text sx={{ fontSize: [2, 3, 3] }}>
-              It's worth noting that I'm a straight, white, middle-class,
-              able-bodied, man. Everything I've done, no matter how hard I've
-              worked, has been enabled by my privilege.
+              I am a straight, white, middle-class, able-bodied, man. Everything
+              I've done, no matter how hard I've worked, has been enabled by my
+              privilege.
             </Text>
           </Stack>
         </Stack>
