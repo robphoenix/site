@@ -42,7 +42,7 @@ export default {
         body: `PT Sans, sans-serif`,
       },
       bendigedig: {
-        heading: `Major Mono Display, monospace`,
+        heading: `Work Sans, sans-serif`,
         body: `DM Sans, sans-serif`,
       },
     },

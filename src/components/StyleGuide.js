@@ -6,7 +6,7 @@ import Colours from './Colours'
 import Spacing from './Spacing'
 import { Stack } from './Stack'
 
-const SectionHeading = props => (
+const SectionHeading = (props) => (
   <Heading
     as="h4"
     sx={{
@@ -25,7 +25,7 @@ const SectionHeading = props => (
   />
 )
 
-const Section = props => (
+const Section = (props) => (
   <Stack
     space={[4, 4, 5]}
     as="section"
@@ -77,7 +77,7 @@ const StyleGuide = () => {
         <SectionHeading>foundations</SectionHeading>
         <Stack
           space={5}
-          sx={{ px: [3, 3, 4], width: `100%`, flexDirection: `column` }}
+          sx={{ px: [3, 3, 4], width: `100vw`, flexDirection: `column` }}
         >
           <Stack space={3} sx={{ px: [3, 3, 4] }}>
             <Text sx={{ fontSize: [2, 3, 4] }}>
@@ -89,18 +89,22 @@ const StyleGuide = () => {
             </Text>
           </Stack>
           <Stack space={3}>
-            <Text sx={{ fontSize: [2, 3, 3] }}>
+            <Text sx={{ fontSize: [2, 3, 3], lineHeight: `copy` }}>
               I went to art school in the 1990's, then, after becoming a dad in
               the 2010's, I went back to uni to study network engineering and
               ended up writing code; automating networks and then building
               backend systems. In recent years I've moved closer to the user,
-              building web UI's, and finding a passion for UX, Design Systems
-              and, to my great surprise, CSS.
+              building web UI's, and discovering a passion for Design Systems,
+              UX, typography, animation, microinteractions and both CSS &
+              CSS-in-JS. I live in rural North Wales with my partner, our kids,
+              2 dogs, 1 cat, 4 chickens, 2 ponies & 1 sheep. I don't code on the
+              weekends.
             </Text>
-            <Text sx={{ fontSize: [2, 3, 3] }}>
-              I am a straight, white, middle-class, able-bodied, man. Everything
-              I've done, no matter how hard I've worked, has been enabled by my
-              privilege.
+            <Text sx={{ fontSize: [2, 3, 3], lineHeight: `copy` }}>
+              It's worth noting that I'm a straight, white, middle-class,
+              able-bodied, cisgender male. Everything I've achieved, no matter
+              how hard I've worked, has been enabled by all the privilege this
+              brings.
             </Text>
           </Stack>
         </Stack>
