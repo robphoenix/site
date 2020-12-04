@@ -30,8 +30,6 @@ const ThemeButton = props => (
         color: `background`,
       },
       ':active': {
-        // bg: `background`,
-        // color: `primary`,
         boxShadow: `none`,
       },
     }}
@@ -53,7 +51,7 @@ const ThemeSwitcher = () => {
   }, [colorMode])
 
   return (
-    <Stack space={3} align="center">
+    <Stack space={3} align="left">
       <Text
         sx={{
           fontFamily: `body`,
