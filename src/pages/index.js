@@ -72,18 +72,10 @@ const Index = () => {
               mt: [0, 0, 6],
             }}
           >
-            frontend
+            frontend developer
             <Box as="span" sx={{ color: `primary` }}>
               .
             </Box>{' '}
-            developer
-            <Box as="span" sx={{ color: `primary` }}>
-              .
-            </Box>{' '}
-            designer
-            <Box as="span" sx={{ color: `primary` }}>
-              .
-            </Box>
           </Heading>
         </Flex>
         <Box sx={{ py: [4, 4, 5], display: [`none`, `none`, `flex`] }}>
